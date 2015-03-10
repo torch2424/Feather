@@ -686,13 +686,7 @@ public class Ui extends Activity implements OnSeekBarChangeListener, Runnable
                                                                 DialogInterface dialog,
                                                                 int id)
                                                         {
-                                                            // since you need to
-                                                            // clear a folder
-                                                            // before deleting
-                                                            // have to call
-                                                            // function to
-                                                            // delete everything
-                                                            // inside
+                                                            //If it is a folder, then set it as default
                                                             if (folderDir
                                                                     .isDirectory())
                                                             {
@@ -700,6 +694,7 @@ public class Ui extends Activity implements OnSeekBarChangeListener, Runnable
                                                                 SharedPreferences.Editor editor = prefs.edit();
                                                                 editor.putString("DEFAULTPATH", folderDir.getAbsolutePath());
                                                                 editor.commit();
+                                                                toast.show("Default folder successfully set!");
 
                                                             }
                                                             else
