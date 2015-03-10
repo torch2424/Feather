@@ -50,11 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ui.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Ui.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/torch2424/feather/Ui.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.825" vertical-offset="2982" max-vertical-offset="19815">
-              <caret line="234" column="88" selection-start-line="234" selection-start-column="88" selection-end-line="234" selection-end-column="88" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2982" max-vertical-offset="19815">
+              <caret line="225" column="50" selection-start-line="225" selection-start-column="50" selection-end-line="225" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3059#3091#0" expanded="true" />
@@ -106,13 +106,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="770" max-vertical-offset="1410">
-              <caret line="82" column="17" selection-start-line="82" selection-start-column="17" selection-end-line="82" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.390625" vertical-offset="260" max-vertical-offset="1755">
+              <caret line="34" column="73" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="73" />
               <folding>
-                <element signature="e#3560#3598#0" expanded="true" />
+                <element signature="e#4846#4884#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -872,6 +872,7 @@
       <list>
         <option value="$PROJECT_DIR$/app/src/main/java/com/torch2424/feather/BGMusic.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/torch2424/feather/Ui.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
       </list>
     </option>
   </component>
@@ -1326,16 +1327,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="810" max-vertical-offset="1410">
-          <caret line="82" column="17" selection-start-line="82" selection-start-column="17" selection-end-line="82" selection-end-column="17" />
-          <folding>
-            <element signature="e#3560#3598#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/torch2424/feather/NotificationPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="332" max-vertical-offset="1545">
@@ -1370,8 +1361,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/torch2424/feather/Ui.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.825" vertical-offset="2982" max-vertical-offset="19815">
-          <caret line="234" column="88" selection-start-line="234" selection-start-column="88" selection-end-line="234" selection-end-column="88" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2982" max-vertical-offset="19815">
+          <caret line="225" column="50" selection-start-line="225" selection-start-column="50" selection-end-line="225" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3059#3091#0" expanded="true" />
@@ -1398,6 +1389,16 @@
             <element signature="e#27930#27931#0" expanded="true" />
             <element signature="e#28057#28058#0" expanded="true" />
             <element signature="e#37723#37755#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.390625" vertical-offset="260" max-vertical-offset="1755">
+          <caret line="34" column="73" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="73" />
+          <folding>
+            <element signature="e#4846#4884#0" expanded="true" />
           </folding>
         </state>
       </provider>
