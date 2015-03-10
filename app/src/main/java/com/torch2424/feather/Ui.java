@@ -6,12 +6,14 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.app.WallpaperManager;
 import android.content.ComponentName;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.graphics.PorterDuff;
@@ -24,6 +26,8 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.IBinder;
+import android.provider.MediaStore;
+import android.util.Log;
 import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -47,6 +51,7 @@ import com.torch2424.feather.BGMusic.MusicBinder;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -85,6 +90,10 @@ public class Ui extends Activity implements OnSeekBarChangeListener, Runnable
 	// to control volume for when someone long press volumes
 	AudioManager audio;
 	ComponentName musicControl;
+
+    //Boolean and passed file for when app gives our app a file
+    boolean passedFileBool;
+    File passedFile;
 	
 	// Boolean for exiting app
 	boolean exit;
@@ -98,115 +107,160 @@ public class Ui extends Activity implements OnSeekBarChangeListener, Runnable
 	@SuppressLint("SimpleDateFormat")
 	@SuppressWarnings("deprecation")
 	@Override
-	protected void onCreate(Bundle savedInstanceState)
-	{
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_ui);
+	protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_ui);
 		
 		/*
 		 * NOTES Service is controlling Manlyager, since it will outLive this
 		 * activity Wakelock done by xml android:Keep Screen on, wakelocks only
 		 * when video view is visible!
 		 */
-		
-		// Our Toast
-		toast = new Toasty(getApplicationContext());
-		
-		// Connect to our music service
-		startMusic();
-		
-		// Initializing Our Views (and hiding some of them)
-		playing = (TextView) findViewById(R.id.fileText);
-		filePath = (TextView) findViewById(R.id.filePath);
-		noVideo = (TextView) findViewById(R.id.noVideo);
-		noVideo.setVisibility(View.GONE);
-		player = (VideoView) findViewById(R.id.VideoView);
-		videoLayout = (RelativeLayout) findViewById(R.id.VideoLayout);
-		playPause = (Button) findViewById(R.id.playpause);
-		videoLayout.setVisibility(View.GONE);
-		
-		// set up exit
-		exit = false;
-		
-		// Is image and is apk done in Manly
-		
-		// ListFileBoolean?
-		
-		// setting up seekbar
-		seekBar = (SeekBar) findViewById(R.id.seek_bar);
-		seekBar.setOnSeekBarChangeListener(this);
-		seekBar.setEnabled(false);
-		seekHandler = new Handler();
-		currentDur = (TextView) findViewById(R.id.currentDur);
-		maxDur = (TextView) findViewById(R.id.maxDur);
-		duration = new SimpleDateFormat("m:ss");
-		
-		// Create our listview
-		listView = (ListView) findViewById(R.id.browserList);
+
+        // Our Toast
+        toast = new Toasty(getApplicationContext());
+
+        // Connect to our music service
+        startMusic();
+
+        // Initializing Our Views (and hiding some of them)
+        playing = (TextView) findViewById(R.id.fileText);
+        filePath = (TextView) findViewById(R.id.filePath);
+        noVideo = (TextView) findViewById(R.id.noVideo);
+        noVideo.setVisibility(View.GONE);
+        player = (VideoView) findViewById(R.id.VideoView);
+        videoLayout = (RelativeLayout) findViewById(R.id.VideoLayout);
+        playPause = (Button) findViewById(R.id.playpause);
+        videoLayout.setVisibility(View.GONE);
+
+        // set up exit
+        exit = false;
+
+        // Is image and is apk done in Manly
+
+        // ListFileBoolean?
+
+        // setting up seekbar
+        seekBar = (SeekBar) findViewById(R.id.seek_bar);
+        seekBar.setOnSeekBarChangeListener(this);
+        seekBar.setEnabled(false);
+        seekHandler = new Handler();
+        currentDur = (TextView) findViewById(R.id.currentDur);
+        maxDur = (TextView) findViewById(R.id.maxDur);
+        duration = new SimpleDateFormat("m:ss");
+
+        // Create our listview
+        listView = (ListView) findViewById(R.id.browserList);
 
         //Get default folder now user can choose
         prefs = this.getApplicationContext().getSharedPreferences("MyPrefs", 0);
-		// default user folder, path to sd folder, root if not found
-		String startPath;
+        // default user folder, path to sd folder, root if not found
+        String startPath;
         //Set a safe word "False" if user has not chosen a default folder yet
         String defaultPath = prefs.getString("DEFAULTPATH", "FALSE");
         //If it ids not the default safe word then they have their own path
-        if(!defaultPath.contentEquals("FALSE"))
-        {
+        if (!defaultPath.contentEquals("FALSE")) {
             startPath = defaultPath;
+        } else if (Environment.getExternalStorageDirectory().exists()) {
+            startPath = (String) Environment.getExternalStorageDirectory()
+                    .getAbsolutePath();
+        } else {
+            startPath = (String) Environment.getRootDirectory()
+                    .getAbsolutePath();
         }
-		else if (Environment.getExternalStorageDirectory().exists())
-		{
-			startPath = (String) Environment.getExternalStorageDirectory()
-					.getAbsolutePath();
-		}
-		else
-		{
-			startPath = (String) Environment.getRootDirectory()
-					.getAbsolutePath();
-		}
-		// Set our Current directory to the external root
-		browseDir = new File(startPath);
-		
-		// Assigning file path
-		filePath.setText(browseDir.getAbsolutePath());
-		
-		// MAY NEED STATIC CONTEXT
-		// assinging context for things that require it to be static
-		// MainActivity.contextStatic = getApplicationContext();
-		// regular context
-		// context = this;
-		
-		// to help start long press on volume keys
-		audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-		// register all media playback buttons to this app
-		// Start listening for button presses
-		// need to unregister this in quit
-		musicControl = new ComponentName(getApplicationContext(),
-				MusicControl.class);
-		// Deprecated in Lollipop
-		audio.registerMediaButtonEventReceiver(musicControl);
-		
-		// Video Wake Lock, get from TIH/ Going without Audio Focus
-		
-		// Make sure only affect media playback not ringer
-		setVolumeControlStream(AudioManager.STREAM_MUSIC);
-		
-		// Get UI Wallpaper
-		getAppWallpaper();
-		
-		// Do Notification in service
-		
-		// Start/Refesh Listview
-		// Set our adapter
-		adapter = new ArrayAdapter<String>(getApplicationContext(),
-				android.R.layout.simple_list_item_1,
-				Manly.getDirectoryArray(browseDir));
-		listView.setAdapter(adapter);
-		getItemClick();
-		getLongClick();
-		
-	}
+        // Set our Current directory to the external root
+        browseDir = new File(startPath);
+
+        // Assigning file path
+        filePath.setText(browseDir.getAbsolutePath());
+
+        // MAY NEED STATIC CONTEXT
+        // assinging context for things that require it to be static
+        // MainActivity.contextStatic = getApplicationContext();
+        // regular context
+        // context = this;
+
+        // to help start long press on volume keys
+        audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+        // register all media playback buttons to this app
+        // Start listening for button presses
+        // need to unregister this in quit
+        musicControl = new ComponentName(getApplicationContext(),
+                MusicControl.class);
+        // Deprecated in Lollipop
+        audio.registerMediaButtonEventReceiver(musicControl);
+
+        // Video Wake Lock, get from TIH/ Going without Audio Focus
+
+        // Make sure only affect media playback not ringer
+        setVolumeControlStream(AudioManager.STREAM_MUSIC);
+
+        // Get UI Wallpaper
+        getAppWallpaper();
+
+        // Do Notification in service
+
+        // Start/Refesh Listview
+        // Set our adapter
+        adapter = new ArrayAdapter<String>(getApplicationContext(),
+                android.R.layout.simple_list_item_1,
+                Manly.getDirectoryArray(browseDir));
+        listView.setAdapter(adapter);
+        getItemClick();
+        getLongClick();
+
+
+        //Lastly check/prepare app for when a file is passed to the app
+        passedFileBool = false;
+        passedFile = null;
+        Intent passed = getIntent();
+        //If we did get an intent, and the data of it is not null
+        if (passed != null && passed.getData() != null) {
+            //Get the real file path from our uri
+            //Simply make the file and play it!
+            File playFile = null;
+            if(passed.getData().getPath() != null)
+            {
+                try {
+                    String realPath = getRealPath(passed.getData(), getApplicationContext().getContentResolver());
+                    playFile = new File(realPath);
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                    toast.show("Could not get the file path from the app...");
+                }
+            }
+            //If it is a file we can handle it, and if it is music or video we can handle it
+            if (Manly.isMusic(playFile) || Manly.isVideo(playFile))
+            {
+                //Set our boolean and file, so that once music is bounded, it will play!
+                passedFileBool = true;
+                passedFile = playFile;
+            }
+            //Else we cannot handle it
+            else
+            {
+                toast.show("Sorry, but Feather cannot play this...");
+            }
+        }
+    }
+
+        //Helpwer function to get real file path from uri, modified from stack
+        private String getRealPath(Uri selectedVideoUri,
+            ContentResolver contentResolver) throws UnsupportedEncodingException
+
+        {
+        String filePath;
+        String[] filePathColumn = {MediaStore.MediaColumns.DATA};
+
+        Cursor cursor = contentResolver.query(selectedVideoUri, filePathColumn, null, null, null);
+        cursor.moveToFirst();
+
+        int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+        filePath = cursor.getString(columnIndex);
+        cursor.close();
+        String result = java.net.URLDecoder.decode(filePath, "UTF-8");
+        return result;
+        }
 	
 	// connect to the service
 	ServiceConnection musicConnection = new ServiceConnection()
@@ -218,6 +272,26 @@ public class Ui extends Activity implements OnSeekBarChangeListener, Runnable
 			MusicBinder binder = (MusicBinder) service;
 			// get service
 			bgMusic = binder.getService();
+
+            //Check to see if we were passed file, if we were play it once music is binded
+            if(passedFileBool)
+            {
+                // Clear the Playlist
+                bgMusic.playList.clear();
+                //Add the file
+                bgMusic.playList.add(passedFile);
+                // Set the playlist index
+                bgMusic.index = 0;
+
+                // Start the music or video
+                try {
+                    bgMusic.startMedia();
+                } catch (IllegalArgumentException | SecurityException
+                        | IllegalStateException | IOException e) {
+                    e.printStackTrace();
+                }
+                startSeekBar();
+            }
 		}
 		
 		@Override
