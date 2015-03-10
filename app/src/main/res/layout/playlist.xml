@@ -1,0 +1,29 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.torch2424.feather.EditPlayList"
+    tools:ignore="MergeRootFrame" >
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:animateLayoutChanges="true"
+        android:padding="5dip"
+        tools:context=".Browser" >
+    </ListView>
+
+    <TextView
+        android:id="@+id/noPlaylist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/noPlaylist"
+        android:textColor="@color/white"
+        android:textSize="30sp" />
+
+</LinearLayout>

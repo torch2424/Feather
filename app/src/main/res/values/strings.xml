@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Feather</string>
+    <string name="action_settings">Settings</string>
+    <string name="loading">Loading...</string>
+    <string name="player_name">Player</string>
+    <string name="playpause">Play/Pause</string>
+    <string name="next">Next</string>
+    <string name="previous">Prev</string>
+    <string name="noVideo">Please play a video!</string>
+    <string name="noPlaylist">Playlist Empty!</string>
+    <string name="title_activity_play_list">Playlist</string>
+    <string name="zero">0:00</string>
+    <string name="menuPlaylist">Playlist</string>
+    <string name="quit">Quit</string>
+    <string name="shuffle">Shuffle</string>
+    <string name="loop">Loop</string>
+    <string name="title_activity_edit_playlist">Playlist</string>
+    <string name="hello_world">Hello world!</string>
+
+</resources>

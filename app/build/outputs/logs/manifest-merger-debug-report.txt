@@ -1,0 +1,119 @@
+-- Merging decision tree log ---
+manifest
+ADDED from AndroidManifest.xml:2:1
+	xmlns:android
+		ADDED from AndroidManifest.xml:2:11
+	package
+		ADDED from AndroidManifest.xml:3:5
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+	android:versionName
+		ADDED from AndroidManifest.xml:5:5
+	android:versionCode
+		ADDED from AndroidManifest.xml:4:5
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from AndroidManifest.xml:8:5
+	android:name
+		ADDED from AndroidManifest.xml:8:22
+uses-permission#android.permission.WRITE_SETTINGS
+ADDED from AndroidManifest.xml:11:5
+	android:name
+		ADDED from AndroidManifest.xml:11:22
+uses-sdk
+ADDED from AndroidManifest.xml:13:5
+MERGED from com.android.support:support-v4:21.0.3:15:5
+	android:targetSdkVersion
+		ADDED from AndroidManifest.xml:15:9
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+	android:minSdkVersion
+		ADDED from AndroidManifest.xml:14:9
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+application
+ADDED from AndroidManifest.xml:17:5
+MERGED from com.android.support:support-v4:21.0.3:16:5
+	android:label
+		ADDED from AndroidManifest.xml:21:9
+	android:allowBackup
+		ADDED from AndroidManifest.xml:18:9
+	android:icon
+		ADDED from AndroidManifest.xml:20:9
+	android:configChanges
+		ADDED from AndroidManifest.xml:19:9
+	android:theme
+		ADDED from AndroidManifest.xml:22:9
+activity#com.torch2424.feather.Ui
+ADDED from AndroidManifest.xml:23:9
+	android:label
+		ADDED from AndroidManifest.xml:26:13
+	android:configChanges
+		ADDED from AndroidManifest.xml:25:13
+	android:name
+		ADDED from AndroidManifest.xml:24:13
+	android:launchMode
+		ADDED from AndroidManifest.xml:27:13
+intent-filter#android.intent.action.MAIN+android.intent.action.MUSIC_PLAYER+android.intent.category.APP_MUSIC+android.intent.category.DEFAULT+android.intent.category.LAUNCHER
+ADDED from AndroidManifest.xml:30:13
+action#android.intent.action.MAIN
+ADDED from AndroidManifest.xml:31:17
+	android:name
+		ADDED from AndroidManifest.xml:31:25
+action#android.intent.action.MUSIC_PLAYER
+ADDED from AndroidManifest.xml:32:17
+	android:name
+		ADDED from AndroidManifest.xml:32:25
+category#android.intent.category.DEFAULT
+ADDED from AndroidManifest.xml:34:17
+	android:name
+		ADDED from AndroidManifest.xml:34:27
+category#android.intent.category.LAUNCHER
+ADDED from AndroidManifest.xml:35:17
+	android:name
+		ADDED from AndroidManifest.xml:35:27
+category#android.intent.category.APP_MUSIC
+ADDED from AndroidManifest.xml:36:17
+	android:name
+		ADDED from AndroidManifest.xml:36:27
+intent-filter#android.intent.action.VIEW+android.intent.category.DEFAULT
+ADDED from AndroidManifest.xml:38:13
+action#android.intent.action.VIEW
+ADDED from AndroidManifest.xml:39:17
+	android:name
+		ADDED from AndroidManifest.xml:39:25
+data
+ADDED from AndroidManifest.xml:43:17
+	android:scheme
+		ADDED from AndroidManifest.xml:43:23
+intent-filter#android.intent.action.VIEW+android.intent.category.BROWSABLE+android.intent.category.DEFAULT
+ADDED from AndroidManifest.xml:61:13
+	android:priority
+		ADDED from AndroidManifest.xml:61:28
+category#android.intent.category.BROWSABLE
+ADDED from AndroidManifest.xml:65:17
+	android:name
+		ADDED from AndroidManifest.xml:65:27
+receiver#com.torch2424.feather.MusicControl
+ADDED from AndroidManifest.xml:75:9
+	android:name
+		ADDED from AndroidManifest.xml:75:19
+intent-filter#android.intent.action.MEDIA_BUTTON
+ADDED from AndroidManifest.xml:76:13
+	android:priority
+		ADDED from AndroidManifest.xml:76:28
+action#android.intent.action.MEDIA_BUTTON
+ADDED from AndroidManifest.xml:77:17
+	android:name
+		ADDED from AndroidManifest.xml:77:25
+service#com.torch2424.feather.BGMusic
+ADDED from AndroidManifest.xml:81:9
+	android:name
+		ADDED from AndroidManifest.xml:81:18
+activity#com.torch2424.feather.EditPlaylist
+ADDED from AndroidManifest.xml:83:9
+	android:label
+		ADDED from AndroidManifest.xml:85:13
+	android:name
+		ADDED from AndroidManifest.xml:84:13
