@@ -17,10 +17,15 @@
         android:id="@+id/playlistActivity"
         android:orderInCategory="300"
         android:title="@string/menuPlaylist"/>
+
+    <item
+        android:id="@+id/settings"
+        android:orderInCategory="400"
+        android:title="@string/settings"/>
     
     <item
         android:id="@+id/quit"
-        android:orderInCategory="400"
+        android:orderInCategory="500"
         android:title="@string/quit"/>
         
 

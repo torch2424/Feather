@@ -1208,6 +1208,12 @@ public class Ui extends Activity implements OnSeekBarChangeListener, Runnable
 			startActivity(listIntent);
 			return true;
 		}
+        else if (id == R.id.settings)
+        {
+            Intent listIntent = new Intent(this, FeatherSettings.class);
+            startActivity(listIntent);
+            return true;
+        }
 		else if (id == R.id.quit)
 		{
 			quit();

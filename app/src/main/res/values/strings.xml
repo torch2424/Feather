@@ -19,5 +19,10 @@
     <string name="title_activity_edit_playlist">Playlist</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_feather_settings">FeatherSettings</string>
+    <string name="saveConfig">Save</string>
+    <string name="ConfigTitle">Uncheck to remove items from Feather, check them to add! Scroll down to save configurations!</string>
+    <string name="headset">Stop music when headphones are removed</string>
+    <string name="musicSort">Sort media by track number, instead of Alphabetically</string>
+    <string name="settings">Settings</string>
 
 </resources>
