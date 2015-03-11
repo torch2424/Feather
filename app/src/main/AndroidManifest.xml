@@ -4,15 +4,20 @@
     android:versionCode="6"
     android:versionName="3.0" >
 
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="21" />
+
     <!-- to access songs -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <!-- To store some app settings (Wallpaper) -->
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
 
-    <uses-sdk
-        android:minSdkVersion="14"
-        android:targetSdkVersion="21" />
+    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <android:uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
 
     <application
         android:allowBackup="true"
@@ -30,6 +35,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.MUSIC_PLAYER" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.LAUNCHER" />
                 <category android:name="android.intent.category.APP_MUSIC" />
@@ -45,13 +51,13 @@
                 <data android:mimeType="application/ogg" />
                 <data android:mimeType="application/x-ogg" />
                 <data android:mimeType="application/itunes" />
-                <data android:mimeType="video/mpeg4"/>
-                <data android:mimeType="video/mp4"/>
-                <data android:mimeType="video/3gp"/>
-                <data android:mimeType="video/3gpp"/>
-                <data android:mimeType="video/3gpp2"/>
-                <data android:mimeType="video/webm"/>
-                <data android:mimeType="video/avi"/>
+                <data android:mimeType="video/mpeg4" />
+                <data android:mimeType="video/mp4" />
+                <data android:mimeType="video/3gp" />
+                <data android:mimeType="video/3gpp" />
+                <data android:mimeType="video/3gpp2" />
+                <data android:mimeType="video/webm" />
+                <data android:mimeType="video/avi" />
                 <data android:mimeType="video/*" />
             </intent-filter>
             <intent-filter>
@@ -64,13 +70,13 @@
                 <data android:mimeType="application/ogg" />
                 <data android:mimeType="application/x-ogg" />
                 <data android:mimeType="application/itunes" />
-                <data android:mimeType="video/mpeg4"/>
-                <data android:mimeType="video/mp4"/>
-                <data android:mimeType="video/3gp"/>
-                <data android:mimeType="video/3gpp"/>
-                <data android:mimeType="video/3gpp2"/>
-                <data android:mimeType="video/webm"/>
-                <data android:mimeType="video/avi"/>
+                <data android:mimeType="video/mpeg4" />
+                <data android:mimeType="video/mp4" />
+                <data android:mimeType="video/3gp" />
+                <data android:mimeType="video/3gpp" />
+                <data android:mimeType="video/3gpp2" />
+                <data android:mimeType="video/webm" />
+                <data android:mimeType="video/avi" />
                 <data android:mimeType="video/*" />
             </intent-filter>
             <intent-filter android:priority="-1" >
@@ -84,13 +90,13 @@
                 <data android:mimeType="application/ogg" />
                 <data android:mimeType="application/x-ogg" />
                 <data android:mimeType="application/itunes" />
-                <data android:mimeType="video/mpeg4"/>
-                <data android:mimeType="video/mp4"/>
-                <data android:mimeType="video/3gp"/>
-                <data android:mimeType="video/3gpp"/>
-                <data android:mimeType="video/3gpp2"/>
-                <data android:mimeType="video/webm"/>
-                <data android:mimeType="video/avi"/>
+                <data android:mimeType="video/mpeg4" />
+                <data android:mimeType="video/mp4" />
+                <data android:mimeType="video/3gp" />
+                <data android:mimeType="video/3gpp" />
+                <data android:mimeType="video/3gpp2" />
+                <data android:mimeType="video/webm" />
+                <data android:mimeType="video/avi" />
                 <data android:mimeType="video/*" />
             </intent-filter>
         </activity>
@@ -106,6 +112,14 @@
         <activity
             android:name=".EditPlaylist"
             android:label="@string/title_activity_edit_playlist" >
+        </activity>
+        <activity
+            android:name=".FeatherSettings"
+            android:label="@string/title_activity_feather_settings"
+            android:parentActivityName=".Ui" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.torch2424.feather.Ui" />
         </activity>
     </application>
 

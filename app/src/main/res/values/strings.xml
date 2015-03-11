@@ -18,5 +18,6 @@
     <string name="loop">Loop</string>
     <string name="title_activity_edit_playlist">Playlist</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_feather_settings">FeatherSettings</string>
 
 </resources>
