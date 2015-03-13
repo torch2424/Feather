@@ -11,11 +11,18 @@ import android.os.Bundle;
 import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.CheckBox;
 
 public class FeatherSettings extends Activity {
 
     // for toasts context
     Toasty toast;
+
+    //initialize checkboxes and edittexts and booleans
+    CheckBox checkSort;
+    CheckBox checkHeadset;
+    boolean sortBool;
+    boolean headsetBool;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -30,6 +37,9 @@ public class FeatherSettings extends Activity {
         getAppWallpaper();
 
         //Do stuff from stats monitor to initialize our settings page and stuff
+        //initialize checkboxes
+        checkSort = (CheckBox) findViewById(R.id.musicSort);
+        checkHeadset = (CheckBox) findViewById(R.id.checkHeadset);
     }
 
     // Getting the system wallpaper and setting it a the apps
