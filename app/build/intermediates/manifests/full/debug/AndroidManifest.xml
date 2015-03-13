@@ -14,6 +14,11 @@
     <!-- To store some app settings (Wallpaper) -->
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
 
+    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <android:uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+
     <application
         android:allowBackup="true"
         android:configChanges="orientation|keyboardHidden|screenSize"
@@ -107,6 +112,14 @@
         <activity
             android:name="com.torch2424.feather.EditPlaylist"
             android:label="@string/title_activity_edit_playlist" >
+        </activity>
+        <activity
+            android:name="com.torch2424.feather.FeatherSettings"
+            android:label="@string/title_activity_feather_settings"
+            android:parentActivityName="com.torch2424.feather.Ui" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.torch2424.feather.Ui" />
         </activity>
     </application>
 

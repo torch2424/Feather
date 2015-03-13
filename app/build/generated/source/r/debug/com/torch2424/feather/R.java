@@ -36,55 +36,68 @@ public final class R {
         public static final int VideoLayout=0x7f090002;
         public static final int VideoView=0x7f090003;
         public static final int browserList=0x7f090004;
-        public static final int buttons=0x7f090010;
-        public static final int container=0x7f090012;
+        public static final int buttons=0x7f090015;
+        public static final int checkHeadset=0x7f09000f;
+        public static final int configTitle=0x7f09000e;
+        public static final int container=0x7f09000d;
         public static final int currentDur=0x7f090007;
         public static final int filePath=0x7f090000;
         public static final int fileText=0x7f090009;
-        public static final int listView=0x7f090013;
-        public static final int loop=0x7f090016;
+        public static final int listView=0x7f090017;
+        public static final int loop=0x7f09001a;
         public static final int maxDur=0x7f090008;
-        public static final int message=0x7f09000f;
+        public static final int message=0x7f090014;
+        public static final int musicSort=0x7f090010;
         public static final int next=0x7f09000a;
-        public static final int noPlaylist=0x7f090014;
+        public static final int noPlaylist=0x7f090018;
         public static final int noVideo=0x7f090001;
-        public static final int notifcation_icon=0x7f09000e;
-        public static final int notifylayout=0x7f09000d;
-        public static final int playlistActivity=0x7f090017;
+        public static final int notifcation_icon=0x7f090013;
+        public static final int notifylayout=0x7f090012;
+        public static final int playlistActivity=0x7f09001b;
         public static final int playpause=0x7f09000b;
-        public static final int prev=0x7f090011;
+        public static final int prev=0x7f090016;
         public static final int previous=0x7f09000c;
-        public static final int quit=0x7f090018;
+        public static final int quit=0x7f09001d;
+        public static final int saveConfig=0x7f090011;
         public static final int seek_bar=0x7f090006;
-        public static final int shuffle=0x7f090015;
+        public static final int settings=0x7f09001c;
+        public static final int shuffle=0x7f090019;
     }
     public static final class layout {
         public static final int activity_ui=0x7f030000;
-        public static final int medianotification=0x7f030001;
-        public static final int playlist=0x7f030002;
+        public static final int fsettings=0x7f030001;
+        public static final int medianotification=0x7f030002;
+        public static final int playlist=0x7f030003;
     }
     public static final class menu {
         public static final int edit_playlist=0x7f080000;
-        public static final int ui=0x7f080001;
+        public static final int fsettings=0x7f080001;
+        public static final int ui=0x7f080002;
     }
     public static final class string {
-        public static final int action_settings=0x7f060000;
-        public static final int app_name=0x7f060001;
-        public static final int hello_world=0x7f060002;
-        public static final int loading=0x7f060003;
-        public static final int loop=0x7f060004;
-        public static final int menuPlaylist=0x7f060005;
-        public static final int next=0x7f060006;
-        public static final int noPlaylist=0x7f060007;
-        public static final int noVideo=0x7f060008;
-        public static final int player_name=0x7f060009;
-        public static final int playpause=0x7f06000a;
-        public static final int previous=0x7f06000b;
-        public static final int quit=0x7f06000c;
-        public static final int shuffle=0x7f06000d;
-        public static final int title_activity_edit_playlist=0x7f06000e;
-        public static final int title_activity_play_list=0x7f06000f;
-        public static final int zero=0x7f060010;
+        public static final int ConfigTitle=0x7f060000;
+        public static final int action_settings=0x7f060001;
+        public static final int app_name=0x7f060002;
+        public static final int headset=0x7f060003;
+        public static final int hello_world=0x7f060004;
+        public static final int loading=0x7f060005;
+        public static final int loop=0x7f060006;
+        public static final int menuPlaylist=0x7f060007;
+        public static final int musicSort=0x7f060008;
+        public static final int next=0x7f060009;
+        public static final int noPlaylist=0x7f06000a;
+        public static final int noVideo=0x7f06000b;
+        public static final int player_name=0x7f06000c;
+        public static final int playpause=0x7f06000d;
+        public static final int previous=0x7f06000e;
+        public static final int quit=0x7f06000f;
+        public static final int saveConfig=0x7f060010;
+        public static final int settings=0x7f060011;
+        public static final int shuffle=0x7f060012;
+        public static final int title_activity_edit_playlist=0x7f060013;
+        public static final int title_activity_feather_settings=0x7f060014;
+        public static final int title_activity_play_list=0x7f060015;
+        public static final int zero=0x7f060016;
     }
     public static final class style {
         /** 
