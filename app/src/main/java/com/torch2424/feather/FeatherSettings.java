@@ -2,6 +2,7 @@ package com.torch2424.feather;
 
 import android.app.Activity;
 import android.app.WallpaperManager;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.graphics.PorterDuff;
@@ -11,6 +12,7 @@ import android.os.Bundle;
 import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.CheckBox;
 
 public class FeatherSettings extends Activity {
@@ -40,6 +42,17 @@ public class FeatherSettings extends Activity {
         //initialize checkboxes
         checkSort = (CheckBox) findViewById(R.id.musicSort);
         checkHeadset = (CheckBox) findViewById(R.id.checkHeadset);
+
+        //get preferences for each box to set checked or not
+        SharedPreferences prefs = this.getApplicationContext().getSharedPreferences("MyPrefs", 0);
+        sortBool = prefs.getBoolean("MUSICSORT", false);
+        headsetBool = prefs.getBoolean("HEADSET", false);
+
+        //Set the checkboxes to true or false
+        if(sortBool) checkSort.setChecked(true);
+        else checkSort.setChecked(false);
+        if(headsetBool) checkHeadset.setChecked(true);
+        else checkHeadset.setChecked(false);
     }
 
     // Getting the system wallpaper and setting it a the apps
@@ -70,6 +83,12 @@ public class FeatherSettings extends Activity {
                 getResources().getColor(R.color.transparent),
                 PorterDuff.Mode.SRC_ATOP);
         getWindow().setBackgroundDrawable(wallpaperDrawable);
+    }
+
+    //Function to save settings
+    public void saveConfig(View view)
+    {
+        
     }
 
 
