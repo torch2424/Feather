@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -12,6 +13,7 @@ import android.app.Service;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.AudioManager;
+import android.media.MediaMetadataRetriever;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
 import android.os.Binder;
@@ -346,9 +348,10 @@ public class BGMusic extends Service implements OnCompletionListener
 			File tempFile = currentFile;
 
             //Now supporting sorting by track index
-            //Checking if they want it sorted by track index
-            if(prefs.getBoolean("MUSICSORT", false)) metaDataSort();
-            else Collections.sort(playList);
+            //Checking if they want it sorted by track index, and it is music
+            //But sort by alphabet anyways incase of errorreds with metadatasort
+            Collections.sort(playList);
+            if(prefs.getBoolean("MUSICSORT", false) && Manly.isMusic(playList.get(0))) metaDataSort();
 
 			for (int i = 0; tempFile != null; ++i)
 			{
@@ -367,7 +370,56 @@ public class BGMusic extends Service implements OnCompletionListener
      */
     public void metaDataSort()
     {
-        
+        //get our meta data thing, final for comparator
+        final MediaMetadataRetriever mmr = new MediaMetadataRetriever();
+        //now sort with a comparator
+        Collections.sort(playList,new Comparator<File>() {
+            @Override
+            public int compare(File song1, File song2)
+            {
+                //First get our metaData, artist, album, song
+                ArrayList<String> array1 = new ArrayList<String>();
+                ArrayList<String> array2 = new ArrayList<String>();
+
+
+                //Get all of the data for Song 1
+                mmr.setDataSource(song1.getAbsolutePath());
+                array1.add(mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_ARTIST));
+                array1.add(mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_ALBUM));
+                array1.add(mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DISC_NUMBER));
+
+                //Get all of the data for Song 2
+                mmr.setDataSource(song1.getAbsolutePath());
+                array2.add(mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_ARTIST));
+                array2.add(mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_ALBUM));
+                array2.add(mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DISC_NUMBER));
+
+                //Now sort by artist, then album then track
+                for(int i = 0; i < 3; ++i)
+                {
+                    int compared = array1.get(i).compareTo(array2.get(i));
+                    if(compared == 0)
+                    {
+                        if(i == 2)
+                        {
+                            return 0;
+                        }
+                    }
+                    else if(compared < 0)
+                    {
+                        return -10;
+                    }
+                    else
+                    {
+                        return 10;
+                    }
+                }
+
+                //Failsafe incase for some odd reason nothing was returned above
+                return 0;
+
+            }
+        });
     }
 
 	/**
