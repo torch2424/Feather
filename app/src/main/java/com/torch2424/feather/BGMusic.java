@@ -10,6 +10,7 @@ import java.util.TimerTask;
 import android.annotation.SuppressLint;
 import android.app.Service;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
@@ -45,6 +46,9 @@ public class BGMusic extends Service implements OnCompletionListener
 
 	// Our notification
 	NotificationPanel notification;
+
+    //Preferences for sorting by track
+    SharedPreferences prefs;
 
 	@Override
 	public IBinder onBind(Intent arg0)
@@ -96,6 +100,9 @@ public class BGMusic extends Service implements OnCompletionListener
 		isPaused = false;
 		loopBool = false;
 		notification = new NotificationPanel(getApplicationContext());
+
+        //Preparing our preferences for our settings
+        prefs = this.getApplicationContext().getSharedPreferences("MyPrefs", 0);
 	}
 
 	public void FadeIn()
@@ -337,7 +344,11 @@ public class BGMusic extends Service implements OnCompletionListener
 		{
 			// Make file copy, sort, and find where it's at, set index
 			File tempFile = currentFile;
-			Collections.sort(playList);
+
+            //Now supporting sorting by track index
+            //Checking if they want it sorted by track index
+            if(prefs.getBoolean("MUSICSORT", false)) metaDataSort();
+            else Collections.sort(playList);
 
 			for (int i = 0; tempFile != null; ++i)
 			{
@@ -350,6 +361,14 @@ public class BGMusic extends Service implements OnCompletionListener
 		}
 
 	}
+
+    /**
+     * Sorts files by meta data
+     */
+    public void metaDataSort()
+    {
+        
+    }
 
 	/**
 	 * Plays(Continues) song with fading
