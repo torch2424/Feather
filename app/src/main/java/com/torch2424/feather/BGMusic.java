@@ -18,6 +18,7 @@ import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
 import android.os.Binder;
 import android.os.IBinder;
+import android.util.Log;
 import android.view.View;
 
 public class BGMusic extends Service implements OnCompletionListener
@@ -351,16 +352,20 @@ public class BGMusic extends Service implements OnCompletionListener
             //Checking if they want it sorted by track index, and it is music
             //But sort by alphabet anyways incase of errorreds with metadatasort
             Collections.sort(playList);
-            if(prefs.getBoolean("MUSICSORT", false) && Manly.isMusic(playList.get(0))) metaDataSort();
+            if(prefs.getBoolean("MUSICSORT", false) && Manly.isMusic(playList.get(0)))
+            {
+                metaDataSort();
+            }
+            else
+            {
 
-			for (int i = 0; tempFile != null; ++i)
-			{
-				if (tempFile == playList.get(i))
-				{
-					index = i;
-					tempFile = null;
-				}
-			}
+                for (int i = 0; tempFile != null; ++i) {
+                    if (tempFile == playList.get(i)) {
+                        index = i;
+                        tempFile = null;
+                    }
+                }
+            }
 		}
 
 	}
@@ -377,6 +382,9 @@ public class BGMusic extends Service implements OnCompletionListener
             @Override
             public int compare(File song1, File song2)
             {
+
+                //Console if we get in the comparator
+                Log.d("FEATHER", "Comparator started");
                 //First get our metaData, artist, album, song
                 ArrayList<String> array1 = new ArrayList<String>();
                 ArrayList<String> array2 = new ArrayList<String>();
@@ -384,23 +392,40 @@ public class BGMusic extends Service implements OnCompletionListener
 
                 //Get all of the data for Song 1
                 mmr.setDataSource(song1.getAbsolutePath());
-                array1.add(mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_ARTIST));
                 array1.add(mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_ALBUM));
-                array1.add(mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DISC_NUMBER));
+                array1.add(mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_CD_TRACK_NUMBER));
 
+                //Console if we get in the comparator
+                Log.d("FEATHER", array1.get(0));
+                Log.d("FEATHER", array1.get(1));
                 //Get all of the data for Song 2
-                mmr.setDataSource(song1.getAbsolutePath());
-                array2.add(mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_ARTIST));
+                mmr.setDataSource(song2.getAbsolutePath());
                 array2.add(mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_ALBUM));
-                array2.add(mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DISC_NUMBER));
+                array2.add(mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_CD_TRACK_NUMBER));
 
-                //Now sort by artist, then album then track
-                for(int i = 0; i < 3; ++i)
+                Log.d("FEATHER", array2.get(1));
+
+                //Now sort by album, then track. Not doing artist for songs with like a million artists
+                for(int i = 0; i < 2; ++i)
                 {
-                    int compared = array1.get(i).compareTo(array2.get(i));
+                    int compared = 0;
+                    //Compare album name
+                    if(i == 0) compared = array1.get(i).compareTo(array2.get(i));
+                    //Compare track number, but need to get substring of a number divided by another
+                    else
+                    {
+                        //Get the string of the first half of a cd number (eg. 1/10) and convert it
+                        //and integer
+                        int trackno1 = Integer.valueOf(array1.get(i).split("/")[0]);
+                        int trackno2 = Integer.valueOf(array2.get(i).split("/")[0]);
+                        //now compare the track numbers to get compared
+                        if(trackno1 == trackno2) compared = 0;
+                        else if(trackno1 < trackno2) compared = -10;
+                        else compared = 10;
+                    }
                     if(compared == 0)
                     {
-                        if(i == 2)
+                        if(i == 1)
                         {
                             return 0;
                         }
