@@ -43,22 +43,34 @@
       <file leaf-file-name="FeatherSettings.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/torch2424/feather/FeatherSettings.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.740741" vertical-offset="577" max-vertical-offset="1890">
+            <state vertical-scroll-proportion="0.0" vertical-offset="900" max-vertical-offset="2085">
               <caret line="60" column="24" selection-start-line="60" selection-start-column="23" selection-end-line="60" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BGMusic.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="BGMusic.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/torch2424/feather/BGMusic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.625" vertical-offset="5880" max-vertical-offset="10230">
-              <caret line="423" column="43" selection-start-line="423" selection-start-column="43" selection-end-line="423" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="5265" max-vertical-offset="9240">
+              <caret line="379" column="36" selection-start-line="379" selection-start-column="36" selection-end-line="379" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#8578#11450#0" expanded="true" />
-                <element signature="e#11439#11440#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SongComparator.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/torch2424/feather/SongComparator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5996441" vertical-offset="143" max-vertical-offset="1200">
+              <caret line="32" column="93" selection-start-line="32" selection-start-column="93" selection-end-line="32" selection-end-column="93" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#587#595#0" expanded="true" />
+                <element signature="e#647#655#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -67,7 +79,7 @@
       <file leaf-file-name="Ui.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/torch2424/feather/Ui.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="7990" max-vertical-offset="18135">
+            <state vertical-scroll-proportion="0.0" vertical-offset="7830" max-vertical-offset="18135">
               <caret line="632" column="56" selection-start-line="632" selection-start-column="56" selection-end-line="632" selection-end-column="56" />
               <folding />
             </state>
@@ -834,14 +846,15 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/torch2424/feather/FeatherSettings.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fsettings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/torch2424/feather/BGMusic.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/torch2424/feather/SongComparator.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
+    <option name="x" value="838" />
     <option name="y" value="30" />
-    <option name="width" value="1368" />
-    <option name="height" value="739" />
+    <option name="width" value="1922" />
+    <option name="height" value="1051" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -870,8 +883,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="ProjectPane" />
-      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -956,6 +967,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1172,7 +1185,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="30" width="1368" height="739" extended-state="6" />
+    <frame x="838" y="30" width="1922" height="1051" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1185,15 +1198,14 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3528428" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35274726" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1744713" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17412141" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943144" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1202,6 +1214,7 @@
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16624258" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1227,18 +1240,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/torch2424/feather/BGMusic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="5640" max-vertical-offset="10065">
-          <caret line="382" column="33" selection-start-line="382" selection-start-column="33" selection-end-line="382" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#8578#11450#0" expanded="true" />
-            <element signature="e#11439#11440#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/torch2424/feather/Ui.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="13170" max-vertical-offset="19905">
@@ -1269,8 +1270,6 @@
           <caret line="351" column="61" selection-start-line="351" selection-start-column="61" selection-end-line="351" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#8578#11450#0" expanded="true" />
-            <element signature="e#11439#11440#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1305,8 +1304,6 @@
           <caret line="351" column="61" selection-start-line="351" selection-start-column="61" selection-end-line="351" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#8578#11450#0" expanded="true" />
-            <element signature="e#11439#11440#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1619,7 +1616,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/torch2424/feather/FeatherSettings.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.740741" vertical-offset="577" max-vertical-offset="1890">
+        <state vertical-scroll-proportion="0.0" vertical-offset="900" max-vertical-offset="2085">
           <caret line="60" column="24" selection-start-line="60" selection-start-column="23" selection-end-line="60" selection-end-column="24" />
           <folding />
         </state>
@@ -1635,12 +1632,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/torch2424/feather/BGMusic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.625" vertical-offset="5880" max-vertical-offset="10230">
-          <caret line="423" column="43" selection-start-line="423" selection-start-column="43" selection-end-line="423" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="5265" max-vertical-offset="9240">
+          <caret line="379" column="36" selection-start-line="379" selection-start-column="36" selection-end-line="379" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#8578#11450#0" expanded="true" />
-            <element signature="e#11439#11440#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/torch2424/feather/SongComparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5996441" vertical-offset="143" max-vertical-offset="1200">
+          <caret line="32" column="93" selection-start-line="32" selection-start-column="93" selection-end-line="32" selection-end-column="93" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#587#595#0" expanded="true" />
+            <element signature="e#647#655#0" expanded="true" />
           </folding>
         </state>
       </provider>
