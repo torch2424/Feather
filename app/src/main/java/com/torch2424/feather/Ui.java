@@ -609,17 +609,7 @@ public class Ui extends Activity implements OnSeekBarChangeListener, Runnable
 										else bgMusic.getPlaylist(folderDir,
 												bgMusic.playList, false);
 										
-										// Now need to shuffle or sort depending
-										// on what we want to do
-										if (bgMusic.shuffleBool)
-										{
-											Collections
-													.shuffle(bgMusic.playList);
-										}
-										else
-										{
-											Collections.sort(bgMusic.playList);
-										}
+										//Sorting done in bgMusic
 										
 										// Resetting index
 										bgMusic.index = 0;
@@ -680,17 +670,8 @@ public class Ui extends Activity implements OnSeekBarChangeListener, Runnable
 													false);
 										}
 										
-										// Now need to shuffle or sort depending
-										// on what we want to do
-										if (bgMusic.shuffleBool)
-										{
-											Collections.shuffle(tempArray);
-										}
-										else
-										{
-											Collections.sort(tempArray);
-										}
-										
+										//Sorting and shuffling done in bg music
+
 										// Finally add to the end of our current
 										// playlist
 										bgMusic.playList.addAll(tempArray);

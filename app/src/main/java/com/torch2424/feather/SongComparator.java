@@ -15,60 +15,55 @@ public class SongComparator implements Comparator<File>
     @Override
     public int compare(File song1, File song2)
     {
+        //Check if they are not music files
+        if(!Manly.isMusic(song1) || !Manly.isMusic(song2))
+        {
+            //return 0 because we cant compare these files
+            return 0;
+        }
+
+        //Since they are music
+
         //Our metdata retriever
         MediaMetadataRetriever mmr = new MediaMetadataRetriever();
 
-        //First get our metaData, artist, album, song
-        ArrayList<String> array1 = new ArrayList<String>();
-        ArrayList<String> array2 = new ArrayList<String>();
+        //Our compared int, to return a positive or negative value
+        int compared = 0;
 
-        //Get all of the data for Song 1
+        //First get our metaData album, song
+        String[] array1 = new String[2];
+        String[] array2 = new String[2];
+
+        //Get the album for song 1 and 2
         mmr.setDataSource(song1.getAbsolutePath());
-        array1.add(mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_ALBUM));
-        array1.add(mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_CD_TRACK_NUMBER));
-
-        //Get all of the data for Song 2
+        array1[0] = mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_ALBUM);
         mmr.setDataSource(song2.getAbsolutePath());
-        array2.add(mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_ALBUM));
-        array2.add(mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_CD_TRACK_NUMBER));
+        array2[0] = mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_ALBUM);
 
-        //Now sort by album, then track. Not doing artist for songs with like a million artists
-        for(int i = 0; i < 2; ++i)
-        {
-            int compared = 0;
-            //Compare album name
-            if(i == 0) compared = array1.get(i).compareTo(array2.get(i));
-                //Compare track number, but need to get substring of a number divided by another
-            else
-            {
-                //Get the string of the first half of a cd number (eg. 1/10) and convert it
-                //and integer
-                int trackno1 = Integer.valueOf(array1.get(i).split("/")[0]);
-                int trackno2 = Integer.valueOf(array2.get(i).split("/")[0]);
-                //now compare the track numbers to get compared
-                if(trackno1 == trackno2) compared = 0;
-                else if(trackno1 < trackno2) compared = -10;
-                else compared = 10;
-            }
-            if(compared == 0)
-            {
-                if(i == 1)
-                {
-                    return 0;
-                }
-            }
-            else if(compared < 0)
-            {
-                return -10;
-            }
-            else
-            {
-                return 10;
-            }
-        }
+        //Compare their albums
+        compared = array1[0].compareTo(array2[0]);
 
-        //Failsafe incase for some odd reason nothing was returned above
-        return 0;
+        //Our check if we can stop here
+        if(compared < 0) return -10;
+        else if(compared > 0) return 10;
 
+        //Since their albums are equal
+
+        //Get the song number for song 1 and 2
+        mmr.setDataSource(song1.getAbsolutePath());
+        array1[1] = mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_CD_TRACK_NUMBER);
+        mmr.setDataSource(song2.getAbsolutePath());
+        array2[1] = mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_CD_TRACK_NUMBER);
+
+        //Compare their songs
+        //First split up the string we get, and return the answer
+        //Get the string of the first half of a cd number (eg. 1/10) and convert it
+        //and integer
+        int trackno1 = Integer.valueOf(array1[1].split("/")[0]);
+        int trackno2 = Integer.valueOf(array2[1].split("/")[0]);
+        //now compare the track numbers to get compared
+        if(trackno1 > trackno2) return 10;
+        else if(trackno1 < trackno2) return -10;
+        else return 0;
     }
 }
