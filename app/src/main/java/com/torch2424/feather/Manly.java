@@ -128,6 +128,29 @@ public class Manly
 		}
 	}
 
+    /**
+     * Function to return the contents of a directory into an unsorted file array
+     *
+     * @return A unsorted file array with contents of directory
+     */
+    public static File[] getUnsortedFileArray(File file)
+    {
+        // Need to check if the file is a directory
+        if (file.isDirectory())
+        {
+            // create our array
+            File[] array;
+
+            // Fill it up and sort
+            array = file.listFiles();
+            return array;
+        }
+        else
+        {
+            return null;
+        }
+    }
+
 	/**
 	 * This will delete all the files and the directoy in a folder
 	 * 

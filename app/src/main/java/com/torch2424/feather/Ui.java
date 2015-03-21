@@ -103,7 +103,11 @@ public class Ui extends Activity implements OnSeekBarChangeListener, Runnable
 
     //Preferences for settings and stuff
     SharedPreferences prefs;
-	
+
+    //Context for service access
+    static Context context;
+    static Handler uiHandler;
+
 	@SuppressLint("SimpleDateFormat")
 	@SuppressWarnings("deprecation")
 	@Override
@@ -177,8 +181,10 @@ public class Ui extends Activity implements OnSeekBarChangeListener, Runnable
         // MAY NEED STATIC CONTEXT
         // assinging context for things that require it to be static
         // MainActivity.contextStatic = getApplicationContext();
-        // regular context
-        // context = this;
+        // regular context for loading dialog in our service
+        context = this;
+        //Handler for service to runonuithread
+        uiHandler = new Handler();
 
         // to help start long press on volume keys
         audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);

@@ -9,6 +9,8 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.app.ProgressDialog;
 import android.app.Service;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -354,7 +356,36 @@ public class BGMusic extends Service implements OnCompletionListener
             Collections.sort(playList);
             if(prefs.getBoolean("MUSICSORT", false) && Manly.isMusic(playList.get(0)))
             {
-                metaDataSort();
+                //Show a loading screen since it takes a while to sort
+                // Show Loading
+                final ProgressDialog loading = ProgressDialog
+                        .show(Ui.context,
+                                "",
+                                "Sorting your files by track number"
+                                        + ", this may take a "
+                                        + "while depending on playlist size."
+                                        + " Please wait...",
+                                true);
+                //Sort our stuff on a new thread, and close our loading dialog there
+                Thread mThread = new Thread()
+                {
+                    @Override
+                    public void run()
+                    {
+                        //Sort with our song metadata comparator
+                        Collections.sort(playList, new SongComparator());
+
+                        runOnUiThread(new Runnable() {
+                            public void run() {
+                                loading.dismiss();
+                            }
+                        });
+                    }
+
+                };
+
+                //Start the thread
+                mThread.start();
             }
             else
             {
@@ -370,18 +401,12 @@ public class BGMusic extends Service implements OnCompletionListener
 
 	}
 
-    /**
-     * Sorts files by meta data
-     */
-    public void metaDataSort()
+    private void runOnUiThread(Runnable runnable)
     {
-        //get our meta data thing, final for comparator
-        final MediaMetadataRetriever mmr = new MediaMetadataRetriever();
-        //now sort with a comparator
-        Collections.sort(playList,new SongComparator());
+        Ui.uiHandler.post(runnable);
     }
 
-	/**
+    /**
 	 * Plays(Continues) song with fading
 	 */
 	public void playSong()
