@@ -12,11 +12,22 @@ import java.util.Comparator;
  */
 public class SongComparator implements Comparator<File>
 {
+
+    //Our metdata retriever
+    private MediaMetadataRetriever mmr = new MediaMetadataRetriever();
+
+    //Our compared int, to return a positive or negative value
+    int compared;
+
+    //Arrays to store our album and track number
+    String[] array1 = new String[2];
+    String[] array2 = new String[2];
+
     @Override
     public int compare(File song1, File song2)
     {
         //Check if they are not music files
-        if(!Manly.isMusic(song1) || !Manly.isMusic(song2))
+        if(song1 == null || song2 == null || !Manly.isMusic(song1) || !Manly.isMusic(song2))
         {
             //return 0 because we cant compare these files
             return 0;
@@ -24,15 +35,7 @@ public class SongComparator implements Comparator<File>
 
         //Since they are music
 
-        //Our metdata retriever
-        MediaMetadataRetriever mmr = new MediaMetadataRetriever();
-
-        //Our compared int, to return a positive or negative value
-        int compared = 0;
-
-        //First get our metaData album, song
-        String[] array1 = new String[2];
-        String[] array2 = new String[2];
+        //Get our metaData album, song
 
         //Get the album for song 1 and 2
         mmr.setDataSource(song1.getAbsolutePath());
