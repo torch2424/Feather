@@ -107,6 +107,7 @@ public class Ui extends Activity implements OnSeekBarChangeListener, Runnable
     //Context for service access
     static Context context;
     static Handler uiHandler;
+    static Thread mThread;
 
 	@SuppressLint("SimpleDateFormat")
 	@SuppressWarnings("deprecation")
@@ -185,6 +186,7 @@ public class Ui extends Activity implements OnSeekBarChangeListener, Runnable
         context = this;
         //Handler for service to runonuithread
         uiHandler = new Handler();
+        mThread = new Thread();
 
         // to help start long press on volume keys
         audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
@@ -509,7 +511,7 @@ public class Ui extends Activity implements OnSeekBarChangeListener, Runnable
 											final String extractDir = currentFile
 													.getAbsolutePath().replace(
 															".zip", "");
-											Thread mThread = new Thread()
+											mThread = new Thread()
 											{
 												@Override
 												public void run()

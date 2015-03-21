@@ -55,6 +55,9 @@ public class BGMusic extends Service implements OnCompletionListener
     //Preferences for sorting by track
     SharedPreferences prefs;
 
+    //Boolean to use the helper when we are sorting by track
+    boolean stopHelper;
+
 	@Override
 	public IBinder onBind(Intent arg0)
 	{
@@ -262,31 +265,44 @@ public class BGMusic extends Service implements OnCompletionListener
 		bgmusic.setOnCompletionListener(this);
 		Ui.player.setOnCompletionListener(this);
 
-		// Do Notification Stuff Here
-		notification.newNotify(selectedFile.getName(), selectedFile.getName());
+        //Doing this because we are sorting by music or alphabetically
+        //This will stop the helper from being run if it is going to be executed by the background thread
+        //inside the shuffle function, therefore music isn't played before we are done sorting
+        if(!stopHelper)
+        {
+            startMediaHelper(selectedFile);
+        }
+	}
 
-		// Seekbar done by UI
+    //Function to fnish start media
+    private void startMediaHelper(File selectedFile) throws IllegalArgumentException,
+            SecurityException, IllegalStateException, IOException
+    {
+        // Do Notification Stuff Here
+        notification.newNotify(selectedFile.getName(), selectedFile.getName());
 
-		Ui.playing.setText(selectedFile.getName());
+        // Seekbar done by UI
+
+        Ui.playing.setText(selectedFile.getName());
 
 		/*
 		 * PLAY MEDIA DEPEDING ON VIDEO OR MUSIC
 		 */
-		if (Manly.isMusic(selectedFile))
-		{
-			bgmusic.setDataSource(selectedFile.getAbsolutePath());
-			bgmusic.prepare();
-			// Play the Song
-			playSong();
-		}
-		else
-		{
-			Ui.videoLayout.setVisibility(View.VISIBLE);
-			Ui.player.setVideoPath(selectedFile.getAbsolutePath());
-			//play the video
-			Ui.player.start();
-		}
-	}
+        if (Manly.isMusic(selectedFile))
+        {
+            bgmusic.setDataSource(selectedFile.getAbsolutePath());
+            bgmusic.prepare();
+            // Play the Song
+            playSong();
+        }
+        else
+        {
+            Ui.videoLayout.setVisibility(View.VISIBLE);
+            Ui.player.setVideoPath(selectedFile.getAbsolutePath());
+            //play the video
+            Ui.player.start();
+        }
+    }
 	
 	/**
 	 * Return an array of files in a foler as a playlist, returns only music files or video files
@@ -342,7 +358,7 @@ public class BGMusic extends Service implements OnCompletionListener
 	/**
 	 * Sorts our current playlist while keeping the current playlist
 	 */
-	public void sort(File currentFile)
+	public void sort(final File currentFile)
 	{
 		// Need to sure playlist isn't null or empty
 		if (playList != null && !playList.isEmpty() && currentFile != null)
@@ -353,9 +369,9 @@ public class BGMusic extends Service implements OnCompletionListener
             //Now supporting sorting by track index
             //Checking if they want it sorted by track index, and it is music
             //But sort by alphabet anyways incase of errorreds with metadatasort
-            Collections.sort(playList);
             if(prefs.getBoolean("MUSICSORT", false) && Manly.isMusic(playList.get(0)))
             {
+                stopHelper = true;
                 //Show a loading screen since it takes a while to sort
                 // Show Loading
                 final ProgressDialog loading = ProgressDialog
@@ -367,7 +383,7 @@ public class BGMusic extends Service implements OnCompletionListener
                                         + " Please wait...",
                                 true);
                 //Sort our stuff on a new thread, and close our loading dialog there
-                Thread mThread = new Thread()
+                Ui.mThread = new Thread()
                 {
                     @Override
                     public void run()
@@ -375,9 +391,18 @@ public class BGMusic extends Service implements OnCompletionListener
                         //Sort with our song metadata comparator
                         Collections.sort(playList, new SongComparator());
 
-                        runOnUiThread(new Runnable() {
+                        runOnUiThread(new Runnable()
+                        {
                             public void run() {
+                                //Dismiss the loading pop-up
                                 loading.dismiss();
+
+                                //Now finish playing the playlist
+                                try {
+                                    startMediaHelper(currentFile);
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
                             }
                         });
                     }
@@ -385,18 +410,25 @@ public class BGMusic extends Service implements OnCompletionListener
                 };
 
                 //Start the thread
-                mThread.start();
+                Ui.mThread.start();
             }
             else
             {
-
-                for (int i = 0; tempFile != null; ++i) {
-                    if (tempFile == playList.get(i)) {
+                //Sort normally
+                Collections.sort(playList);
+            }
+                //Find the song we originally clicked
+                for (int i = 0; tempFile != null; ++i)
+                {
+                    if (tempFile == playList.get(i))
+                    {
                         index = i;
                         tempFile = null;
+                        //break to save process time
+                        break;
+
                     }
                 }
-            }
 		}
 
 	}
