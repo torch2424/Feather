@@ -52,8 +52,8 @@ public class SongComparator implements Comparator<File>
             compared = array1[0].compareTo(array2[0]);
 
             //Our check if we can stop here
-            if (compared < 0) return -10;
-            else if (compared > 0) return 10;
+            if (compared < 0) return 10;
+            else if (compared > 0) return -10;
 
             //Since their albums are equal
 
