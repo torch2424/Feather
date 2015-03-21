@@ -29,10 +29,9 @@ public class SongComparator implements Comparator<File>
         //Place into a try/catch block to catch our exceptions and return 0
         try {
             //Check if they are not music files
-            if (!Manly.isMusic(song1) || !Manly.isMusic(song2)) {
-                //return 0 because we cant compare these files
-                return 0;
-            }
+            //Do it this way to avoid 'violating the comparator general contract'
+            if (!Manly.isMusic(song1)) return -10;
+            else if(!Manly.isMusic(song2))return 10;
 
             //Since they are music
 
@@ -45,7 +44,9 @@ public class SongComparator implements Comparator<File>
             array2[0] = mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_ALBUM);
 
             //Check they are not null
-            if (array1[0] == null || array2[0] == null) return 0;
+            //Do it this way to avoid 'violating the comparator general contract'
+            if (array1[0] == null)  return -10;
+            else if(array2[0] == null) return 10;
 
             //Compare their albums
             compared = array1[0].compareTo(array2[0]);
@@ -63,7 +64,9 @@ public class SongComparator implements Comparator<File>
             array2[1] = mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_CD_TRACK_NUMBER);
 
             //Check they are not null
-            if (array1[1] == null || array2[1] == null) return 0;
+            //Do it this way to avoid 'violating the comparator general contract'
+            if (array1[1] == null)  return -10;
+            else if(array2[1] == null) return 10;
 
             //Compare their songs
             //First split up the string we get, and return the answer
