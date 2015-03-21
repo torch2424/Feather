@@ -864,6 +864,10 @@ public class Ui extends Activity implements OnSeekBarChangeListener, Runnable
 			// Go one File Deeper
 			browseDir = directory;
 			filePath.setText(directory.getAbsolutePath());
+            /* very slow right now, can implement later in settings
+
+
+
             //Check if we want the files sorted by track number or alpahbetically
             if(prefs.getBoolean("MUSICSORT", false))
             {
@@ -893,6 +897,13 @@ public class Ui extends Activity implements OnSeekBarChangeListener, Runnable
                         android.R.layout.simple_list_item_1,
                         Manly.getDirectoryArray(browseDir));
             }
+
+            */
+
+            //alphabetically
+            adapter = new ArrayAdapter<String>(getApplicationContext(),
+                    android.R.layout.simple_list_item_1,
+                    Manly.getDirectoryArray(browseDir));
 			listView.setAdapter(adapter);
 			listView.invalidateViews();
 		}
