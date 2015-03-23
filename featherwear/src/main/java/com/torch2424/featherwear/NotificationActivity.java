@@ -12,6 +12,7 @@ import com.google.android.gms.wearable.Asset;
 public class NotificationActivity extends Activity {
 
     private TextView mTextView;
+    public static String TITLE = "Feather";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +30,7 @@ public class NotificationActivity extends Activity {
 
         Intent intent = getIntent();
         if (intent != null) {
-            mTextView.setText(intent.getStringExtra("FILE"));
+            mTextView.setText(intent.getStringExtra(TITLE));
 
         }
     }

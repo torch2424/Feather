@@ -9,18 +9,32 @@ import android.graphics.BitmapFactory;
 import android.os.IBinder;
 import android.util.Log;
 
+import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.data.FreezableUtils;
 import com.google.android.gms.wearable.Asset;
+import com.google.android.gms.wearable.DataEvent;
+import com.google.android.gms.wearable.DataEventBuffer;
+import com.google.android.gms.wearable.DataMapItem;
 import com.google.android.gms.wearable.Wearable;
 import com.google.android.gms.wearable.WearableListenerService;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class OngoingService extends WearableListenerService
 {
     //Our google api clinet
     private GoogleApiClient GoogClient;
 
+    //our constants to be defined
+    private final String KEY = "Feather";
+    private final int NID =548853;
+    private String PATH = null;
+
     public OngoingService()
     {
+
     }
 
     @Override
@@ -43,7 +57,7 @@ public class OngoingService extends WearableListenerService
             ConnectionResult connectionResult = GoogClient
                     .blockingConnect(30, TimeUnit.SECONDS);
             if (!connectionResult.isSuccess()) {
-                Log.e(TAG, "Service failed to connect to GoogleApiClient.");
+                //Could not connect to the api
                 return;
             }
         }
@@ -51,18 +65,19 @@ public class OngoingService extends WearableListenerService
         for (DataEvent event : events) {
             if (event.getType() == DataEvent.TYPE_CHANGED) {
                 String path = event.getDataItem().getUri().getPath();
+                //Doing this for now until I can understand what path is
+                PATH = path;
                 if (PATH.equals(path)) {
                     // Get the data out of the event
                     DataMapItem dataMapItem =
                             DataMapItem.fromDataItem(event.getDataItem());
-                    final String title = dataMapItem.getDataMap().getString(KEY_TITLE);
-                    Asset asset = dataMapItem.getDataMap().getAsset(KEY_IMAGE);
+                    final String title = dataMapItem.getDataMap().getString(KEY);
 
                     // Build the intent to display our custom notification
                     Intent notificationIntent =
                             new Intent(this, NotificationActivity.class);
                     notificationIntent.putExtra(
-                            NotificationActivity.EXTRA_TITLE, title);
+                            NotificationActivity.TITLE, title);
                     PendingIntent notificationPendingIntent = PendingIntent.getActivity
                             (
                             this,
@@ -73,9 +88,10 @@ public class OngoingService extends WearableListenerService
                     // Create the ongoing notification
                     Notification.Builder notificationBuilder =
                             new Notification.Builder(this)
-                                    .setSmallIcon(R.drawable.ic_launcher)
+                                    //Need to make these feather icons
+                                    .setSmallIcon(R.mipmap.ic_launcher)
                                     .setLargeIcon(BitmapFactory.decodeResource(
-                                            getResources(), R.drawable.ic_launcher))
+                                            getResources(), R.mipmap.ic_launcher))
                                     .setOngoing(true)
                                     .extend(new Notification.WearableExtender()
                                             .setDisplayIntent(notificationPendingIntent));
@@ -84,9 +100,10 @@ public class OngoingService extends WearableListenerService
                     NotificationManager notificationManager =
                             (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
                     notificationManager.notify(
-                            NOTIFICATION_ID, notificationBuilder.build());
-                } else {
-                    Log.d(TAG, "Unrecognized path: " + path);
+                            NID, notificationBuilder.build());
+                } else
+                {
+                    //The path is not recognized
                 }
             }
         }

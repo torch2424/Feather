@@ -17,6 +17,9 @@ public class NotificationPanel
 	private static RemoteViews contentView;
 	private Notification notifier;
 
+    //Notification ID
+    private final int NID =548853;
+
 	@SuppressLint("NewApi")
 	public NotificationPanel(Context parent)
 	{
@@ -42,7 +45,7 @@ public class NotificationPanel
 		notification.contentView = contentView;
 		notification.flags |= Notification.FLAG_ONGOING_EVENT;
 		// CharSequence contentTitle = "From Shortcuts";
-		notifyMan.notify(548853, notification);
+		notifyMan.notify(NID, notification);
 		notifier = notification;
 	}
 
@@ -86,14 +89,14 @@ public class NotificationPanel
 
 	public void notificationCancel()
 	{
-		notifyMan.cancel(548853);
+		notifyMan.cancel(NID);
 	}
 	
 	public void newNotify(String tickerText, String message)
 	{
 		notifier.tickerText = tickerText;
 		contentView.setTextViewText(R.id.message, message);
-		notifyMan.notify(548853, notifier);
+		notifyMan.notify(NID, notifier);
 	}
 	
 	/**
