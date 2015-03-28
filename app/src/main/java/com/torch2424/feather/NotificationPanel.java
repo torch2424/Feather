@@ -40,7 +40,7 @@ public class NotificationPanel implements ConnectionCallbacks, GoogleApiClient.O
 
     //our constants to be defined
     private final String KEY = "Feather";
-    private String PATH = null;
+    private String PATH = "/feather";
 
 	@SuppressLint("NewApi")
 	public NotificationPanel(Context parent)

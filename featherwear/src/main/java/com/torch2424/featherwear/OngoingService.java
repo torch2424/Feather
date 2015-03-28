@@ -30,7 +30,7 @@ public class OngoingService extends WearableListenerService
     //our constants to be defined
     private final String KEY = "Feather";
     private final int NID =548853;
-    private String PATH = null;
+    private String PATH = "/feather";
 
     public OngoingService()
     {
@@ -65,8 +65,6 @@ public class OngoingService extends WearableListenerService
         for (DataEvent event : events) {
             if (event.getType() == DataEvent.TYPE_CHANGED) {
                 String path = event.getDataItem().getUri().getPath();
-                //Doing this for now until I can understand what path is
-                PATH = path;
                 if (PATH.equals(path)) {
                     // Get the data out of the event
                     DataMapItem dataMapItem =
