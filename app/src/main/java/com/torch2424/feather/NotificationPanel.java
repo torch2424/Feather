@@ -6,10 +6,25 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.widget.RemoteViews;
 
-public class NotificationPanel
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.wearable.Asset;
+import com.google.android.gms.wearable.DataApi;
+import com.google.android.gms.wearable.PutDataMapRequest;
+import com.google.android.gms.wearable.PutDataRequest;
+import com.google.android.gms.wearable.Wearable;
+
+import static com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
+
+public class NotificationPanel implements ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener
 {
 
 	private Context context;
@@ -20,6 +35,13 @@ public class NotificationPanel
     //Notification ID
     private final int NID =548853;
 
+    //Wearable google api client
+    GoogleApiClient client;
+
+    //our constants to be defined
+    private final String KEY = "Feather";
+    private String PATH = null;
+
 	@SuppressLint("NewApi")
 	public NotificationPanel(Context parent)
 	{
@@ -29,6 +51,19 @@ public class NotificationPanel
 		notifyMan = (NotificationManager) context.getSystemService(ns);
 		CharSequence tickerText = "Welcome To Feather";
 		long when = System.currentTimeMillis();
+
+        //Do our wearable client stuff
+        client = new GoogleApiClient.Builder(context)
+                .addApi(Wearable.API)
+                .addConnectionCallbacks(this)
+                .addOnConnectionFailedListener(this)
+                .build();
+
+        if (!client.isConnected()) {
+            client.connect();
+        }
+
+
 		Notification.Builder builder = new Notification.Builder(context);
 		@SuppressWarnings("deprecation")
 		Notification notification = builder.getNotification();
@@ -87,9 +122,14 @@ public class NotificationPanel
 	
 	
 
+    //Close our notification
 	public void notificationCancel()
 	{
-		notifyMan.cancel(NID);
+        //Close the wearable and our notification
+        if (client.isConnected()) {
+            client.disconnect();
+        }
+        notifyMan.cancel(NID);
 	}
 	
 	public void newNotify(String tickerText, String message)
@@ -108,4 +148,40 @@ public class NotificationPanel
 		if(bool) contentView.setImageViewResource(R.id.playpause, R.drawable.playpauses);
 		else contentView.setImageViewResource(R.id.playpause, R.drawable.playpauses);
 	}
+
+    //Our implements methods
+    @Override
+    public void onConnected(Bundle bundle)
+    {
+        //Send this on connection (just testing)
+        if (client.isConnected()) {
+            PutDataMapRequest putDataMapRequest = PutDataMapRequest.create(PATH);
+
+            // Add data to the request
+            putDataMapRequest.getDataMap().putString(KEY,
+                    "hi");
+
+            PutDataRequest request = putDataMapRequest.asPutDataRequest();
+
+            Wearable.DataApi.putDataItem(client, request)
+                    .setResultCallback(new ResultCallback<DataApi.DataItemResult>() {
+                        @Override
+                        public void onResult(DataApi.DataItemResult dataItemResult) {
+                            Log.d("Feather", "putDataItem status: "
+                                    + dataItemResult.getStatus().toString());
+                        }
+                    });
+        }
+
+    }
+
+    @Override
+    public void onConnectionSuspended(int i) {
+
+    }
+
+    @Override
+    public void onConnectionFailed(ConnectionResult connectionResult) {
+
+    }
 }
