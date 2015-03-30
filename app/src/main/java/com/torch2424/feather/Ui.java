@@ -106,6 +106,8 @@ public class Ui extends Activity implements OnSeekBarChangeListener, Runnable
     SharedPreferences prefs;
 
     //Context for service access
+    //Handler used in bgmusic
+    //Thread for loading dialogs
     static Context context;
     static Handler uiHandler;
     static Thread mThread;
@@ -185,7 +187,7 @@ public class Ui extends Activity implements OnSeekBarChangeListener, Runnable
         // MainActivity.contextStatic = getApplicationContext();
         // regular context for loading dialog in our service
         context = this;
-        //Handler for service to runonuithread
+        //Handler for service to runonuithread in BGMUSIC
         uiHandler = new Handler();
         mThread = new Thread();
 

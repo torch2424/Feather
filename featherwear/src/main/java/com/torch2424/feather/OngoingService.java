@@ -24,10 +24,11 @@ public class OngoingService extends WearableListenerService implements GoogleApi
     //Our google api clinet
     private GoogleApiClient GoogClient;
 
-    //our constants to be defined
+    //our "constants" to be defined
     private final String KEY = "Feather";
     private final int NID = 548853;
     private String PATH = "/feather";
+    private String PATHDISMISS = "/feather/quit";
 
     //Our notification manager so that we can close and open
     private NotificationManager notificationManager;
@@ -51,10 +52,13 @@ public class OngoingService extends WearableListenerService implements GoogleApi
     }
     
     @Override
+    //Whenever data is changed, this is launched
     public void onDataChanged(DataEventBuffer dataEvents) {
+        //Get all of our evnets and put into a list
         final List<DataEvent> events = FreezableUtils.freezeIterable(dataEvents);
         dataEvents.close();
 
+        //FIf our client has lost connection, try reconnecting, if we cant, return and leave
         if (!GoogClient.isConnected()) {
             ConnectionResult connectionResult = GoogClient
                     .blockingConnect(30, TimeUnit.SECONDS);
@@ -64,10 +68,13 @@ public class OngoingService extends WearableListenerService implements GoogleApi
             }
         }
 
+        //For all of our data events that we receive, do this
         for (DataEvent event : events) {
             if (event.getType() == DataEvent.TYPE_CHANGED) {
                 String path = event.getDataItem().getUri().getPath();
-                if (PATH.equals(path)) {
+                //If it is feather's path
+                if (PATH.equals(path))
+                {
                     // Get the data out of the event
                     DataMapItem dataMapItem =
                             DataMapItem.fromDataItem(event.getDataItem());
@@ -77,7 +84,14 @@ public class OngoingService extends WearableListenerService implements GoogleApi
                     NotificationActivity.changeText(title);
 
                     //We only build our notification when it is started
-                } else
+                }
+                //We get a notification with path dissmiss
+                else if(path.equals(PATHDISMISS))
+                {
+                    //Close the noticiation
+                    notificationManager.cancel(NID);
+                }
+                else
                 {
                     //The path is not recognized
                 }
@@ -86,6 +100,7 @@ public class OngoingService extends WearableListenerService implements GoogleApi
     }
 
     //Going to implement a single notification
+    //When we first connect to our handheld, create our notification
     @Override
     public void onConnected(Bundle bundle)
     {
@@ -122,6 +137,6 @@ public class OngoingService extends WearableListenerService implements GoogleApi
     @Override
     public void onConnectionSuspended(int i)
     {
-        notificationManager.cancel(NID);
+        //Do nothing
     }
 }

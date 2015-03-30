@@ -29,6 +29,7 @@ import static com.google.android.gms.common.api.GoogleApiClient.ConnectionCallba
 public class NotificationPanel implements ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener
 {
 
+    //Private variables neccessary for creating our notification
 	private Context context;
 	private NotificationManager notifyMan;
 	private static RemoteViews contentView;
@@ -40,32 +41,36 @@ public class NotificationPanel implements ConnectionCallbacks, GoogleApiClient.O
     //Wearable google api client
     GoogleApiClient client;
 
-    //our constants to be defined
+    //our "constants" to be defined
     private final String KEY = "Feather";
     private String PATH = "/feather";
+    private String PATHDISMISS = "/feather/quit";
 
 	@SuppressLint("NewApi")
 	public NotificationPanel(Context parent)
 	{
 		super();
 		context = parent;
+        //Get our notification
 		String ns = Context.NOTIFICATION_SERVICE;
 		notifyMan = (NotificationManager) context.getSystemService(ns);
 		CharSequence tickerText = "Welcome To Feather";
 		long when = System.currentTimeMillis();
 
-        //Do our wearable client stuff
+        //Build our client
         client = new GoogleApiClient.Builder(context)
                 .addApi(Wearable.API)
+                //add our listeners
                 .addConnectionCallbacks(this)
                 .addOnConnectionFailedListener(this)
                 .build();
-
+        //If it is not already connected connect
         if (!client.isConnected()) {
             client.connect();
         }
 
 
+        //Create our initial notification
 		Notification.Builder builder = new Notification.Builder(context);
 		@SuppressWarnings("deprecation")
 		Notification notification = builder.getNotification();
@@ -79,15 +84,22 @@ public class NotificationPanel implements ConnectionCallbacks, GoogleApiClient.O
 		// set the button listeners
 		setListeners(contentView);
 
+        //Finalize our notification view
 		notification.contentView = contentView;
 		notification.flags |= Notification.FLAG_ONGOING_EVENT;
-		// CharSequence contentTitle = "From Shortcuts";
+        //Send out our notification
 		notifyMan.notify(NID, notification);
 		notifier = notification;
 	}
 
 	public void setListeners(RemoteViews view)
 	{
+        /*
+            Here we are creating the buttons on our notification
+            First we get a key event, which sends out a media broadcast (acting as a remote)
+            Then we get a pending intent to get ready to send this broadcast,
+            finally we attach it to our buttons/views
+         */
 		// Previous
 		Intent prev = new Intent(Intent.ACTION_MEDIA_BUTTON, null); 
 		KeyEvent prevEvent = new KeyEvent(0, 0, 
@@ -128,20 +140,38 @@ public class NotificationPanel implements ConnectionCallbacks, GoogleApiClient.O
 	public void notificationCancel()
 	{
         //Close the wearable and our notification
+
         if (client.isConnected()) {
+
+            //Set our path of our request, this time path dismiss so we close wearable notification
+            PutDataMapRequest putDataMapRequest = PutDataMapRequest.create(PATHDISMISS);
+
+            // Add data to the request
+            putDataMapRequest.getDataMap().putString(KEY,
+                    "");
+            putDataMapRequest.getDataMap().
+                    putLong("time", new Date().getTime());
+
+            //request our request
+            PutDataRequest request = putDataMapRequest.asPutDataRequest();
+
+            //finally disconnect our client
             client.disconnect();
         }
         notifyMan.cancel(NID);
 	}
-	
+
+
+	//Redo our notification
 	public void newNotify(String tickerText, String message)
 	{
 		notifier.tickerText = tickerText;
 		contentView.setTextViewText(R.id.message, message);
 		notifyMan.notify(NID, notifier);
 
-        //Send this whenever we create a new connection to a wearble if exists
+        //Send this whenever we redo our notification, that way title is same on wear
         if (client.isConnected()) {
+            //Set our path of our request
             PutDataMapRequest putDataMapRequest = PutDataMapRequest.create(PATH);
 
             // Add data to the request
@@ -150,6 +180,7 @@ public class NotificationPanel implements ConnectionCallbacks, GoogleApiClient.O
             putDataMapRequest.getDataMap().
                     putLong("time", new Date().getTime());
 
+            //request our request
             PutDataRequest request = putDataMapRequest.asPutDataRequest();
         }
 	}
@@ -168,17 +199,30 @@ public class NotificationPanel implements ConnectionCallbacks, GoogleApiClient.O
     @Override
     public void onConnected(Bundle bundle)
     {
+        //Since we are now connected, change the title of our notification,
+        //so we make sure it is shown on wear
+        //Create our data request
+        PutDataMapRequest putDataMapRequest = PutDataMapRequest.create(PATH);
 
+        // Add data to the request
+        putDataMapRequest.getDataMap().putString(KEY,
+                "Feather Wear");
+        putDataMapRequest.getDataMap().
+                putLong("time", new Date().getTime());
+
+        //Request our request
+        PutDataRequest request = putDataMapRequest.asPutDataRequest();
     }
 
     @Override
     public void onConnectionSuspended(int i)
     {
-
+        //Do nothing
     }
 
     @Override
-    public void onConnectionFailed(ConnectionResult connectionResult) {
-
+    public void onConnectionFailed(ConnectionResult connectionResult)
+    {
+        //Do nothing
     }
 }

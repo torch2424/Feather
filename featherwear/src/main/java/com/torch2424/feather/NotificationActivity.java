@@ -11,7 +11,9 @@ import android.widget.TextView;
 public class NotificationActivity extends Activity
 {
 
+    //Our textview that will display song titles
     private static TextView mTextView;
+    //Our "Constant"
     public static String TITLE = "Feather";
     //Our handler to run on the main ui thread
     private static Handler UIHandler;
@@ -21,16 +23,20 @@ public class NotificationActivity extends Activity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification);
+        //Create our view
         final WatchViewStub stub = (WatchViewStub) findViewById(R.id.watch_view_stub);
         stub.setOnLayoutInflatedListener(new WatchViewStub.OnLayoutInflatedListener() {
             @Override
             public void onLayoutInflated(WatchViewStub stub) {
+                //Set our textview
                 mTextView = (TextView) stub.findViewById(R.id.text);
             }
         });
 
+        //Set our textview to the view in our layout
         mTextView = (TextView) findViewById(R.id.text_view);
 
+        //Get our intent, and if there is one, set the title to that
         Intent intent = getIntent();
         if (intent != null) {
             mTextView.setText(intent.getStringExtra(TITLE));
@@ -41,9 +47,10 @@ public class NotificationActivity extends Activity
         UIHandler = new Handler(Looper.getMainLooper());
     }
 
+    //Function to change our textview ticker text
     public static void changeText(final String title)
     {
-
+        //Crate our runnable to be run in our handler on the UI thread
         final Runnable r = new Runnable() {
             public void run() {
                 mTextView.setText(title);
