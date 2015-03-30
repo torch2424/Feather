@@ -3,6 +3,8 @@ package com.torch2424.feather;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.support.wearable.view.WatchViewStub;
 import android.widget.TextView;
 
@@ -11,6 +13,8 @@ public class NotificationActivity extends Activity
 
     private static TextView mTextView;
     public static String TITLE = "Feather";
+    //Our handler to run on the main ui thread
+    private static Handler UIHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -33,12 +37,21 @@ public class NotificationActivity extends Activity
 
         }
 
-
+        //Set up our handler
+        UIHandler = new Handler(Looper.getMainLooper());
     }
 
-    public static void changeText(String title)
+    public static void changeText(final String title)
     {
-        mTextView.setText(title);
+
+        final Runnable r = new Runnable() {
+            public void run() {
+                mTextView.setText(title);
+            }
+        };
+
+        //Run our handler, no need for a second thread
+        UIHandler.post(r);
     }
 
 }
