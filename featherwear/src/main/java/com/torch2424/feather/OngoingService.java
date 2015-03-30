@@ -76,36 +76,7 @@ public class OngoingService extends WearableListenerService implements GoogleApi
                     //Change our ticker text to the specified string
                     NotificationActivity.changeText(title);
 
-                    /*
-                    // Build the intent to display our custom notification
-                    Intent notificationIntent =
-                            new Intent(this, NotificationActivity.class);
-                    notificationIntent.putExtra(
-                            NotificationActivity.TITLE, title);
-                    PendingIntent notificationPendingIntent = PendingIntent.getActivity
-                            (
-                            this,
-                            0,
-                            notificationIntent,
-                            PendingIntent.FLAG_UPDATE_CURRENT);
-
-                    // Create the ongoing notification
-                    Notification.Builder notificationBuilder =
-                            new Notification.Builder(this)
-                                    .setSmallIcon(R.mipmap.ic_launcher)
-                                    .setLargeIcon(BitmapFactory.decodeResource(
-                                            getResources(), R.mipmap.ic_launcher))
-                                    .setOngoing(true)
-                                    .setTicker(title)
-                                    .extend(new Notification.WearableExtender()
-                                            .setDisplayIntent(notificationPendingIntent));
-
-                    // Build the notification and show it
-                    NotificationManager notificationManager =
-                            (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
-                    notificationManager.notify(
-                            NID, notificationBuilder.build());
-                           */
+                    //We only build our notification when it is started
                 } else
                 {
                     //The path is not recognized
