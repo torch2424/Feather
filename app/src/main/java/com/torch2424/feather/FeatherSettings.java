@@ -15,7 +15,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
 
-public class FeatherSettings extends Activity {
+public class FeatherSettings extends Activity
+{
 
     // for toasts context
     Toasty toast;
