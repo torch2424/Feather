@@ -130,7 +130,6 @@ public class NotificationPanel implements ConnectionCallbacks, GoogleApiClient.O
         //Close the wearable and our notification
         if (client.isConnected()) {
             client.disconnect();
-            Log.d("Feather", "Questlove left the house...");
         }
         notifyMan.cancel(NID);
 	}
@@ -152,15 +151,6 @@ public class NotificationPanel implements ConnectionCallbacks, GoogleApiClient.O
                     putLong("time", new Date().getTime());
 
             PutDataRequest request = putDataMapRequest.asPutDataRequest();
-
-            Wearable.DataApi.putDataItem(client, request)
-                    .setResultCallback(new ResultCallback<DataApi.DataItemResult>() {
-                        @Override
-                        public void onResult(DataApi.DataItemResult dataItemResult) {
-                            Log.d("Feather", "putDataItem status: "
-                                    + dataItemResult.getStatus().toString());
-                        }
-                    });
         }
 	}
 	
@@ -182,7 +172,8 @@ public class NotificationPanel implements ConnectionCallbacks, GoogleApiClient.O
     }
 
     @Override
-    public void onConnectionSuspended(int i) {
+    public void onConnectionSuspended(int i)
+    {
 
     }
 

@@ -29,6 +29,10 @@ public class OngoingService extends WearableListenerService implements GoogleApi
     private final int NID = 548853;
     private String PATH = "/feather";
 
+    //Our notification manager so that we can close and open
+    private NotificationManager notificationManager;
+
+
     public OngoingService()
     {
 
@@ -138,14 +142,15 @@ public class OngoingService extends WearableListenerService implements GoogleApi
                                 .setDisplayIntent(notificationPendingIntent));
 
         // Build the notification and show it
-        NotificationManager notificationManager =
+        notificationManager =
                 (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
         notificationManager.notify(
                 NID, notificationBuilder.build());
     }
 
     @Override
-    public void onConnectionSuspended(int i) {
-
+    public void onConnectionSuspended(int i)
+    {
+        notificationManager.cancel(NID);
     }
 }
