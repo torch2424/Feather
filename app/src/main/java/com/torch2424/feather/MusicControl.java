@@ -134,6 +134,27 @@ public class MusicControl extends BroadcastReceiver
 			}
 
 		}
+        //For catching headset unplugged and plugged
+        else if (Intent.ACTION_HEADSET_PLUG.equals(intent.getAction()))
+        {
+            //First get if we want to respond to this
+            SharedPreferences prefs = context.getApplicationContext()
+                    .getSharedPreferences("MyPrefs", 0);
+            //If our headset boolean is true
+            if(prefs.getBoolean("HEADSET", false))
+            {
+                //Link to help
+                //http://stackoverflow.com/questions/13316658/in-android-how-do-you-register-to-receive-headset-plug-broadcasts
+                //Get the extra that contains the headset state
+                int state = intent.getIntExtra("state", -1);
+                //if the state is 0 for unplugged and music is playing
+                //Stop
+                if(state == 0 && Ui.bgMusic.isPlaying())
+                {
+                    //Do stuff Here
+                }
+            }
+        }
 
 	}
 }
