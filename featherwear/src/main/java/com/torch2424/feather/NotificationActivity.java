@@ -6,7 +6,8 @@ import android.os.Bundle;
 import android.support.wearable.view.WatchViewStub;
 import android.widget.TextView;
 
-public class NotificationActivity extends Activity {
+public class NotificationActivity extends Activity
+{
 
     private TextView mTextView;
     public static String TITLE = "Feather";

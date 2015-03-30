@@ -88,6 +88,7 @@ public class OngoingService extends WearableListenerService
                                     .setLargeIcon(BitmapFactory.decodeResource(
                                             getResources(), R.mipmap.ic_launcher))
                                     .setOngoing(true)
+                                    .setTicker(title)
                                     .extend(new Notification.WearableExtender()
                                             .setDisplayIntent(notificationPendingIntent));
 
