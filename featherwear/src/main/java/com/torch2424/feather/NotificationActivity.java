@@ -9,11 +9,12 @@ import android.widget.TextView;
 public class NotificationActivity extends Activity
 {
 
-    private TextView mTextView;
+    private static TextView mTextView;
     public static String TITLE = "Feather";
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification);
         final WatchViewStub stub = (WatchViewStub) findViewById(R.id.watch_view_stub);
@@ -31,5 +32,13 @@ public class NotificationActivity extends Activity
             mTextView.setText(intent.getStringExtra(TITLE));
 
         }
+
+
     }
+
+    public static void changeText(String title)
+    {
+        mTextView.setText(title);
+    }
+
 }

@@ -5,6 +5,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
+import android.os.Bundle;
 import android.util.Log;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -19,8 +20,7 @@ import com.google.android.gms.wearable.WearableListenerService;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class OngoingService extends WearableListenerService
-{
+public class OngoingService extends WearableListenerService implements GoogleApiClient.ConnectionCallbacks {
     //Our google api clinet
     private GoogleApiClient GoogClient;
 
@@ -40,6 +40,7 @@ public class OngoingService extends WearableListenerService
         super.onCreate();
         GoogClient = new GoogleApiClient.Builder(this)
                 .addApi(Wearable.API)
+                .addConnectionCallbacks(this)
                 .build();
         GoogClient.connect();
 
@@ -68,6 +69,10 @@ public class OngoingService extends WearableListenerService
                             DataMapItem.fromDataItem(event.getDataItem());
                     final String title = dataMapItem.getDataMap().getString(KEY);
 
+                    //Change our ticker text to the specified string
+                    NotificationActivity.changeText(title);
+
+                    /*
                     // Build the intent to display our custom notification
                     Intent notificationIntent =
                             new Intent(this, NotificationActivity.class);
@@ -83,7 +88,6 @@ public class OngoingService extends WearableListenerService
                     // Create the ongoing notification
                     Notification.Builder notificationBuilder =
                             new Notification.Builder(this)
-                                    //Need to make these feather icons
                                     .setSmallIcon(R.mipmap.ic_launcher)
                                     .setLargeIcon(BitmapFactory.decodeResource(
                                             getResources(), R.mipmap.ic_launcher))
@@ -97,6 +101,7 @@ public class OngoingService extends WearableListenerService
                             (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
                     notificationManager.notify(
                             NID, notificationBuilder.build());
+                           */
                 } else
                 {
                     //The path is not recognized
@@ -105,4 +110,42 @@ public class OngoingService extends WearableListenerService
         }
     }
 
+    //Going to implement a single notification
+    @Override
+    public void onConnected(Bundle bundle)
+    {
+        // Build the intent to display our custom notification
+        Intent notificationIntent =
+                new Intent(this, NotificationActivity.class);
+        notificationIntent.putExtra(
+                NotificationActivity.TITLE, "");
+        PendingIntent notificationPendingIntent = PendingIntent.getActivity
+                (
+                        this,
+                        0,
+                        notificationIntent,
+                        PendingIntent.FLAG_UPDATE_CURRENT);
+
+        // Create the ongoing notification
+        Notification.Builder notificationBuilder =
+                new Notification.Builder(this)
+                        .setSmallIcon(R.mipmap.ic_launcher)
+                        .setLargeIcon(BitmapFactory.decodeResource(
+                                getResources(), R.mipmap.ic_launcher))
+                        .setOngoing(true)
+                        .setTicker("")
+                        .extend(new Notification.WearableExtender()
+                                .setDisplayIntent(notificationPendingIntent));
+
+        // Build the notification and show it
+        NotificationManager notificationManager =
+                (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+        notificationManager.notify(
+                NID, notificationBuilder.build());
+    }
+
+    @Override
+    public void onConnectionSuspended(int i) {
+
+    }
 }
