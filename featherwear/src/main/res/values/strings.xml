@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Feather Wear</string>
+    <string name="appstart">Feather Wear Started</string>
+    <string name="todevice">Please start Feather on your device for a wear notification</string>
     <string name="hello_round">Hello Round World!</string>
     <string name="hello_square">Hello Square World!</string>
     <string name="title_activity_notification">NotificationActivity</string>

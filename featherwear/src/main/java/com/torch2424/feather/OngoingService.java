@@ -26,7 +26,7 @@ public class OngoingService extends WearableListenerService
 
     //our constants to be defined
     private final String KEY = "Feather";
-    private final int NID =548853;
+    private final int NID = 548853;
     private String PATH = "/feather";
 
     public OngoingService()
@@ -42,13 +42,11 @@ public class OngoingService extends WearableListenerService
                 .addApi(Wearable.API)
                 .build();
         GoogClient.connect();
-        Log.d("Featherwaer", "Questlove you not in the house");
 
     }
     
     @Override
     public void onDataChanged(DataEventBuffer dataEvents) {
-        Log.d("Featherwaer", "Questlove is coming to the house");
         final List<DataEvent> events = FreezableUtils.freezeIterable(dataEvents);
         dataEvents.close();
 
@@ -65,7 +63,6 @@ public class OngoingService extends WearableListenerService
             if (event.getType() == DataEvent.TYPE_CHANGED) {
                 String path = event.getDataItem().getUri().getPath();
                 if (PATH.equals(path)) {
-                    Log.d("Featherwaer", "Questlove is in the house");
                     // Get the data out of the event
                     DataMapItem dataMapItem =
                             DataMapItem.fromDataItem(event.getDataItem());

@@ -130,6 +130,7 @@ public class NotificationPanel implements ConnectionCallbacks, GoogleApiClient.O
         //Close the wearable and our notification
         if (client.isConnected()) {
             client.disconnect();
+            Log.d("Feather", "Questlove left the house...");
         }
         notifyMan.cancel(NID);
 	}
