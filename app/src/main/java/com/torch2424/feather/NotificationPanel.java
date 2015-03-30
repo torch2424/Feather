@@ -22,6 +22,8 @@ import com.google.android.gms.wearable.PutDataMapRequest;
 import com.google.android.gms.wearable.PutDataRequest;
 import com.google.android.gms.wearable.Wearable;
 
+import java.util.Date;
+
 import static com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
 
 public class NotificationPanel implements ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener
@@ -137,6 +139,28 @@ public class NotificationPanel implements ConnectionCallbacks, GoogleApiClient.O
 		notifier.tickerText = tickerText;
 		contentView.setTextViewText(R.id.message, message);
 		notifyMan.notify(NID, notifier);
+
+        //Send this whenever we create a new connection to a wearble if exists
+        if (client.isConnected()) {
+            PutDataMapRequest putDataMapRequest = PutDataMapRequest.create(PATH);
+
+            // Add data to the request
+            putDataMapRequest.getDataMap().putString(KEY,
+                    tickerText);
+            putDataMapRequest.getDataMap().
+                    putLong("time", new Date().getTime());
+
+            PutDataRequest request = putDataMapRequest.asPutDataRequest();
+
+            Wearable.DataApi.putDataItem(client, request)
+                    .setResultCallback(new ResultCallback<DataApi.DataItemResult>() {
+                        @Override
+                        public void onResult(DataApi.DataItemResult dataItemResult) {
+                            Log.d("Feather", "putDataItem status: "
+                                    + dataItemResult.getStatus().toString());
+                        }
+                    });
+        }
 	}
 	
 	/**
@@ -153,25 +177,6 @@ public class NotificationPanel implements ConnectionCallbacks, GoogleApiClient.O
     @Override
     public void onConnected(Bundle bundle)
     {
-        //Send this on connection (just testing)
-        if (client.isConnected()) {
-            PutDataMapRequest putDataMapRequest = PutDataMapRequest.create(PATH);
-
-            // Add data to the request
-            putDataMapRequest.getDataMap().putString(KEY,
-                    "hi");
-
-            PutDataRequest request = putDataMapRequest.asPutDataRequest();
-
-            Wearable.DataApi.putDataItem(client, request)
-                    .setResultCallback(new ResultCallback<DataApi.DataItemResult>() {
-                        @Override
-                        public void onResult(DataApi.DataItemResult dataItemResult) {
-                            Log.d("Feather", "putDataItem status: "
-                                    + dataItemResult.getStatus().toString());
-                        }
-                    });
-        }
 
     }
 
