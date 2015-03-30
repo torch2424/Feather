@@ -1,4 +1,4 @@
-package com.torch2424.featherwear;
+package com.torch2424.feather;
 
 import android.app.Activity;
 import android.os.Bundle;

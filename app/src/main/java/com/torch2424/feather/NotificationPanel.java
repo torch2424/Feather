@@ -33,7 +33,7 @@ public class NotificationPanel implements ConnectionCallbacks, GoogleApiClient.O
 	private Notification notifier;
 
     //Notification ID
-    private final int NID =548853;
+    private final int NID = 548853;
 
     //Wearable google api client
     GoogleApiClient client;

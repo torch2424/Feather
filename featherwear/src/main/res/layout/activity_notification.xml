@@ -6,7 +6,7 @@
     android:layout_width="match_parent" android:layout_height="match_parent"
     app:rectLayout="@layout/rect_activity_notification"
     app:roundLayout="@layout/round_activity_notification"
-    tools:context="com.torch2424.featherwear.NotificationActivity"
+    tools:context="com.torch2424.feather.NotificationActivity"
     tools:deviceIds="wear">
 
     <!-- Our layout -->

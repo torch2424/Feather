@@ -1,13 +1,10 @@
-package com.torch2424.featherwear;
+package com.torch2424.feather;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.wearable.view.WatchViewStub;
-import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.google.android.gms.wearable.Asset;
 
 public class NotificationActivity extends Activity {
 

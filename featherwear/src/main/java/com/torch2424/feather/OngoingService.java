@@ -1,18 +1,15 @@
-package com.torch2424.featherwear;
+package com.torch2424.feather;
 
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.app.Service;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
-import android.os.IBinder;
 import android.util.Log;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.data.FreezableUtils;
-import com.google.android.gms.wearable.Asset;
 import com.google.android.gms.wearable.DataEvent;
 import com.google.android.gms.wearable.DataEventBuffer;
 import com.google.android.gms.wearable.DataMapItem;
@@ -45,11 +42,13 @@ public class OngoingService extends WearableListenerService
                 .addApi(Wearable.API)
                 .build();
         GoogClient.connect();
+        Log.d("Featherwaer", "Questlove you not in the house");
 
     }
     
     @Override
     public void onDataChanged(DataEventBuffer dataEvents) {
+        Log.d("Featherwaer", "Questlove is coming to the house");
         final List<DataEvent> events = FreezableUtils.freezeIterable(dataEvents);
         dataEvents.close();
 
@@ -66,6 +65,7 @@ public class OngoingService extends WearableListenerService
             if (event.getType() == DataEvent.TYPE_CHANGED) {
                 String path = event.getDataItem().getUri().getPath();
                 if (PATH.equals(path)) {
+                    Log.d("Featherwaer", "Questlove is in the house");
                     // Get the data out of the event
                     DataMapItem dataMapItem =
                             DataMapItem.fromDataItem(event.getDataItem());
