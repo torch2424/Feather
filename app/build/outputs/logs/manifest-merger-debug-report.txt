@@ -304,27 +304,35 @@ action#android.intent.action.MEDIA_BUTTON
 ADDED from AndroidManifest.xml:110:17
 	android:name
 		ADDED from AndroidManifest.xml:110:25
+intent-filter#android.intent.action.HEADSET_PLUG
+ADDED from AndroidManifest.xml:112:13
+	android:priority
+		ADDED from AndroidManifest.xml:112:28
+action#android.intent.action.HEADSET_PLUG
+ADDED from AndroidManifest.xml:113:17
+	android:name
+		ADDED from AndroidManifest.xml:113:25
 service#com.torch2424.feather.BGMusic
-ADDED from AndroidManifest.xml:114:9
+ADDED from AndroidManifest.xml:117:9
 	android:name
-		ADDED from AndroidManifest.xml:114:18
+		ADDED from AndroidManifest.xml:117:18
 activity#com.torch2424.feather.EditPlaylist
-ADDED from AndroidManifest.xml:116:9
+ADDED from AndroidManifest.xml:119:9
 	android:label
-		ADDED from AndroidManifest.xml:118:13
-	android:name
-		ADDED from AndroidManifest.xml:117:13
-activity#com.torch2424.feather.FeatherSettings
-ADDED from AndroidManifest.xml:120:9
-	android:label
-		ADDED from AndroidManifest.xml:122:13
-	android:parentActivityName
-		ADDED from AndroidManifest.xml:123:13
-	android:name
 		ADDED from AndroidManifest.xml:121:13
-meta-data#android.support.PARENT_ACTIVITY
-ADDED from AndroidManifest.xml:124:13
 	android:name
-		ADDED from AndroidManifest.xml:125:17
+		ADDED from AndroidManifest.xml:120:13
+activity#com.torch2424.feather.FeatherSettings
+ADDED from AndroidManifest.xml:123:9
+	android:label
+		ADDED from AndroidManifest.xml:125:13
+	android:parentActivityName
+		ADDED from AndroidManifest.xml:126:13
+	android:name
+		ADDED from AndroidManifest.xml:124:13
+meta-data#android.support.PARENT_ACTIVITY
+ADDED from AndroidManifest.xml:127:13
+	android:name
+		ADDED from AndroidManifest.xml:128:17
 	android:value
-		ADDED from AndroidManifest.xml:126:17
+		ADDED from AndroidManifest.xml:129:17
