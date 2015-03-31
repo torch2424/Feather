@@ -141,8 +141,8 @@ public class MusicControl extends BroadcastReceiver
             //First get if we want to respond to this
             SharedPreferences prefs = context.getApplicationContext()
                     .getSharedPreferences("MyPrefs", 0);
-            //If our headset boolean is true
-            if(prefs.getBoolean("HEADSET", false))
+            //If our headset boolean is true, and our bg music is not null
+            if(prefs.getBoolean("HEADSET", false) && Ui.bgMusic != null)
             {
                 //Get the extra that contains the headset state
                 int state = intent.getIntExtra("state", -1);
