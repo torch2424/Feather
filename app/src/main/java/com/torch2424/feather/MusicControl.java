@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.AudioManager;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.widget.TextView;
 
@@ -137,6 +138,7 @@ public class MusicControl extends BroadcastReceiver
         //For catching headset unplugged and plugged
         else if (Intent.ACTION_HEADSET_PLUG.equals(intent.getAction()))
         {
+            Log.d("feather", "hi");
             //First get if we want to respond to this
             SharedPreferences prefs = context.getApplicationContext()
                     .getSharedPreferences("MyPrefs", 0);
