@@ -15,7 +15,6 @@ public class MusicControl extends BroadcastReceiver
 	@Override
 	public void onReceive(Context context, Intent intent)
 	{
-        Log.d("feather", "yo");
 		// random view to pass through class
 		TextView view = new TextView(context);
 		// creating class object to call functions
@@ -139,7 +138,6 @@ public class MusicControl extends BroadcastReceiver
         //For catching headset unplugged and plugged
         else if (Intent.ACTION_HEADSET_PLUG.equals(intent.getAction()))
         {
-            Log.d("feather", "hi");
             //First get if we want to respond to this
             SharedPreferences prefs = context.getApplicationContext()
                     .getSharedPreferences("MyPrefs", 0);
@@ -152,8 +150,8 @@ public class MusicControl extends BroadcastReceiver
                 //Stop
                 if(state == 0 && Ui.bgMusic.isPlaying())
                 {
-                    // Pause
-                    Ui.playPause(view);
+                    // Pause without a fade
+                    Ui.bgMusic.pauseSongNoFade();
                 }
             }
         }

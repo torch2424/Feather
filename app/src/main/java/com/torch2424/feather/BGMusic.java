@@ -474,6 +474,27 @@ public class BGMusic extends Service implements OnCompletionListener
 			}
 		}
 	}
+
+    /**
+     * pauses song without fading
+     */
+    public void pauseSongNoFade()
+    {
+        // need to check if it is playing duh
+        // checking will help with closing app
+        if (bgmusic != null)
+        {
+            if (fading)
+            {
+                cancelFade();
+            }
+            else
+            {
+                isPaused = true;
+                bgmusic.pause();
+            }
+        }
+    }
 	
 	/**
 	 * This switches the play logo to the pause logo and vice versa
