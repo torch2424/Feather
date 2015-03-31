@@ -15,6 +15,7 @@ public class MusicControl extends BroadcastReceiver
 	@Override
 	public void onReceive(Context context, Intent intent)
 	{
+        Log.d("feather", "yo");
 		// random view to pass through class
 		TextView view = new TextView(context);
 		// creating class object to call functions

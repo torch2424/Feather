@@ -10,6 +10,7 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
@@ -200,6 +201,11 @@ public class Ui extends Activity implements OnSeekBarChangeListener, Runnable
                 MusicControl.class);
         // Deprecated in Lollipop
         audio.registerMediaButtonEventReceiver(musicControl);
+
+        //Also registering our broadcast for headset cotrol here
+        MusicControl myReceiver = new MusicControl();
+        IntentFilter filter = new IntentFilter(Intent.ACTION_HEADSET_PLUG);
+        registerReceiver(myReceiver, filter);
 
         // Video Wake Lock, get from TIH/ Going without Audio Focus
 
