@@ -47,7 +47,7 @@ public class FeatherSettings extends Activity
         //get preferences for each box to set checked or not
         SharedPreferences prefs = this.getApplicationContext().getSharedPreferences("MyPrefs", 0);
         sortBool = prefs.getBoolean("MUSICSORT", false);
-        headsetBool = prefs.getBoolean("HEADSET", false);
+        headsetBool = prefs.getBoolean("HEADSET", true);
 
         //Set the checkboxes to true or false
         if(sortBool) checkSort.setChecked(true);
