@@ -364,7 +364,7 @@ public class BGMusic extends Service implements OnCompletionListener
 		if (playList != null && !playList.isEmpty() && currentFile != null)
 		{
 			// Make file copy, sort, and find where it's at, set index
-			File tempFile = currentFile;
+			final File tempFile = currentFile;
 
             //Now supporting sorting by track index
             //Checking if they want it sorted by track index, and it is music
@@ -391,6 +391,18 @@ public class BGMusic extends Service implements OnCompletionListener
                         //Sort with our song metadata comparator
                         Collections.sort(playList, new SongComparator());
 
+                        //Find the song we originally clicked
+                        for (int i = 0; tempFile != null; ++i)
+                        {
+                            if (tempFile == playList.get(i))
+                            {
+                                index = i;
+                                //break to save process time
+                                break;
+
+                            }
+                        }
+
                         runOnUiThread(new Runnable()
                         {
                             public void run() {
@@ -416,19 +428,27 @@ public class BGMusic extends Service implements OnCompletionListener
             {
                 //Sort normally
                 Collections.sort(playList);
-            }
+
                 //Find the song we originally clicked
                 for (int i = 0; tempFile != null; ++i)
                 {
                     if (tempFile == playList.get(i))
                     {
-                        index = i;
-                        tempFile = null;
+                        index = i;git 
                         //break to save process time
                         break;
 
                     }
                 }
+            }
+
+            //Testing playlist
+            for (int i = 0; i < playList.size(); ++i)
+            {
+                Log.d("Feather playlist", playList.get(i).getName());
+            }
+            //now log index
+            Log.d("Feather index", Integer.toString(index));
 		}
 
 	}
