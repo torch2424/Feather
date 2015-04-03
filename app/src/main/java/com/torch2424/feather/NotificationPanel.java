@@ -139,8 +139,8 @@ public class NotificationPanel implements ConnectionCallbacks, GoogleApiClient.O
 
 		// Go Back To App
 		Intent notify = new Intent(context, Ui.class);
-		PendingIntent btn4 = PendingIntent.getActivity(context, 5, notify, 0);
-		view.setOnClickPendingIntent(R.id.notifylayout, btn4);
+		PendingIntent btn5 = PendingIntent.getActivity(context, 5, notify, 0);
+		view.setOnClickPendingIntent(R.id.notifylayout, btn5);
 	}
 	
 	

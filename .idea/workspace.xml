@@ -68,8 +68,8 @@
       <file leaf-file-name="NotificationPanel.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/torch2424/feather/NotificationPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.84615386" vertical-offset="1200" max-vertical-offset="3270">
-              <caret line="137" column="46" selection-start-line="137" selection-start-column="46" selection-end-line="137" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.7692308" vertical-offset="1290" max-vertical-offset="3270">
+              <caret line="140" column="54" selection-start-line="140" selection-start-column="54" selection-end-line="140" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -2879,8 +2879,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/torch2424/feather/NotificationPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.84615386" vertical-offset="1200" max-vertical-offset="3270">
-          <caret line="137" column="46" selection-start-line="137" selection-start-column="46" selection-end-line="137" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.7692308" vertical-offset="1290" max-vertical-offset="3270">
+          <caret line="140" column="54" selection-start-line="140" selection-start-column="54" selection-end-line="140" selection-end-column="54" />
           <folding />
         </state>
       </provider>
