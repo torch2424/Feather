@@ -138,7 +138,7 @@ public class MusicControl extends BroadcastReceiver
             else if (keyCode == KeyEvent.KEYCODE_ESCAPE)
             {
                 //Quit the application, do this by finishing quit
-                
+                Ui.activity.finish();
             }
 
 		}

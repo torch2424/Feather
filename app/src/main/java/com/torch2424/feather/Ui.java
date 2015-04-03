@@ -113,6 +113,9 @@ public class Ui extends Activity implements OnSeekBarChangeListener, Runnable
     static Handler uiHandler;
     static Thread mThread;
 
+    //To statically finish our activity from our background reciever
+    public static Activity activity;
+
 	@SuppressLint("SimpleDateFormat")
 	@SuppressWarnings("deprecation")
 	@Override
@@ -188,6 +191,8 @@ public class Ui extends Activity implements OnSeekBarChangeListener, Runnable
         // MainActivity.contextStatic = getApplicationContext();
         // regular context for loading dialog in our service
         context = this;
+        //Getting a static context of activity for our quiting in background receiver
+        activity = this;
         //Handler for service to runonuithread in BGMUSIC
         uiHandler = new Handler();
         mThread = new Thread();
