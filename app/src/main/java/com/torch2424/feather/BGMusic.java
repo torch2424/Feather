@@ -434,7 +434,7 @@ public class BGMusic extends Service implements OnCompletionListener
                 {
                     if (tempFile == playList.get(i))
                     {
-                        index = i;git 
+                        index = i;
                         //break to save process time
                         break;
 
