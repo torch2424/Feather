@@ -1,5 +1,6 @@
 package com.torch2424.feather;
 
+import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -133,6 +134,12 @@ public class MusicControl extends BroadcastReceiver
 					Ui.prev(view);
 				}
 			}
+            // if quit is pressed
+            else if (keyCode == KeyEvent.KEYCODE_ESCAPE)
+            {
+                //Quit the application, do this by finishing quit
+                
+            }
 
 		}
         //For catching headset unplugged and plugged
