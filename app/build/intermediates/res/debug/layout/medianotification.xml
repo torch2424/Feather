@@ -56,6 +56,13 @@
             android:layout_height="40dp"
             android:layout_margin="10dp"
             android:background="@drawable/nexts" />
+
+        <Button
+            android:id="@+id/quit"
+            android:layout_width="35dp"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/quits" />
     </LinearLayout>
 
 </RelativeLayout><!-- From: file:/home/torch2424/Dropbox/Android%20Source/NewFeather1/app/src/main/res/layout/medianotification.xml -->
