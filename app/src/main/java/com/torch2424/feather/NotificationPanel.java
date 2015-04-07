@@ -153,6 +153,8 @@ public class NotificationPanel implements ConnectionCallbacks, GoogleApiClient.O
 
         if (client.isConnected()) {
 
+            //This is working
+
             //Set our path of our request, this time path dismiss so we close wearable notification
             PutDataMapRequest putDataMapRequest = PutDataMapRequest.create(PATHDISMISS);
 

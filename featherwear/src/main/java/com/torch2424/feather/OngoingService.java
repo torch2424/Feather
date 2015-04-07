@@ -88,6 +88,7 @@ public class OngoingService extends WearableListenerService implements GoogleApi
                 //We get a notification with path dissmiss
                 else if(path.equals(PATHDISMISS))
                 {
+                    Log.d("Feahter", "Questlove is in the house");
                     //Close the noticiation
                     notificationManager.cancel(NID);
                 }
