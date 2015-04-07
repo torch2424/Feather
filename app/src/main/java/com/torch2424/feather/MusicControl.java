@@ -85,7 +85,7 @@ public class MusicControl extends BroadcastReceiver
 					// If music playing
 					if (BGMusic.bgmusic.isPlaying())
 					{
-						// get current position add 
+						// get current position add
 						currentDuration = BGMusic.bgmusic.getDuration();
 					}
 					// if video playing
