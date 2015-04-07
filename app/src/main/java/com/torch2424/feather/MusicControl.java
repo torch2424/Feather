@@ -79,16 +79,13 @@ public class MusicControl extends BroadcastReceiver
 			else if ((keyCode == KeyEvent.KEYCODE_MEDIA_NEXT || keyCode == KeyEvent.KEYCODE_MEDIA_FAST_FORWARD)
 					&& KeyEvent.ACTION_DOWN == keyAction)
 			{
-				// stop everything that is playing
-				if (manager.isMusicActive())
-				{
 					// this is to avoid double skipping
 					int currentDuration = 5000;
 
 					// If music playing
 					if (BGMusic.bgmusic.isPlaying())
 					{
-						// get current position
+						// get current position add 
 						currentDuration = BGMusic.bgmusic.getDuration();
 					}
 					// if video playing
@@ -104,7 +101,6 @@ public class MusicControl extends BroadcastReceiver
 						// Next
 						Ui.next(view);
 					}
-				}
 			}
 
 			// if previous is pressed
