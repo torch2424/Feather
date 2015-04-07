@@ -28,6 +28,13 @@
         android:textSize="17sp"
         android:text="@string/musicSort" />
 
+    <CheckBox
+        android:id="@+id/loopList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:text="@string/loopList" />
+
     <Button
         android:id="@+id/saveConfig"
         android:layout_width="match_parent"

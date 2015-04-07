@@ -104,8 +104,9 @@ available. Please contact the developer for assistance.</string>
     <string name="hello_world">Hello world!</string>
     <string name="loading">Loading...</string>
     <string name="loop">Loop</string>
+    <string name="loopList">Loop playlists after they have ended</string>
     <string name="menuPlaylist">Playlist</string>
-    <string name="musicSort">Sort media by track number, instead of Alphabetically</string>
+    <string name="musicSort">Sort media by track number, instead of alphabetically</string>
     <string name="next">Next</string>
     <string name="noPlaylist">Playlist Empty!</string>
     <string name="noVideo">Please play a video!</string>

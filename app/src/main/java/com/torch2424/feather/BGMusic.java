@@ -660,16 +660,37 @@ public class BGMusic extends Service implements OnCompletionListener
 		// Did the playlist end?
 		if (index == playList.size())
 		{
-			// commented out these lines to allow users to go
-			// to previous songs if playlist has ended
-			Ui.playing.setText("");
-			Ui.videoLayout.setVisibility(View.GONE);
+            //Do we have loop playlists enabled?
+            if(prefs.getBoolean("LOOPLIST", false))
+            {
+                //reset our index to zero and start from the beginning
+                index = 0;
 
-			// Do Notification Stuff
-			notification.newNotify("Playlist Ended!", "Playlist Ended!");
+                // Open Next File
+                try
+                {
+                    easyNext();
+                }
+                catch (IllegalStateException | IOException e)
+                {
+                    // TODO Auto-geneRATEd catch block
+                    e.printStackTrace();
+                }
+            }
+            //Else just end the playlist and everything
+            else
+            {
+                // commented out these lines to allow users to go
+                // to previous songs if playlist has ended
+                Ui.playing.setText("");
+                Ui.videoLayout.setVisibility(View.GONE);
 
-			// Disable seekbar to stop running it
-			Ui.seekBar.setEnabled(false);
+                // Do Notification Stuff
+                notification.newNotify("Playlist Ended!", "Playlist Ended!");
+
+                // Disable seekbar to stop running it
+                Ui.seekBar.setEnabled(false);
+            }
 		}
 		else
 		{
