@@ -12,6 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="22sp"
+        android:textColor="@color/white"
         android:text="@string/ConfigTitle"/>
 
     <CheckBox
@@ -19,6 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="17sp"
+        android:textColor="@color/white"
         android:text="@string/headset" />
 
     <CheckBox
@@ -26,6 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="17sp"
+        android:textColor="@color/white"
         android:text="@string/musicSort" />
 
     <CheckBox
@@ -33,6 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="17sp"
+        android:textColor="@color/white"
         android:text="@string/loopList" />
 
     <Button
@@ -40,6 +44,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/saveConfig"
+        android:textColor="@color/white"
         android:onClick="saveConfig"/>
 
 </LinearLayout>

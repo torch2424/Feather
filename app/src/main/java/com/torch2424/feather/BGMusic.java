@@ -20,6 +20,7 @@ import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
 import android.os.Binder;
 import android.os.IBinder;
+import android.os.PowerManager;
 import android.util.Log;
 import android.view.View;
 
@@ -98,8 +99,9 @@ public class BGMusic extends Service implements OnCompletionListener
 		bgmusic.setAudioStreamType(AudioManager.STREAM_MUSIC);
 		// No Wakelock might need it if music is dropping, dont forget to re-add
 		// permission
-		// bgmusic.setWakeMode(this.getApplicationContext(),
-		// PowerManager.PARTIAL_WAKE_LOCK);
+        //re-adding this for lollipop since music will end early without it
+		 bgmusic.setWakeMode(this.getApplicationContext(),
+		 PowerManager.PARTIAL_WAKE_LOCK);
 		playList = new ArrayList<File>();
 		index = 0;
 

@@ -14,8 +14,10 @@
     <!-- To store some app settings (Wallpaper) -->
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
 
-    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <android:uses-permission
+    <!-- to fix lollipop music bug -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission
         android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="18" />
 
