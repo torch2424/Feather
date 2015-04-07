@@ -45,6 +45,7 @@ public class NotificationPanel implements ConnectionCallbacks, GoogleApiClient.O
     private final String KEY = "Feather";
     private String PATH = "/feather";
     private String PATHDISMISS = "/feather/quit";
+    private String PATHSTART = "/feather/start";
 
 	@SuppressLint("NewApi")
 	public NotificationPanel(Context parent)
@@ -64,10 +65,9 @@ public class NotificationPanel implements ConnectionCallbacks, GoogleApiClient.O
                 .addConnectionCallbacks(this)
                 .addOnConnectionFailedListener(this)
                 .build();
-        //If it is not already connected connect
-        if (!client.isConnected()) {
-            client.connect();
-        }
+        //Connect to our client
+        Log.d("Feather", "Connecting to Client");
+        client.connect();
 
 
         //Create our initial notification
@@ -211,10 +211,12 @@ public class NotificationPanel implements ConnectionCallbacks, GoogleApiClient.O
     @Override
     public void onConnected(Bundle bundle)
     {
+        Log.d("Feather", "We are connected!");
         //Since we are now connected, change the title of our notification,
         //so we make sure it is shown on wear
+        //Use path start so that we create the notification
         //Create our data request
-        PutDataMapRequest putDataMapRequest = PutDataMapRequest.create(PATH);
+        PutDataMapRequest putDataMapRequest = PutDataMapRequest.create(PATHSTART);
 
         // Add data to the request
         putDataMapRequest.getDataMap().putString(KEY,
@@ -229,12 +231,12 @@ public class NotificationPanel implements ConnectionCallbacks, GoogleApiClient.O
     @Override
     public void onConnectionSuspended(int i)
     {
-        //Do nothing
+        Log.d("Feather", "Connection Suspended");
     }
 
     @Override
     public void onConnectionFailed(ConnectionResult connectionResult)
     {
-        //Do nothing
+        Log.d("Feather", "Connection Failed");
     }
 }

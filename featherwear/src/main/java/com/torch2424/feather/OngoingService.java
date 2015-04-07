@@ -28,10 +28,14 @@ public class OngoingService extends WearableListenerService implements GoogleApi
     private final String KEY = "Feather";
     private final int NID = 548853;
     private String PATH = "/feather";
+    private String PATHSTART = "/feather/start";
     private String PATHDISMISS = "/feather/quit";
 
     //Our notification manager so that we can close and open
     private NotificationManager notificationManager;
+
+    //Boolean to store if notification is active or not
+    private boolean isActive;
 
 
     public OngoingService()
@@ -48,7 +52,7 @@ public class OngoingService extends WearableListenerService implements GoogleApi
                 .addConnectionCallbacks(this)
                 .build();
         GoogClient.connect();
-
+        isActive = false;
     }
     
     @Override
@@ -82,7 +86,8 @@ public class OngoingService extends WearableListenerService implements GoogleApi
                     final String title = dataMapItem.getDataMap().getString(KEY);
 
                     //Change our ticker text to the specified string
-                    NotificationActivity.changeText(title);
+                    //Check with is active to make sure we dont crash
+                    if(isActive) NotificationActivity.changeText(title);
 
                     //We only build our notification when it is started
                 }
@@ -92,6 +97,45 @@ public class OngoingService extends WearableListenerService implements GoogleApi
                     Log.d("Feahter", "Questlove is in the house");
                     //Close the noticiation
                     notificationManager.cancel(NID);
+
+                    //is Activer is now false
+                    isActive = false;
+                }
+                else if(path.equals(PATHSTART))
+                {
+                    //Create our notification
+                    Log.d("Feather", "Creating notifyication");
+                    // Build the intent to display our custom notification
+                    Intent notificationIntent =
+                            new Intent(this, NotificationActivity.class);
+                    notificationIntent.putExtra(
+                            NotificationActivity.TITLE, "");
+                    PendingIntent notificationPendingIntent = PendingIntent.getActivity
+                            (
+                                    this,
+                                    0,
+                                    notificationIntent,
+                                    PendingIntent.FLAG_UPDATE_CURRENT);
+
+                    // Create the ongoing notification
+                    Notification.Builder notificationBuilder =
+                            new Notification.Builder(this)
+                                    .setSmallIcon(R.mipmap.ic_launcher)
+                                    .setLargeIcon(BitmapFactory.decodeResource(
+                                            getResources(), R.mipmap.ic_launcher))
+                                    .setOngoing(true)
+                                    .setTicker("")
+                                    .extend(new Notification.WearableExtender()
+                                            .setDisplayIntent(notificationPendingIntent));
+
+                    // Build the notification and show it
+                    notificationManager =
+                            (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+                    notificationManager.notify(
+                            NID, notificationBuilder.build());
+
+                    //Set our variable is active to true
+                    isActive = true;
                 }
                 else
                 {
@@ -106,34 +150,7 @@ public class OngoingService extends WearableListenerService implements GoogleApi
     @Override
     public void onConnected(Bundle bundle)
     {
-        // Build the intent to display our custom notification
-        Intent notificationIntent =
-                new Intent(this, NotificationActivity.class);
-        notificationIntent.putExtra(
-                NotificationActivity.TITLE, "");
-        PendingIntent notificationPendingIntent = PendingIntent.getActivity
-                (
-                        this,
-                        0,
-                        notificationIntent,
-                        PendingIntent.FLAG_UPDATE_CURRENT);
-
-        // Create the ongoing notification
-        Notification.Builder notificationBuilder =
-                new Notification.Builder(this)
-                        .setSmallIcon(R.mipmap.ic_launcher)
-                        .setLargeIcon(BitmapFactory.decodeResource(
-                                getResources(), R.mipmap.ic_launcher))
-                        .setOngoing(true)
-                        .setTicker("")
-                        .extend(new Notification.WearableExtender()
-                                .setDisplayIntent(notificationPendingIntent));
-
-        // Build the notification and show it
-        notificationManager =
-                (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
-        notificationManager.notify(
-                NID, notificationBuilder.build());
+        Log.d("Feather", "Connected to client!");
     }
 
     @Override
