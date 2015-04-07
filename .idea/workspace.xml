@@ -87,8 +87,8 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8448276" vertical-offset="470" max-vertical-offset="1110">
-              <caret line="64" column="43" selection-start-line="64" selection-start-column="43" selection-end-line="64" selection-end-column="43" />
+            <state vertical-scroll-proportion="1.112069" vertical-offset="0" max-vertical-offset="1155">
+              <caret line="43" column="52" selection-start-line="43" selection-start-column="52" selection-end-line="43" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -2877,8 +2877,8 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8448276" vertical-offset="470" max-vertical-offset="1110">
-          <caret line="64" column="43" selection-start-line="64" selection-start-column="43" selection-end-line="64" selection-end-column="43" />
+        <state vertical-scroll-proportion="1.112069" vertical-offset="0" max-vertical-offset="1155">
+          <caret line="43" column="52" selection-start-line="43" selection-start-column="52" selection-end-line="43" selection-end-column="52" />
           <folding />
         </state>
       </provider>
