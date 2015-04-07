@@ -98,12 +98,14 @@ public class FeatherSettings extends Activity
         //getting every config and putting it in an boolean
         sortBool = checkSort.isChecked();
         headsetBool = checkHeadset.isChecked();
+        listBool = checkList.isChecked();
 
         //used shared preferences to transfer data
         SharedPreferences prefs = this.getApplicationContext().getSharedPreferences("MyPrefs", 0);
         SharedPreferences.Editor editor = prefs.edit();
         editor.putBoolean("MUSICSORT", sortBool);
         editor.putBoolean("HEADSET", headsetBool);
+        editor.putBoolean("LOOPLIST", listBool);
         //Save changes
         editor.commit();
 
