@@ -64,7 +64,7 @@ public class OngoingService extends WearableListenerService {
         final List<DataEvent> events = FreezableUtils.freezeIterable(dataEvents);
         dataEvents.close();
 
-        //FIf our client has lost connection, try reconnecting, if we cant, return and leave
+        //If our client has lost connection, try reconnecting, if we cant, return and leave
         if (!GoogClient.isConnected()) {
             Log.d("Feather", "Client is not connected");
             ConnectionResult connectionResult = GoogClient
@@ -91,6 +91,7 @@ public class OngoingService extends WearableListenerService {
                     //Change our ticker text to the specified string
                     //Check with is active to make sure we dont crash
                     if(isActive) NotificationActivity.changeText(title);
+                    else Log.d("Feather", "We're not active :'(");
 
                     //We only build our notification when it is started
                 }
