@@ -80,6 +80,7 @@ public class OngoingService extends WearableListenerService implements GoogleApi
                 //If it is feather's path
                 if (PATH.equals(path))
                 {
+                    Log.d("Feather", "Changing text");
                     // Get the data out of the event
                     DataMapItem dataMapItem =
                             DataMapItem.fromDataItem(event.getDataItem());

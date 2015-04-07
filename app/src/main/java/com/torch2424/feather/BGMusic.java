@@ -444,13 +444,6 @@ public class BGMusic extends Service implements OnCompletionListener
                 }
             }
 
-            //Testing playlist
-            for (int i = 0; i < playList.size(); ++i)
-            {
-                Log.d("Feather playlist", playList.get(i).getName());
-            }
-            //now log index
-            Log.d("Feather index", Integer.toString(index));
 		}
 
 	}
