@@ -24,8 +24,10 @@ public class FeatherSettings extends Activity
     //initialize checkboxes and edittexts and booleans
     CheckBox checkSort;
     CheckBox checkHeadset;
+    CheckBox checkList;
     boolean sortBool;
     boolean headsetBool;
+    boolean listBool;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -43,17 +45,21 @@ public class FeatherSettings extends Activity
         //initialize checkboxes
         checkSort = (CheckBox) findViewById(R.id.musicSort);
         checkHeadset = (CheckBox) findViewById(R.id.checkHeadset);
+        checkList = (CheckBox) findViewById(R.id.loopList);
 
         //get preferences for each box to set checked or not
         SharedPreferences prefs = this.getApplicationContext().getSharedPreferences("MyPrefs", 0);
         sortBool = prefs.getBoolean("MUSICSORT", false);
         headsetBool = prefs.getBoolean("HEADSET", true);
+        listBool = prefs.getBoolean("LOOPLIST", false);
 
         //Set the checkboxes to true or false
         if(sortBool) checkSort.setChecked(true);
         else checkSort.setChecked(false);
         if(headsetBool) checkHeadset.setChecked(true);
         else checkHeadset.setChecked(false);
+        if(listBool) checkList.setChecked(true);
+        else checkList.setChecked(false);
     }
 
     // Getting the system wallpaper and setting it a the apps
