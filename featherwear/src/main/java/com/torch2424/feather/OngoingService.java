@@ -20,7 +20,7 @@ import com.google.android.gms.wearable.WearableListenerService;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class OngoingService extends WearableListenerService implements GoogleApiClient.ConnectionCallbacks {
+public class OngoingService extends WearableListenerService {
     //Our google api clinet
     private GoogleApiClient GoogClient;
 
@@ -49,10 +49,12 @@ public class OngoingService extends WearableListenerService implements GoogleApi
         super.onCreate();
         GoogClient = new GoogleApiClient.Builder(this)
                 .addApi(Wearable.API)
-                .addConnectionCallbacks(this)
                 .build();
         GoogClient.connect();
         isActive = false;
+
+        //Show that we've created our service
+        Log.d("Feather", "Create the wearable listener");
     }
     
     @Override
@@ -144,19 +146,5 @@ public class OngoingService extends WearableListenerService implements GoogleApi
                 }
             }
         }
-    }
-
-    //Going to implement a single notification
-    //When we first connect to our handheld, create our notification
-    @Override
-    public void onConnected(Bundle bundle)
-    {
-        Log.d("Feather", "Connected to client!");
-    }
-
-    @Override
-    public void onConnectionSuspended(int i)
-    {
-        //Do nothing
     }
 }

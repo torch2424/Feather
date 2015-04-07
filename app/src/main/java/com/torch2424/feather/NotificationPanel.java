@@ -167,6 +167,9 @@ public class NotificationPanel implements ConnectionCallbacks, GoogleApiClient.O
             //request our request
             PutDataRequest request = putDataMapRequest.asPutDataRequest();
 
+            //Send to wearable
+            Wearable.DataApi.putDataItem(client, request);
+
             //finally disconnect our client
             client.disconnect();
         }
@@ -194,6 +197,9 @@ public class NotificationPanel implements ConnectionCallbacks, GoogleApiClient.O
 
             //request our request
             PutDataRequest request = putDataMapRequest.asPutDataRequest();
+
+            //Send to wearable
+            Wearable.DataApi.putDataItem(client, request);
         }
 	}
 	
@@ -226,6 +232,9 @@ public class NotificationPanel implements ConnectionCallbacks, GoogleApiClient.O
 
         //Request our request
         PutDataRequest request = putDataMapRequest.asPutDataRequest();
+
+        //Send to wearable
+        Wearable.DataApi.putDataItem(client, request);
     }
 
     @Override
