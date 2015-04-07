@@ -1045,7 +1045,28 @@ public class Ui extends Activity implements OnSeekBarChangeListener, Runnable
 		// Did the playlist end?
 		if (bgMusic.index + 1 >= bgMusic.playList.size())
 		{
-			toast.show("No next File!");
+            //Do we have loop playlists enabled?
+            //Using bgMusic prefs since this is a static fucntion
+            if(bgMusic.prefs.getBoolean("LOOPLIST", false))
+            {
+                //reset our index to zero and start from the beginning
+                bgMusic.index = 0;
+
+                // Open Next File
+                try
+                {
+                    bgMusic.easyNext();
+                }
+                catch (IllegalStateException | IOException e)
+                {
+                    // TODO Auto-geneRATEd catch block
+                    e.printStackTrace();
+                }
+            }
+            //else toast there is no next file
+            else {
+                toast.show("No next File!");
+            }
 		}
 		else
 		{
