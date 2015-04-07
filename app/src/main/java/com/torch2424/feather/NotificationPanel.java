@@ -134,12 +134,13 @@ public class NotificationPanel implements ConnectionCallbacks, GoogleApiClient.O
                 KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ESCAPE, 0);
         quit.setAction(Intent.ACTION_MEDIA_BUTTON);
         quit.putExtra(Intent.EXTRA_KEY_EVENT, quitEvent);
-        PendingIntent btn4 = PendingIntent.getBroadcast(context, 4, quit, 0);
+        //CANNOT USE 4 FOR SECOND VALUE IN PENDING INTENT FOR SOME WEIRD REASON
+        PendingIntent btn4 = PendingIntent.getBroadcast(context, 5, quit, 0);
         view.setOnClickPendingIntent(R.id.quit, btn4);
 
 		// Go Back To App
 		Intent notify = new Intent(context, Ui.class);
-		PendingIntent btn5 = PendingIntent.getActivity(context, 5, notify, 0);
+		PendingIntent btn5 = PendingIntent.getActivity(context, 6, notify, 0);
 		view.setOnClickPendingIntent(R.id.notifylayout, btn5);
 	}
 	
