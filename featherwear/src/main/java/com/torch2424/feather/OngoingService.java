@@ -60,6 +60,7 @@ public class OngoingService extends WearableListenerService implements GoogleApi
 
         //FIf our client has lost connection, try reconnecting, if we cant, return and leave
         if (!GoogClient.isConnected()) {
+            Log.d("Feather", "Client is not connected");
             ConnectionResult connectionResult = GoogClient
                     .blockingConnect(30, TimeUnit.SECONDS);
             if (!connectionResult.isSuccess()) {
