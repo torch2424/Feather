@@ -35,7 +35,8 @@ public class OngoingService extends WearableListenerService {
     private NotificationManager notificationManager;
 
     //Boolean to store if notification is active or not
-    private boolean isActive;
+    //Store it's false here since on create is called multiple times
+    private boolean isActive = false;
 
 
     public OngoingService()
@@ -51,10 +52,11 @@ public class OngoingService extends WearableListenerService {
                 .addApi(Wearable.API)
                 .build();
         GoogClient.connect();
-        isActive = false;
 
         //Show that we've created our service
         Log.d("Feather", "Create the wearable listener");
+
+        //Dont change is active here since on create is called  multiple times
     }
     
     @Override
@@ -73,6 +75,10 @@ public class OngoingService extends WearableListenerService {
                 //Could not connect to the api
                 return;
             }
+        }
+        else
+        {
+
         }
 
         //For all of our data events that we receive, do this

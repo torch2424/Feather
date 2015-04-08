@@ -47,6 +47,9 @@ public class NotificationPanel implements ConnectionCallbacks, GoogleApiClient.O
     private String PATHDISMISS = "/feather/quit";
     private String PATHSTART = "/feather/start";
 
+    //Boolean to determine if wear notification is active
+    public boolean wearNotify;
+
 	@SuppressLint("NewApi")
 	public NotificationPanel(Context parent)
 	{
@@ -143,15 +146,39 @@ public class NotificationPanel implements ConnectionCallbacks, GoogleApiClient.O
 		PendingIntent btn5 = PendingIntent.getActivity(context, 6, notify, 0);
 		view.setOnClickPendingIntent(R.id.notifylayout, btn5);
 	}
-	
-	
+
+    //Redo our notification
+    public void newNotify(String tickerText, String message)
+    {
+        notifier.tickerText = tickerText;
+        contentView.setTextViewText(R.id.message, message);
+        notifyMan.notify(NID, notifier);
+
+        //Send this whenever we redo our notification, that way title is same on wear
+        if (client.isConnected() && wearNotify) {
+            //Set our path of our request
+            PutDataMapRequest putDataMapRequest = PutDataMapRequest.create(PATH);
+
+            // Add data to the request
+            putDataMapRequest.getDataMap().putString(KEY,
+                    tickerText);
+            putDataMapRequest.getDataMap().
+                    putLong("time", new Date().getTime());
+
+            //request our request
+            PutDataRequest request = putDataMapRequest.asPutDataRequest();
+
+            //Send to wearable
+            Wearable.DataApi.putDataItem(client, request);
+        }
+    }
 
     //Close our notification
 	public void notificationCancel()
 	{
         //Close the wearable and our notification
 
-        if (client.isConnected()) {
+        if (client.isConnected() && wearNotify) {
 
             //This is working
 
@@ -176,32 +203,6 @@ public class NotificationPanel implements ConnectionCallbacks, GoogleApiClient.O
         notifyMan.cancel(NID);
 	}
 
-
-	//Redo our notification
-	public void newNotify(String tickerText, String message)
-	{
-		notifier.tickerText = tickerText;
-		contentView.setTextViewText(R.id.message, message);
-		notifyMan.notify(NID, notifier);
-
-        //Send this whenever we redo our notification, that way title is same on wear
-        if (client.isConnected()) {
-            //Set our path of our request
-            PutDataMapRequest putDataMapRequest = PutDataMapRequest.create(PATH);
-
-            // Add data to the request
-            putDataMapRequest.getDataMap().putString(KEY,
-                    tickerText);
-            putDataMapRequest.getDataMap().
-                    putLong("time", new Date().getTime());
-
-            //request our request
-            PutDataRequest request = putDataMapRequest.asPutDataRequest();
-
-            //Send to wearable
-            Wearable.DataApi.putDataItem(client, request);
-        }
-	}
 	
 	/**
 	 * To switch from play to pause
