@@ -6,6 +6,7 @@ import android.app.PendingIntent;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.support.v4.app.NotificationManagerCompat;
 import android.util.Log;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -32,7 +33,7 @@ public class OngoingService extends WearableListenerService {
     private String PATHDISMISS = "/feather/quit";
 
     //Our notification manager so that we can close and open
-    private NotificationManager notificationManager;
+    private NotificationManagerCompat notificationManager;
 
     public OngoingService()
     {
@@ -101,6 +102,7 @@ public class OngoingService extends WearableListenerService {
                 {
                     Log.d("Feahter", "Questlove is in the house");
                     //Close the noticiation
+                    notificationManager = NotificationManagerCompat.from(this);
                     notificationManager.cancel(NID);
 
                     //is Activer is now false
@@ -135,7 +137,7 @@ public class OngoingService extends WearableListenerService {
 
                     // Build the notification and show it
                     notificationManager =
-                            (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+                            (NotificationManagerCompat)getSystemService(NOTIFICATION_SERVICE);
                     notificationManager.notify(
                             NID, notificationBuilder.build());
 
