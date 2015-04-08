@@ -47,8 +47,6 @@ public class NotificationPanel implements ConnectionCallbacks, GoogleApiClient.O
     private String PATHDISMISS = "/feather/quit";
     private String PATHSTART = "/feather/start";
 
-    //Boolean to determine if wear notification is active
-    public boolean wearNotify;
 
 	@SuppressLint("NewApi")
 	public NotificationPanel(Context parent)
@@ -155,7 +153,7 @@ public class NotificationPanel implements ConnectionCallbacks, GoogleApiClient.O
         notifyMan.notify(NID, notifier);
 
         //Send this whenever we redo our notification, that way title is same on wear
-        if (client.isConnected() && wearNotify) {
+        if (client.isConnected()) {
             //Set our path of our request
             PutDataMapRequest putDataMapRequest = PutDataMapRequest.create(PATH);
 
@@ -178,7 +176,7 @@ public class NotificationPanel implements ConnectionCallbacks, GoogleApiClient.O
 	{
         //Close the wearable and our notification
 
-        if (client.isConnected() && wearNotify) {
+        if (client.isConnected()) {
 
             //This is working
 

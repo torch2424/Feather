@@ -18,6 +18,9 @@ public class NotificationActivity extends Activity
     //Our handler to run on the main ui thread
     private static Handler UIHandler;
 
+    //Our boolean to state that we have been created
+    public static boolean isActive;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -45,6 +48,9 @@ public class NotificationActivity extends Activity
 
         //Set up our handler
         UIHandler = new Handler(Looper.getMainLooper());
+
+        //set is active to true
+        isActive = true;
     }
 
     //Function to change our textview ticker text

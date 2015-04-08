@@ -34,11 +34,6 @@ public class OngoingService extends WearableListenerService {
     //Our notification manager so that we can close and open
     private NotificationManager notificationManager;
 
-    //Boolean to store if notification is active or not
-    //Store it's false here since on create is called multiple times
-    private boolean isActive = false;
-
-
     public OngoingService()
     {
 
@@ -96,7 +91,7 @@ public class OngoingService extends WearableListenerService {
 
                     //Change our ticker text to the specified string
                     //Check with is active to make sure we dont crash
-                    if(isActive) NotificationActivity.changeText(title);
+                    if(NotificationActivity.isActive) NotificationActivity.changeText(title);
                     else Log.d("Feather", "We're not active :'(");
 
                     //We only build our notification when it is started
@@ -109,7 +104,7 @@ public class OngoingService extends WearableListenerService {
                     notificationManager.cancel(NID);
 
                     //is Activer is now false
-                    isActive = false;
+                    NotificationActivity.isActive = false;
                 }
                 else if(path.equals(PATHSTART))
                 {
@@ -144,8 +139,8 @@ public class OngoingService extends WearableListenerService {
                     notificationManager.notify(
                             NID, notificationBuilder.build());
 
-                    //Set our variable is active to true
-                    isActive = true;
+                    //Set our wear variable is active to true
+                    NotificationActivity.isActive = true;
                 }
                 else
                 {
