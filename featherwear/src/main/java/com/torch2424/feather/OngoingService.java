@@ -32,9 +32,6 @@ public class OngoingService extends WearableListenerService {
     private String PATHSTART = "/feather/start";
     private String PATHDISMISS = "/feather/quit";
 
-    //Our notification manager so that we can close and open
-    private NotificationManagerCompat notificationManager;
-
     public OngoingService()
     {
 
@@ -102,8 +99,8 @@ public class OngoingService extends WearableListenerService {
                 {
                     Log.d("Feahter", "Questlove is in the house");
                     //Close the noticiation
-                    notificationManager = NotificationManagerCompat.from(this);
-                    notificationManager.cancel(NID);
+                    NotificationManagerCompat notifyCompat = NotificationManagerCompat.from(this);
+                    notifyCompat.cancel(NID);
 
                     //is Activer is now false
                     NotificationActivity.isActive = false;
@@ -136,8 +133,8 @@ public class OngoingService extends WearableListenerService {
                                             .setDisplayIntent(notificationPendingIntent));
 
                     // Build the notification and show it
-                    notificationManager =
-                            (NotificationManagerCompat)getSystemService(NOTIFICATION_SERVICE);
+                    NotificationManager notificationManagergit  =
+                            (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
                     notificationManager.notify(
                             NID, notificationBuilder.build());
 
