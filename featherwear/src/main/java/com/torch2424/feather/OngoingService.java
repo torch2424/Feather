@@ -133,7 +133,7 @@ public class OngoingService extends WearableListenerService {
                                             .setDisplayIntent(notificationPendingIntent));
 
                     // Build the notification and show it
-                    NotificationManager notificationManagergit  =
+                    NotificationManager notificationManager =
                             (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
                     notificationManager.notify(
                             NID, notificationBuilder.build());
