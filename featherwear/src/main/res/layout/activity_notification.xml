@@ -4,21 +4,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools" android:id="@+id/watch_view_stub"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="@color/blue"
     app:rectLayout="@layout/rect_activity_notification"
     app:roundLayout="@layout/round_activity_notification"
     tools:context="com.torch2424.feather.NotificationActivity"
     tools:deviceIds="wear">
 
     <!-- Our layout -->
-<FrameLayout
-android:layout_width="match_parent"
-android:layout_height="match_parent">
-<TextView
-    android:id="@+id/text_view"
-    android:layout_gravity="center"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"/>
 
     <LinearLayout
         android:id="@+id/buttons"
@@ -26,13 +17,19 @@ android:layout_height="match_parent">
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
 
+        <TextView
+            android:id="@+id/text_view"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
         <Button
             android:id="@+id/prev"
             android:layout_width="35dp"
             android:layout_height="40dp"
             android:layout_margin="8dp"
             android:layout_gravity="center_vertical"
-            android:background="@drawable/prevs" />
+            android:background="@drawable/prevpress" />
 
         <Button
             android:id="@+id/playpause"
@@ -40,7 +37,7 @@ android:layout_height="match_parent">
             android:layout_height="40dp"
             android:layout_margin="8dp"
             android:layout_gravity="center_vertical"
-            android:background="@drawable/playpauses" />
+            android:background="@drawable/playpausepress" />
 
         <Button
             android:id="@+id/next"
@@ -48,8 +45,7 @@ android:layout_height="match_parent">
             android:layout_height="40dp"
             android:layout_margin="8dp"
             android:layout_gravity="center_vertical"
-            android:background="@drawable/nexts" />
+            android:background="@drawable/nextpress" />
     </LinearLayout>
-</FrameLayout>
 
 </android.support.wearable.view.WatchViewStub>

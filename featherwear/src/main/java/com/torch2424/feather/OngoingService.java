@@ -126,7 +126,7 @@ public class OngoingService extends WearableListenerService {
                             new Notification.Builder(this)
                                     .setSmallIcon(R.mipmap.ic_launcher)
                                     .setLargeIcon(BitmapFactory.decodeResource(
-                                            getResources(), R.mipmap.ic_launcher))
+                                            getResources(), getResources().getColor(R.color.blue)))
                                     .setOngoing(true)
                                     .setTicker("")
                                     .extend(new Notification.WearableExtender()
