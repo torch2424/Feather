@@ -38,18 +38,13 @@ public class NotificationActivity extends Activity
         Intent intent = getIntent();
         if (intent != null) {
             mTextView.setText(intent.getStringExtra(TITLE));
-            Log.d("FEATHERWEARTEXTZview", intent.getStringExtra(TITLE));
         }
-        else mTextView.setText("Feather Wear");
 
         //Set up our handler
         UIHandler = new Handler(Looper.getMainLooper());
 
         //set is active to true
         isActive = true;
-
-        //check if the textview is empty
-        Log.d("FEATHERWEARTEXTZview", mTextView.getText().toString());
     }
 
     //Function to change our textview ticker text
