@@ -6,6 +6,7 @@ import android.app.PendingIntent;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.NotificationManagerCompat;
 import android.util.DisplayMetrics;
@@ -126,7 +127,8 @@ public class OngoingService extends WearableListenerService {
                     //create a bitmap we want as our background
                     //We get it and and just fill it with our blue
                     Bitmap image = Bitmap.createBitmap(50, 50, Bitmap.Config.ARGB_8888);
-                    image.eraseColor(R.color.blue);
+                    //Feather blue color
+                    image.eraseColor(Color.argb(255, 0, 153, 204));
 
                     // Create the ongoing notification
                     Notification.Builder notificationBuilder =
@@ -136,8 +138,10 @@ public class OngoingService extends WearableListenerService {
                                     .setTicker("")
                                     .extend(new Notification.WearableExtender()
                                             .setDisplayIntent(notificationPendingIntent)
-                                                    //setting the background of the actual notification
-                                            .setBackground(image));
+                                            //setting the background of the actual notification
+                                            .setBackground(image)
+                                            //Setting our action button
+                                            );
 
                     // Build the notification and show it
                     NotificationManager notificationManager =
