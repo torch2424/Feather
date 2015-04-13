@@ -38,32 +38,32 @@
 
         <Button
             android:id="@+id/prev"
-            android:layout_width="35dp"
-            android:layout_height="40dp"
+            android:layout_width="38dp"
+            android:layout_height="43dp"
             android:layout_margin="8dp"
             android:layout_gravity="center_vertical"
             android:background="@drawable/prevs" />
 
         <Button
             android:id="@+id/playpause"
-            android:layout_width="35dp"
-            android:layout_height="40dp"
+            android:layout_width="38dp"
+            android:layout_height="43dp"
             android:layout_margin="8dp"
             android:layout_gravity="center_vertical"
             android:background="@drawable/playpauses" />
 
         <Button
             android:id="@+id/next"
-            android:layout_width="35dp"
-            android:layout_height="40dp"
+            android:layout_width="38dp"
+            android:layout_height="43dp"
             android:layout_margin="8dp"
             android:layout_gravity="center_vertical"
             android:background="@drawable/nexts" />
 
         <Button
             android:id="@+id/quit"
-            android:layout_width="20dp"
-            android:layout_height="25dp"
+            android:layout_width="25dp"
+            android:layout_height="30dp"
             android:layout_margin="8dp"
             android:layout_gravity="center_vertical"
             android:background="@drawable/quits" />
