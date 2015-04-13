@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools" android:id="@+id/watch_view_stub"
     android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/blue"
     app:rectLayout="@layout/rect_activity_notification"
     app:roundLayout="@layout/round_activity_notification"
     tools:context="com.torch2424.feather.NotificationActivity"
@@ -12,8 +13,7 @@
     <!-- Our layout -->
 <FrameLayout
 android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:background="@color/blue">
+android:layout_height="match_parent">
 <TextView
     android:id="@+id/text_view"
     android:layout_gravity="center"
@@ -32,7 +32,7 @@ android:background="@color/blue">
             android:layout_height="40dp"
             android:layout_margin="8dp"
             android:layout_gravity="center_vertical"
-            android:background="@mipmap/prevs" />
+            android:background="@drawable/prevs" />
 
         <Button
             android:id="@+id/playpause"
@@ -40,7 +40,7 @@ android:background="@color/blue">
             android:layout_height="40dp"
             android:layout_margin="8dp"
             android:layout_gravity="center_vertical"
-            android:background="@mipmap/playpauses" />
+            android:background="@drawable/playpauses" />
 
         <Button
             android:id="@+id/next"
@@ -48,7 +48,7 @@ android:background="@color/blue">
             android:layout_height="40dp"
             android:layout_margin="8dp"
             android:layout_gravity="center_vertical"
-            android:background="@mipmap/nexts" />
+            android:background="@drawable/nexts" />
     </LinearLayout>
 </FrameLayout>
 
