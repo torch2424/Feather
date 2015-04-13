@@ -29,9 +29,8 @@ public class NotificationActivity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification);
         //Create our view
-        final  CardScrollView stub =
-                (CardScrollView) findViewById(R.id.card_scroll_view);
-        stub.setCardGravity(Gravity.BOTTOM);
+        //CardScrollView stub =
+                //(CardScrollView) findViewById(R.id.card_scroll_view);
         /*
         code from when we were using a watchview stub
 
