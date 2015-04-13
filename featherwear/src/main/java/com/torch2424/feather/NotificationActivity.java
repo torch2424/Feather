@@ -48,12 +48,13 @@ public class NotificationActivity extends Activity
         //Set our textview to the view in our layout
         mTextView = (TextView) findViewById(R.id.text_view);
 
-        //Get our intent, and if there is one, set the title to that
+        //Get our intent, and if there is one, set the title to that, or else the starting text
         Intent intent = getIntent();
         if (intent != null) {
             mTextView.setText(intent.getStringExtra(TITLE));
 
         }
+        else mTextView.setText(getResources().getText(R.string.appstart));
 
         //Set up our handler
         UIHandler = new Handler(Looper.getMainLooper());
