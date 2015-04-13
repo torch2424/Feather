@@ -1,23 +1,71 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.wearable.view.WatchViewStub
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools" android:id="@+id/watch_view_stub"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    app:rectLayout="@layout/rect_activity_notification"
-    app:roundLayout="@layout/round_activity_notification"
-    tools:context="com.torch2424.feather.NotificationActivity"
-    tools:deviceIds="wear">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <!-- Our layout -->
-<FrameLayout
-android:layout_width="match_parent"
-android:layout_height="match_parent">
-<TextView
-    android:id="@+id/text_view"
-    android:layout_gravity="center"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"/>
-</FrameLayout>
+    <android.support.wearable.view.BoxInsetLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/background"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
 
-</android.support.wearable.view.WatchViewStub>
+        <android.support.wearable.view.CardScrollView
+            android:id="@+id/card_scroll_view"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            app:layout_box="bottom">
+
+            <android.support.wearable.view.CardFrame
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent">
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:paddingLeft="5dp">
+
+                <TextView
+                    android:id="@+id/text_view"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/appstart"/>
+
+                <LinearLayout
+                    android:id="@+id/buttons"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <Button
+                        android:id="@+id/prev"
+                        android:layout_width="15dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="8dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/prevs" />
+
+                    <Button
+                        android:id="@+id/playpause"
+                        android:layout_width="35dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="8dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/playpauses" />
+
+                    <Button
+                        android:id="@+id/next"
+                        android:layout_width="35dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="8dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/nexts" />
+                </LinearLayout>
+
+                </LinearLayout>
+            </android.support.wearable.view.CardFrame>
+        </android.support.wearable.view.CardScrollView>
+    </android.support.wearable.view.BoxInsetLayout>
+
+</RelativeLayout>
