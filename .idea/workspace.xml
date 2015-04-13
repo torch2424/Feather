@@ -104,31 +104,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_notification.xml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="activity_notification.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/featherwear/src/main/res/layout/activity_notification.xml">
           <provider editor-type-id="android-designer">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-19.5" vertical-offset="393" max-vertical-offset="1050">
-              <caret line="60" column="31" selection-start-line="60" selection-start-column="31" selection-end-line="60" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.3652968" vertical-offset="45" max-vertical-offset="1125">
+              <caret line="19" column="52" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
               <folding>
-                <element signature="e#1209#1227#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="medianotification.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/medianotification.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6392694" vertical-offset="450" max-vertical-offset="1170">
-              <caret line="58" column="37" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="37" />
-              <folding>
-                <element signature="e#1187#1205#0" expanded="true" />
+                <element signature="e#1369#1387#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2049,8 +2034,8 @@
         <option value="$PROJECT_DIR$/featherwear/src/main/res/drawable-xxhdpi/nexts.xml" />
         <option value="$PROJECT_DIR$/featherwear/src/main/res/drawable-xxhdpi/playpauses.xml" />
         <option value="$PROJECT_DIR$/featherwear/src/main/res/drawable-xxhdpi/prevs.xml" />
-        <option value="$PROJECT_DIR$/featherwear/src/main/res/layout/activity_notification.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/medianotification.xml" />
+        <option value="$PROJECT_DIR$/featherwear/src/main/res/layout/activity_notification.xml" />
       </list>
     </option>
   </component>
@@ -2303,7 +2288,7 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="TA093017D4" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="localhost:4444" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_S_API_21" />
     <property name="FullScreen" value="false" />
     <property name="LayoutCode.rearrangeEntriesJava" value="false" />
@@ -2331,7 +2316,7 @@
       <recent name="com.torch2424.feather.Ui" />
     </key>
   </component>
-  <component name="RunManager" selected="Android Application.app">
+  <component name="RunManager" selected="Android Application.featherwear">
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
       <module name="" />
       <option name="TESTING_TYPE" value="0" />
@@ -2560,7 +2545,7 @@
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287234" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21978022" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21978022" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2980,19 +2965,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/featherwear/src/main/res/layout/activity_notification.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.5" vertical-offset="393" max-vertical-offset="1050">
-          <caret line="60" column="31" selection-start-line="60" selection-start-column="31" selection-end-line="60" selection-end-column="31" />
-          <folding>
-            <element signature="e#1209#1227#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/medianotification.xml">
       <provider editor-type-id="android-designer">
         <state />
@@ -3002,6 +2974,19 @@
           <caret line="58" column="37" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="37" />
           <folding>
             <element signature="e#1187#1205#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/featherwear/src/main/res/layout/activity_notification.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3652968" vertical-offset="45" max-vertical-offset="1125">
+          <caret line="19" column="52" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
+          <folding>
+            <element signature="e#1369#1387#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -15,6 +15,10 @@
             android:layout_width="match_parent"
             app:layout_box="bottom">
 
+            <android.support.wearable.view.CardFrame
+                android:layout_height="match_parent"
+                android:layout_width="match_parent">
+
                 <LinearLayout
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
@@ -59,6 +63,7 @@
                 </LinearLayout>
 
                 </LinearLayout>
+            </android.support.wearable.view.CardFrame>
         </android.support.wearable.view.CardScrollView>
     </android.support.wearable.view.BoxInsetLayout>
 
