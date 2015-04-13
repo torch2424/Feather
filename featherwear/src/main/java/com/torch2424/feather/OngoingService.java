@@ -4,9 +4,11 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v4.app.NotificationManagerCompat;
+import android.util.DisplayMetrics;
 import android.util.Log;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -121,16 +123,21 @@ public class OngoingService extends WearableListenerService {
                                     notificationIntent,
                                     PendingIntent.FLAG_UPDATE_CURRENT);
 
+                    //create a bitmap we want as our background
+                    //We get it and and just fill it with our blue
+                    Bitmap image = Bitmap.createBitmap(50, 50, Bitmap.Config.ARGB_8888);
+                    image.eraseColor(R.color.blue);
+
                     // Create the ongoing notification
                     Notification.Builder notificationBuilder =
                             new Notification.Builder(this)
                                     .setSmallIcon(R.mipmap.ic_launcher)
-                                    .setLargeIcon(BitmapFactory.decodeResource(
-                                            getResources(), getResources().getColor(R.color.blue)))
                                     .setOngoing(true)
                                     .setTicker("")
                                     .extend(new Notification.WearableExtender()
-                                            .setDisplayIntent(notificationPendingIntent));
+                                            .setDisplayIntent(notificationPendingIntent)
+                                                    //setting the background of the actual notification
+                                            .setBackground(image));
 
                     // Build the notification and show it
                     NotificationManager notificationManager =
