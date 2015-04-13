@@ -24,26 +24,27 @@
 
         <Button
             android:id="@+id/prev"
-            android:layout_width="31dp"
-            android:layout_height="31dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_gravity="center_vertical"
-            android:layout_margin="11dp"
+            android:layout_marginRight="10dp"
             android:background="@drawable/prevs" />
 
         <Button
             android:id="@+id/playpause"
-            android:layout_width="31dp"
-            android:layout_height="31dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_gravity="center_vertical"
-            android:layout_margin="11dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:background="@drawable/playpauses" />
 
         <Button
             android:id="@+id/next"
-            android:layout_width="31dp"
-            android:layout_height="31dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_gravity="center_vertical"
-            android:layout_margin="11dp"
+            android:layout_marginLeft="10dp"
             android:background="@drawable/nexts" />
     </LinearLayout>
 
