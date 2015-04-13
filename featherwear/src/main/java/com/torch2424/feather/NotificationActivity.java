@@ -8,6 +8,7 @@ import android.os.Looper;
 import android.support.wearable.view.CardScrollView;
 import android.support.wearable.view.WatchViewStub;
 import android.view.Gravity;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class NotificationActivity extends Activity
@@ -28,21 +29,6 @@ public class NotificationActivity extends Activity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification);
-        //Create our view
-        //CardScrollView stub =
-                //(CardScrollView) findViewById(R.id.card_scroll_view);
-        /*
-        code from when we were using a watchview stub
-
-        stub.setOnLayoutInflatedListener(new WatchViewStub.OnLayoutInflatedListener() {
-            @Override
-            public void onLayoutInflated(WatchViewStub stub) {
-                //Set our textview
-                mTextView = (TextView) stub.findViewById(R.id.text);
-            }
-        });
-
-        */
 
         //Set our textview to the view in our layout
         mTextView = (TextView) findViewById(R.id.text_view);
@@ -53,7 +39,6 @@ public class NotificationActivity extends Activity
             mTextView.setText(intent.getStringExtra(TITLE));
 
         }
-        else mTextView.setText(getResources().getText(R.string.appstart));
 
         //Set up our handler
         UIHandler = new Handler(Looper.getMainLooper());
