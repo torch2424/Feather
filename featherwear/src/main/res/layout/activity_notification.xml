@@ -1,51 +1,50 @@
- <LinearLayout
-                    xmlns:android="http://schemas.android.com/apk/res/android"
-                    android:layout_height="wrap_content"
-                    android:layout_width="match_parent"
-     android:layout_gravity="center"
-     android:id="@+id/wearcard"
-                    android:orientation="vertical">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/wearcard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/text_view"
-                        android:layout_gravity="center_horizontal"
-                        android:gravity="center"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/appstart"
-                        android:textColor="@color/black"/>
+    <TextView
+        android:id="@+id/text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:text="@string/appstart"
+        android:textColor="@color/black" />
 
 
-                    <LinearLayout
-                    android:id="@+id/buttons"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:orientation="horizontal" >
+    <LinearLayout
+        android:id="@+id/buttons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal">
 
-                    <Button
-                        android:id="@+id/prev"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:layout_margin="12dp"
-                        android:layout_gravity="center_vertical"
-                        android:background="@drawable/prevs" />
+        <Button
+            android:id="@+id/prev"
+            android:layout_width="31dp"
+            android:layout_height="31dp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="11dp"
+            android:background="@drawable/prevs" />
 
-                    <Button
-                        android:id="@+id/playpause"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:layout_margin="12dp"
-                        android:layout_gravity="center_vertical"
-                        android:background="@drawable/playpauses" />
+        <Button
+            android:id="@+id/playpause"
+            android:layout_width="31dp"
+            android:layout_height="31dp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="11dp"
+            android:background="@drawable/playpauses" />
 
-                    <Button
-                        android:id="@+id/next"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:layout_margin="12dp"
-                        android:layout_gravity="center_vertical"
-                        android:background="@drawable/nexts" />
-                </LinearLayout>
+        <Button
+            android:id="@+id/next"
+            android:layout_width="31dp"
+            android:layout_height="31dp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="11dp"
+            android:background="@drawable/nexts" />
+    </LinearLayout>
 
-                </LinearLayout>
+</LinearLayout>
