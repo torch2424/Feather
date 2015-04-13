@@ -24,40 +24,43 @@
                     android:layout_width="match_parent"
                     android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/text_view"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/appstart"/>
+                    <TextView
+                        android:id="@+id/text_view"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/appstart"
+                        android:textColor="@color/black"/>
 
-                <LinearLayout
+
+                    <LinearLayout
                     android:id="@+id/buttons"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
                     android:orientation="horizontal" >
 
                     <Button
                         android:id="@+id/prev"
-                        android:layout_width="30dp"
-                        android:layout_height="35dp"
-                        android:layout_margin="8dp"
+                        android:layout_width="10dp"
+                        android:layout_height="15dp"
+                        android:layout_margin="4dp"
                         android:layout_gravity="center_vertical"
                         android:background="@drawable/prevs" />
 
                     <Button
                         android:id="@+id/playpause"
-                        android:layout_width="30dp"
-                        android:layout_height="35dp"
-                        android:layout_margin="8dp"
+                        android:layout_width="10dp"
+                        android:layout_height="15dp"
+                        android:layout_margin="4dp"
                         android:layout_gravity="center_vertical"
                         android:background="@drawable/playpauses" />
 
                     <Button
                         android:id="@+id/next"
-                        android:layout_width="30dp"
-                        android:layout_height="35dp"
-                        android:layout_margin="8dp"
+                        android:layout_width="10dp"
+                        android:layout_height="15dp"
+                        android:layout_margin="4dp"
                         android:layout_gravity="center_vertical"
                         android:background="@drawable/nexts" />
                 </LinearLayout>
