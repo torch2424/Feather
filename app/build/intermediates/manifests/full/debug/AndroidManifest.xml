@@ -132,6 +132,12 @@
                 android:value="com.torch2424.feather.Ui" />
         </activity>
 
+        <service
+            android:name="com.torch2424.feather.WearService"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
+
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />

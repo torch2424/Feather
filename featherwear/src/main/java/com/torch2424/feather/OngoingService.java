@@ -131,7 +131,8 @@ public class OngoingService extends WearableListenerService {
                             new Notification.Builder(this)
                                     .setSmallIcon(R.mipmap.ic_launcher)
                                     .setOngoing(true)
-                                    .setTicker("")
+                                    //This may have to be "" but trying to test a bug fix
+                                    .setTicker("Feather Wear")
                                     //Need to create a new pending intent for app
                                     .addAction(R.drawable.quit,
                                             getString(R.string.quit), notificationPendingIntent)

@@ -80,9 +80,9 @@ public class WearService extends WearableListenerService
             if (event.getType() == DataEvent.TYPE_CHANGED) {
                 String path = event.getDataItem().getUri().getPath();
                 //Put our path if else statements here
-                if(true)
+                if(path.equals(PATHNEXT))
                 {
-
+                    Ui.next(null);
                 }
                 else
                 {

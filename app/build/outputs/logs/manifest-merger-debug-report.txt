@@ -115,17 +115,17 @@ ADDED from AndroidManifest.xml:18:5
 	android:name
 		ADDED from AndroidManifest.xml:18:22
 uses-permission#android.permission.READ_PHONE_STATE
-ADDED from AndroidManifest.xml:20:5
+ADDED from AndroidManifest.xml:19:5
 	android:name
-		ADDED from AndroidManifest.xml:20:22
+		ADDED from AndroidManifest.xml:19:22
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from AndroidManifest.xml:21:5
+ADDED from AndroidManifest.xml:20:5
 	android:maxSdkVersion
-		ADDED from AndroidManifest.xml:23:9
-	android:name
 		ADDED from AndroidManifest.xml:22:9
+	android:name
+		ADDED from AndroidManifest.xml:21:9
 meta-data#com.google.android.gms.version
-ADDED from AndroidManifest.xml:26:5
+ADDED from AndroidManifest.xml:25:5
 MERGED from com.google.android.gms:play-services-base:7.0.0:21:9
 MERGED from com.google.android.gms:play-services-base:7.0.0:21:9
 MERGED from com.google.android.gms:play-services-base:7.0.0:21:9
@@ -152,7 +152,7 @@ MERGED from com.google.android.gms:play-services-base:7.0.0:21:9
 MERGED from com.google.android.gms:play-services-base:7.0.0:21:9
 MERGED from com.google.android.gms:play-services-base:7.0.0:21:9
 	android:name
-		ADDED from AndroidManifest.xml:26:16
+		ADDED from AndroidManifest.xml:26:9
 	android:value
 		ADDED from AndroidManifest.xml:27:9
 application
@@ -340,3 +340,11 @@ ADDED from AndroidManifest.xml:130:13
 		ADDED from AndroidManifest.xml:131:17
 	android:value
 		ADDED from AndroidManifest.xml:132:17
+service#com.torch2424.feather.WearService
+ADDED from AndroidManifest.xml:135:9
+	android:exported
+		ADDED from AndroidManifest.xml:138:13
+	android:enabled
+		ADDED from AndroidManifest.xml:137:13
+	android:name
+		ADDED from AndroidManifest.xml:136:13
