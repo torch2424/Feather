@@ -93,4 +93,12 @@ public class WearService extends WearableListenerService
             }
         }
     }
+
+    // No unbind, since we wnat service running even when unbinded
+    @Override
+    public void onDestroy()
+    {
+        // to make sure it isnt recreated
+        stopSelf();
+    }
 }

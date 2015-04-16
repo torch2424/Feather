@@ -82,7 +82,7 @@ public class BGMusic extends Service implements OnCompletionListener
 		bgmusic.stop();
 		bgmusic.reset();
 		bgmusic.release();
-		// to make sure it is recreated
+		// to make sure it isnt recreated
 		stopSelf();
 
 		// quit notification

@@ -79,8 +79,8 @@ public class NotificationPanel implements ConnectionCallbacks, GoogleApiClient.O
         client.connect();
 
         //Start our service for wearable
-        wearIntent = new Intent(parent.getApplicationContext(), WearService.class);
-        parent.getApplicationContext().startService(wearIntent);
+        wearIntent = new Intent(parent, WearService.class);
+        parent.startService(wearIntent);
 
         //Create our initial notification
 		Notification.Builder builder = new Notification.Builder(context);
