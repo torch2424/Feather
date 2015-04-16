@@ -112,6 +112,7 @@ public class NotificationActivity extends Activity
             //Send to wearable
             Wearable.DataApi.putDataItem(GoogClient, request);
         }
+        else Log.d("FeatherWEAR", "Client is not connected");
     }
 
 }
