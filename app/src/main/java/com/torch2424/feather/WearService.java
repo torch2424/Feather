@@ -39,6 +39,9 @@ public class WearService extends WearableListenerService
     private String PATHPLAY = "/feather/play";
     private String PATHQUIT = "/feather/quitfeather";
 
+    //Our handler to change songs and things
+    Handler handler;
+
     public WearService()
     {
 
@@ -56,6 +59,9 @@ public class WearService extends WearableListenerService
         //Show that we've created our service
         Log.d("Feather", "Create the phone listener");
 
+        //Initialize our handler
+        handler = new Handler(Looper.getMainLooper());
+
         //Dont change is active here since on create is called  multiple times
     }
 
@@ -65,8 +71,6 @@ public class WearService extends WearableListenerService
         //Get all of our evnets and put into a list
         final List<DataEvent> events = FreezableUtils.freezeIterable(dataEvents);
         dataEvents.close();
-
-        Log.d("FEATHER", "WE IN HERE");
 
         //If our client has lost connection, try reconnecting, if we cant, return and leave
         if (!GoogClient.isConnected()) {
@@ -86,10 +90,25 @@ public class WearService extends WearableListenerService
                 //Put our path if else statements here
                 if(path.equals(PATHNEXT))
                 {
-                    Handler handler = new Handler(Looper.getMainLooper());
                     handler.post(new Runnable() {
                         public void run() {
                            Ui.next(Ui.filePath);
+                        }
+                    });
+                }
+                else if(path.equals(PATHPLAY))
+                {
+                    handler.post(new Runnable() {
+                        public void run() {
+                            Ui.playPause(Ui.filePath);
+                        }
+                    });
+                }
+                else if(path.equals(PATHPREV))
+                {
+                    handler.post(new Runnable() {
+                        public void run() {
+                            Ui.prev(Ui.filePath);
                         }
                     });
                 }
@@ -101,10 +120,10 @@ public class WearService extends WearableListenerService
         }
     }
 
-    // No unbind, since we wnat service running even when unbinded
     @Override
     public void onDestroy()
     {
+        Log.d("FEATHER", "BYEEEEE");
         // to make sure it isnt recreated
         stopSelf();
     }

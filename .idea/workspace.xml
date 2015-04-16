@@ -109,11 +109,15 @@
       <file leaf-file-name="WearService.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/torch2424/feather/WearService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5387994" vertical-offset="652" max-vertical-offset="1410">
-              <caret line="91" column="46" selection-start-line="91" selection-start-column="46" selection-end-line="91" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.6486091" vertical-offset="1012" max-vertical-offset="1695">
+              <caret line="120" column="5" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="5" />
               <folding>
-                <element signature="e#3059#3216#0" expanded="true" />
-                <element signature="e#3193#3194#0" expanded="true" />
+                <element signature="e#3099#3256#0" expanded="true" />
+                <element signature="e#3233#3234#0" expanded="true" />
+                <element signature="e#3375#3538#0" expanded="true" />
+                <element signature="e#3515#3516#0" expanded="true" />
+                <element signature="e#3657#3815#0" expanded="true" />
+                <element signature="e#3792#3793#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2958,11 +2962,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/torch2424/feather/WearService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5387994" vertical-offset="652" max-vertical-offset="1410">
-          <caret line="91" column="46" selection-start-line="91" selection-start-column="46" selection-end-line="91" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.6486091" vertical-offset="1012" max-vertical-offset="1695">
+          <caret line="120" column="5" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="5" />
           <folding>
-            <element signature="e#3059#3216#0" expanded="true" />
-            <element signature="e#3193#3194#0" expanded="true" />
+            <element signature="e#3099#3256#0" expanded="true" />
+            <element signature="e#3233#3234#0" expanded="true" />
+            <element signature="e#3375#3538#0" expanded="true" />
+            <element signature="e#3515#3516#0" expanded="true" />
+            <element signature="e#3657#3815#0" expanded="true" />
+            <element signature="e#3792#3793#0" expanded="true" />
           </folding>
         </state>
       </provider>
