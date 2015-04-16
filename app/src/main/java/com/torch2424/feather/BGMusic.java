@@ -86,7 +86,7 @@ public class BGMusic extends Service implements OnCompletionListener
 		stopSelf();
 
 		// quit notification
-		notification.notificationCancel();
+		notification.notificationCancel(this);
 	}
 
 	@Override

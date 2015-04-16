@@ -52,7 +52,6 @@ public class NotificationPanel implements ConnectionCallbacks, GoogleApiClient.O
     private String PATHSTART = "/feather/start";
 
     // wear Service
-    static WearService wearService;
     Intent wearIntent;
 
 
@@ -80,6 +79,8 @@ public class NotificationPanel implements ConnectionCallbacks, GoogleApiClient.O
         client.connect();
 
         //Start our service for wearable
+        wearIntent = new Intent(parent.getApplicationContext(), WearService.class);
+        parent.getApplicationContext().startService(wearIntent);
 
         //Create our initial notification
 		Notification.Builder builder = new Notification.Builder(context);
@@ -182,7 +183,7 @@ public class NotificationPanel implements ConnectionCallbacks, GoogleApiClient.O
     }
 
     //Close our notification
-	public void notificationCancel()
+	public void notificationCancel(Context context)
 	{
         //Close the wearable and our notification
 
@@ -208,6 +209,8 @@ public class NotificationPanel implements ConnectionCallbacks, GoogleApiClient.O
             //finally disconnect our client
             client.disconnect();
         }
+        //Stop our service
+        context.stopService(wearIntent);
         notifyMan.cancel(NID);
 	}
 
