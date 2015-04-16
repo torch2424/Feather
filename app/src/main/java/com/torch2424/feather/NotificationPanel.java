@@ -4,11 +4,14 @@ import android.annotation.SuppressLint;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.IBinder;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.widget.RemoteViews;
@@ -22,6 +25,7 @@ import com.google.android.gms.wearable.PutDataMapRequest;
 import com.google.android.gms.wearable.PutDataRequest;
 import com.google.android.gms.wearable.Wearable;
 
+import java.io.IOException;
 import java.util.Date;
 
 import static com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
@@ -76,7 +80,6 @@ public class NotificationPanel implements ConnectionCallbacks, GoogleApiClient.O
         client.connect();
 
         //Start our service for wearable
-
 
         //Create our initial notification
 		Notification.Builder builder = new Notification.Builder(context);

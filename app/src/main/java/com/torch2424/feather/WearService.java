@@ -64,7 +64,7 @@ public class WearService extends WearableListenerService
         final List<DataEvent> events = FreezableUtils.freezeIterable(dataEvents);
         dataEvents.close();
 
-        Log.d("FEATHER", "WE IN HERE");
+        Log.d("FEATHER", "WE IN HERE")
 
         //If our client has lost connection, try reconnecting, if we cant, return and leave
         if (!GoogClient.isConnected()) {
