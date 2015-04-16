@@ -7,7 +7,9 @@ import android.app.Service;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.os.Handler;
 import android.os.IBinder;
+import android.os.Looper;
 import android.support.v4.app.NotificationManagerCompat;
 import android.util.Log;
 
@@ -84,7 +86,12 @@ public class WearService extends WearableListenerService
                 //Put our path if else statements here
                 if(path.equals(PATHNEXT))
                 {
-                    Ui.next(Ui.filePath);
+                    Handler handler = new Handler(Looper.getMainLooper());
+                    handler.post(new Runnable() {
+                        public void run() {
+                           Ui.next(Ui.filePath);
+                        }
+                    });
                 }
                 else
                 {
