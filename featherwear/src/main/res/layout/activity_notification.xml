@@ -29,7 +29,8 @@
             android:layout_height="30dp"
             android:layout_gravity="center_vertical"
             android:layout_marginRight="10dp"
-            android:background="@drawable/prevs" />
+            android:background="@drawable/prevs"
+            android:onClick="mediaButton"/>
 
         <Button
             android:id="@+id/playpause"
@@ -38,7 +39,8 @@
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:background="@drawable/playpauses" />
+            android:background="@drawable/playpauses"
+            android:onClick="mediaButton"/>
 
         <Button
             android:id="@+id/next"
@@ -46,7 +48,8 @@
             android:layout_height="30dp"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="10dp"
-            android:background="@drawable/nexts" />
+            android:background="@drawable/nexts"
+            android:onClick="mediaButton"/>
     </LinearLayout>
 
 </LinearLayout>

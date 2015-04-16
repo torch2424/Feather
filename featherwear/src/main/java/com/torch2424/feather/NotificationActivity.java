@@ -9,6 +9,7 @@ import android.support.wearable.view.CardScrollView;
 import android.support.wearable.view.WatchViewStub;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -59,6 +60,12 @@ public class NotificationActivity extends Activity
 
         //Run our handler, no need for a second thread
         UIHandler.post(r);
+    }
+
+    //Function that is called when our media buttons are clicked
+    public void mediaButton(View view)
+    {
+        Log.d("FEATHER", "PRETZELS IS THE SAME!!!!!");
     }
 
 }
