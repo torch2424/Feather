@@ -13,6 +13,13 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.wearable.PutDataMapRequest;
+import com.google.android.gms.wearable.PutDataRequest;
+import com.google.android.gms.wearable.Wearable;
+
+import java.util.Date;
+
 public class NotificationActivity extends Activity
 {
 
@@ -25,6 +32,18 @@ public class NotificationActivity extends Activity
 
     //Our boolean to state that we have been created
     public static boolean isActive;
+
+    //Our google api clinet
+    private GoogleApiClient GoogClient;
+
+    //our "constants" to be defined
+    private final String KEY = "Feather";
+    private final int NID = 548853;
+    private String PATHNEXT = "/feather/next";
+    private String PATHPREV= "/feather/previous";
+    private String PATHPLAY = "/feather/play";
+    private String PATHQUIT = "/feather/quitfeather";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -46,6 +65,12 @@ public class NotificationActivity extends Activity
 
         //set is active to true
         isActive = true;
+
+        //Build our client
+        GoogClient = new GoogleApiClient.Builder(this)
+                .addApi(Wearable.API)
+                .build();
+        GoogClient.connect();
     }
 
     //Function to change our textview ticker text
@@ -65,7 +90,26 @@ public class NotificationActivity extends Activity
     //Function that is called when our media buttons are clicked
     public void mediaButton(View view)
     {
-        Log.d("FEATHER", "PRETZELS IS THE SAME!!!!!");
+        //Send this whenever we redo our notification, that way title is same on wear
+        if (GoogClient.isConnected())
+        {
+            //Set our path of our request, depending on our button
+            String button = "";
+            if(view.getId() == R.id.next) button = PATHNEXT;
+            else if(view.getId() == R.id.playpause) button = PATHPLAY;
+            else button = PATHPREV;
+            PutDataMapRequest putDataMapRequest = PutDataMapRequest.create(button);
+
+            // Add data to the request (Just so it has changed and it is recieved
+            putDataMapRequest.getDataMap().
+                    putLong("time", new Date().getTime());
+
+            //request our request
+            PutDataRequest request = putDataMapRequest.asPutDataRequest();
+
+            //Send to wearable
+            Wearable.DataApi.putDataItem(GoogClient, request);
+        }
     }
 
 }
