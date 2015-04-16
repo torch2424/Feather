@@ -123,8 +123,8 @@ public class WearService extends WearableListenerService
     @Override
     public void onDestroy()
     {
-        Log.d("FEATHER", "BYEEEEE");
         // to make sure it isnt recreated
+        // (It is for a little, but once app fully closes it is closed fully again)
         stopSelf();
     }
 }
