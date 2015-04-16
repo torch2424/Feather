@@ -87,10 +87,10 @@
       <file leaf-file-name="OngoingService.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/featherwear/src/main/java/com/torch2424/feather/OngoingService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2235">
-              <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="35" selection-end-column="49" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="397" max-vertical-offset="2175">
+              <caret line="73" column="9" selection-start-line="73" selection-start-column="9" selection-end-line="73" selection-end-column="9" />
               <folding>
-                <element signature="e#5767#5791#0" expanded="true" />
+                <element signature="e#5733#5757#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -99,8 +99,8 @@
       <file leaf-file-name="WearService.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/torch2424/feather/WearService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.30746704" vertical-offset="0" max-vertical-offset="683">
-              <caret line="21" column="47" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
+            <state vertical-scroll-proportion="0.4509517" vertical-offset="502" max-vertical-offset="1185">
+              <caret line="75" column="9" selection-start-line="75" selection-start-column="9" selection-end-line="75" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -2032,8 +2032,8 @@
         <option value="$PROJECT_DIR$/featherwear/src/main/res/layout/activity_notification.xml" />
         <option value="$PROJECT_DIR$/featherwear/src/main/java/com/torch2424/feather/NotificationActivity.java" />
         <option value="$PROJECT_DIR$/featherwear/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/featherwear/src/main/java/com/torch2424/feather/OngoingService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/torch2424/feather/WearService.java" />
+        <option value="$PROJECT_DIR$/featherwear/src/main/java/com/torch2424/feather/OngoingService.java" />
       </list>
     </option>
   </component>
@@ -2852,18 +2852,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/featherwear/src/main/java/com/torch2424/feather/OngoingService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2235">
-          <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="35" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="397" max-vertical-offset="2175">
+          <caret line="73" column="9" selection-start-line="73" selection-start-column="9" selection-end-line="73" selection-end-column="9" />
           <folding>
-            <element signature="e#5767#5791#0" expanded="true" />
+            <element signature="e#5733#5757#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/torch2424/feather/WearService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30746704" vertical-offset="0" max-vertical-offset="683">
-          <caret line="21" column="47" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.4509517" vertical-offset="502" max-vertical-offset="1185">
+          <caret line="75" column="9" selection-start-line="75" selection-start-column="9" selection-end-line="75" selection-end-column="9" />
           <folding />
         </state>
       </provider>

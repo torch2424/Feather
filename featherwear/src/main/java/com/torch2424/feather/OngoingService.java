@@ -72,10 +72,6 @@ public class OngoingService extends WearableListenerService {
                 return;
             }
         }
-        else
-        {
-
-        }
 
         //For all of our data events that we receive, do this
         for (DataEvent event : events) {
