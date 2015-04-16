@@ -16,15 +16,15 @@
 
     <!-- to fix lollipop music bug -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission
         android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="18" />
 
-    <!--For wear support -->
-    <meta-data android:name="com.google.android.gms.version"
-        android:value="@integer/google_play_services_version"/>
+    <!-- For wear support -->
+    <meta-data
+        android:name="com.google.android.gms.version"
+        android:value="@integer/google_play_services_version" />
 
     <application
         android:allowBackup="true"
@@ -131,6 +131,12 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.torch2424.feather.Ui" />
         </activity>
+
+        <service
+            android:name=".WearService"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
     </application>
 
 </manifest>
