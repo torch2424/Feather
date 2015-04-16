@@ -47,19 +47,24 @@ public class NotificationPanel implements ConnectionCallbacks, GoogleApiClient.O
     private String PATHDISMISS = "/feather/quit";
     private String PATHSTART = "/feather/start";
 
+    // wear Service
+    static WearService wearService;
+    Intent wearIntent;
+
 
 	@SuppressLint("NewApi")
 	public NotificationPanel(Context parent)
 	{
 		super();
 		context = parent;
+
         //Get our notification
 		String ns = Context.NOTIFICATION_SERVICE;
 		notifyMan = (NotificationManager) context.getSystemService(ns);
 		CharSequence tickerText = "Welcome To Feather";
 		long when = System.currentTimeMillis();
 
-        //Build our client
+        //Build our client for wearable
         client = new GoogleApiClient.Builder(context)
                 .addApi(Wearable.API)
                 //add our listeners
@@ -69,6 +74,8 @@ public class NotificationPanel implements ConnectionCallbacks, GoogleApiClient.O
         //Connect to our client
         Log.d("Feather", "Connecting to Client");
         client.connect();
+
+        //Start our service for wearable
 
 
         //Create our initial notification

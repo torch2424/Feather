@@ -100,6 +100,8 @@ public class NotificationActivity extends Activity
             else button = PATHPREV;
             PutDataMapRequest putDataMapRequest = PutDataMapRequest.create(button);
 
+            Log.d("FEATHERWEAR", button);
+
             // Add data to the request (Just so it has changed and it is recieved
             putDataMapRequest.getDataMap().
                     putLong("time", new Date().getTime());
