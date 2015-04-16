@@ -1064,9 +1064,7 @@ public class Ui extends Activity implements OnSeekBarChangeListener, Runnable
                 }
             }
             //else toast there is no next file
-            else {
-                toast.show("No next File!");
-            }
+            else toast.show("No next File!");
 		}
 		else
 		{

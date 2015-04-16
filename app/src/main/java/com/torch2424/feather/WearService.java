@@ -84,7 +84,7 @@ public class WearService extends WearableListenerService
                 //Put our path if else statements here
                 if(path.equals(PATHNEXT))
                 {
-                    Ui.next(null);
+                    Ui.next(Ui.filePath);
                 }
                 else
                 {

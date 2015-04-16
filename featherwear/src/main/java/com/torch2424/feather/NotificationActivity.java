@@ -91,6 +91,7 @@ public class NotificationActivity extends Activity
     public void mediaButton(View view)
     {
         //Send this whenever we redo our notification, that way title is same on wear
+        //This is completely working
         if (GoogClient.isConnected())
         {
             //Set our path of our request, depending on our button
@@ -102,7 +103,10 @@ public class NotificationActivity extends Activity
 
             Log.d("FEATHERWEAR", button);
 
-            // Add data to the request (Just so it has changed and it is recieved
+            // Add data to the request (Just so it has changed and it is recieved)
+            // Add data to the request
+            putDataMapRequest.getDataMap().putString(KEY,
+                    "Feather Wear");
             putDataMapRequest.getDataMap().
                     putLong("time", new Date().getTime());
 
@@ -112,7 +116,6 @@ public class NotificationActivity extends Activity
             //Send to wearable
             Wearable.DataApi.putDataItem(GoogClient, request);
         }
-        else Log.d("FeatherWEAR", "Client is not connected");
     }
 
 }

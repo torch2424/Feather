@@ -348,3 +348,9 @@ ADDED from AndroidManifest.xml:135:9
 		ADDED from AndroidManifest.xml:137:13
 	android:name
 		ADDED from AndroidManifest.xml:136:13
+intent-filter#com.google.android.gms.wearable.BIND_LISTENER
+ADDED from AndroidManifest.xml:139:13
+action#com.google.android.gms.wearable.BIND_LISTENER
+ADDED from AndroidManifest.xml:140:17
+	android:name
+		ADDED from AndroidManifest.xml:140:25
