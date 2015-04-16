@@ -137,7 +137,7 @@ public class OngoingService extends WearableListenerService {
                                     .setOngoing(true)
                                     .setTicker("")
                                     //Need to create a new pending intent for app
-                                    .addAction(R.drawable.quits,
+                                    .addAction(R.drawable.quit,
                                             getString(R.string.quit), notificationPendingIntent)
                                     .extend(new Notification.WearableExtender()
                                             .setDisplayIntent(notificationPendingIntent)
