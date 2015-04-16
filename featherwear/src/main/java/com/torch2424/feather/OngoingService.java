@@ -136,6 +136,9 @@ public class OngoingService extends WearableListenerService {
                                     .setSmallIcon(R.mipmap.ic_launcher)
                                     .setOngoing(true)
                                     .setTicker("")
+                                    //Need to create a new pending intent for app
+                                    .addAction(R.drawable.quits,
+                                            getString(R.string.quit), notificationPendingIntent)
                                     .extend(new Notification.WearableExtender()
                                             .setDisplayIntent(notificationPendingIntent)
                                             //setting the background of the actual notification
