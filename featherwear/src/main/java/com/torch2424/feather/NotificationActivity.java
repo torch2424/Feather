@@ -118,4 +118,10 @@ public class NotificationActivity extends Activity
         }
     }
 
+    //Function that is used by main activity to quit the app
+    public static void quitApp()
+    {
+
+    }
+
 }

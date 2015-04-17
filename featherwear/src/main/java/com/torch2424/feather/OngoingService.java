@@ -128,8 +128,8 @@ public class OngoingService extends WearableListenerService {
                     image.eraseColor(Color.argb(255, 0, 153, 204));
 
                     // quit for action button
-                    Intent quit = new Intent(this, WearQuit.class);
-                    PendingIntent pendingQuit = PendingIntent.getBroadcast(this, 0, quit, 0);
+                    Intent quit = new Intent(this, MainActivity.class);
+                    PendingIntent pendingQuit = PendingIntent.getService(this, 0, quit, 0);
 
                     // Create the ongoing notification
                     Notification.Builder notificationBuilder =
