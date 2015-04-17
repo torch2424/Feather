@@ -33,16 +33,16 @@ public class NotificationActivity extends Activity
     //Our boolean to state that we have been created
     public static boolean isActive;
 
-    //Our google api clinet
-    private GoogleApiClient GoogClient;
+    //Our google api clinet, static to quit
+    private static GoogleApiClient GoogClient;
 
-    //our "constants" to be defined
-    private final String KEY = "Feather";
+    //our "constants" to be defined, static to quit
+    private static final String KEY = "Feather";
     private final int NID = 548853;
     private String PATHNEXT = "/feather/next";
     private String PATHPREV= "/feather/previous";
     private String PATHPLAY = "/feather/play";
-    private String PATHQUIT = "/feather/quitfeather";
+    private static String PATHQUIT = "/feather/quitfeather";
 
 
     @Override
@@ -121,7 +121,24 @@ public class NotificationActivity extends Activity
     //Function that is used by main activity to quit the app
     public static void quitApp()
     {
+        //Send the data event to quit the app
 
+        PutDataMapRequest putDataMapRequest = PutDataMapRequest.create(PATHQUIT);
+
+        Log.d("FEATHERWEAR", "QUITING FROM WEAR");
+
+        // Add data to the request (Just so it has changed and it is recieved)
+        // Add data to the request
+        putDataMapRequest.getDataMap().putString(KEY,
+                "Feather Wear");
+        putDataMapRequest.getDataMap().
+                putLong("time", new Date().getTime());
+
+        //request our request
+        PutDataRequest request = putDataMapRequest.asPutDataRequest();
+
+        //Send to wearable
+        Wearable.DataApi.putDataItem(GoogClient, request);
     }
 
 }
