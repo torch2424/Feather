@@ -74,8 +74,8 @@
       <file leaf-file-name="NotificationPanel.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/torch2424/feather/NotificationPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1342" max-vertical-offset="3555">
-              <caret line="149" column="77" selection-start-line="142" selection-start-column="8" selection-end-line="149" selection-end-column="77" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1117" max-vertical-offset="3555">
+              <caret line="139" column="46" selection-start-line="139" selection-start-column="46" selection-end-line="139" selection-end-column="46" />
               <folding>
                 <element signature="e#2791#2823#1" expanded="true" />
               </folding>
@@ -106,12 +106,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OngoingService.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="OngoingService.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/featherwear/src/main/java/com/torch2424/feather/OngoingService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.670571" vertical-offset="1402" max-vertical-offset="2325">
-              <caret line="147" column="81" selection-start-line="147" selection-start-column="81" selection-end-line="147" selection-end-column="81" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1200" max-vertical-offset="2250">
+              <caret line="131" column="79" selection-start-line="131" selection-start-column="79" selection-end-line="131" selection-end-column="79" />
+              <folding>
+                <element signature="e#6074#6098#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WearQuit.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/featherwear/src/main/java/com/torch2424/feather/WearQuit.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.24158126" vertical-offset="0" max-vertical-offset="683">
+              <caret line="11" column="57" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
+              <folding>
+                <element signature="e#152#153#0" expanded="true" />
+                <element signature="e#216#217#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -119,7 +134,7 @@
       <file leaf-file-name="WearService.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/torch2424/feather/WearService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="1695">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1695">
               <caret line="125" column="17" selection-start-line="125" selection-start-column="17" selection-end-line="125" selection-end-column="17" />
               <folding>
                 <element signature="e#3099#3256#0" expanded="true" />
@@ -2071,6 +2086,7 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/torch2424/feather/NotificationPanel.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/torch2424/feather/WearService.java" />
         <option value="$PROJECT_DIR$/featherwear/src/main/java/com/torch2424/feather/OngoingService.java" />
+        <option value="$PROJECT_DIR$/featherwear/src/main/java/com/torch2424/feather/WearQuit.java" />
       </list>
     </option>
   </component>
@@ -2570,13 +2586,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/import-summary.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1605">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/edit_playlist.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="412">
@@ -2954,8 +2963,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/torch2424/feather/NotificationPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1342" max-vertical-offset="3555">
-          <caret line="149" column="77" selection-start-line="142" selection-start-column="8" selection-end-line="149" selection-end-column="77" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1117" max-vertical-offset="3555">
+          <caret line="139" column="46" selection-start-line="139" selection-start-column="46" selection-end-line="139" selection-end-column="46" />
           <folding>
             <element signature="e#2791#2823#1" expanded="true" />
           </folding>
@@ -2979,9 +2988,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/featherwear/src/main/java/com/torch2424/feather/OngoingService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.670571" vertical-offset="1402" max-vertical-offset="2325">
-          <caret line="147" column="81" selection-start-line="147" selection-start-column="81" selection-end-line="147" selection-end-column="81" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1200" max-vertical-offset="2250">
+          <caret line="131" column="79" selection-start-line="131" selection-start-column="79" selection-end-line="131" selection-end-column="79" />
+          <folding>
+            <element signature="e#6074#6098#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/featherwear/src/main/java/com/torch2424/feather/WearQuit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24158126" vertical-offset="0" max-vertical-offset="683">
+          <caret line="11" column="57" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
+          <folding>
+            <element signature="e#152#153#0" expanded="true" />
+            <element signature="e#216#217#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
