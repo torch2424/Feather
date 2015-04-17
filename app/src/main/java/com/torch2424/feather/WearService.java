@@ -12,6 +12,7 @@ import android.os.IBinder;
 import android.os.Looper;
 import android.support.v4.app.NotificationManagerCompat;
 import android.util.Log;
+import android.view.KeyEvent;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -111,6 +112,16 @@ public class WearService extends WearableListenerService
                             Ui.prev(Ui.filePath);
                         }
                     });
+                }
+                else if(path.equals(PATHQUIT))
+                {
+                    // send a quit broadcast
+                    Intent quit = new Intent(Intent.ACTION_MEDIA_BUTTON, null);
+                    KeyEvent quitEvent = new KeyEvent(0, 0,
+                            KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ESCAPE, 0);
+                    quit.setAction(Intent.ACTION_MEDIA_BUTTON);
+                    quit.putExtra(Intent.EXTRA_KEY_EVENT, quitEvent);
+                    sendBroadcast(quit);
                 }
                 else
                 {
