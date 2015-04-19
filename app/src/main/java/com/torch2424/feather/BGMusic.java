@@ -405,7 +405,6 @@ public class BGMusic extends Service implements OnCompletionListener
                         //Use folder play to know if we should set to index 0
                         if(folderPlay)
                         {
-                            Log.d("FEATHERFOLDER", "HIIIII");
                             index = 0;
                             musicFile = playList.get(index);
                             folderPlay = false;
@@ -413,8 +412,6 @@ public class BGMusic extends Service implements OnCompletionListener
                         //else Find the song we originally clicked
                         else
                         {
-                            Log.d("FEATHERFOLDER", "Pretzels" +
-                                    "");
                             for (int i = 0; musicFile != null; ++i) {
                                 if (musicFile == playList.get(i)) {
                                     index = i;
