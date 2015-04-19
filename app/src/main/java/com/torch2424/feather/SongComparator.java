@@ -82,7 +82,6 @@ public class SongComparator implements Comparator<File>
         catch(Exception e)
         {
             //Return 0 if there is an exception
-            Log.d("FeatherException", "Exception thrown:" + e);
             return 0;
         }
     }
