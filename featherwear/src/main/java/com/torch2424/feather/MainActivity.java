@@ -23,6 +23,7 @@ public class MainActivity extends Activity
         {
             //send the path quit
             NotificationActivity.quitApp();
+            //Finish opur activity so it is never shown
             finish();
         }
         //else jsut start the activity like normal
