@@ -75,7 +75,6 @@ public class NotificationPanel implements ConnectionCallbacks, GoogleApiClient.O
                 .addOnConnectionFailedListener(this)
                 .build();
         //Connect to our client
-        Log.d("Feather", "Connecting to Client");
         client.connect();
 
         //Start our service for wearable
@@ -229,7 +228,6 @@ public class NotificationPanel implements ConnectionCallbacks, GoogleApiClient.O
     @Override
     public void onConnected(Bundle bundle)
     {
-        Log.d("Feather", "We are connected!");
         //Since we are now connected, change the title of our notification,
         //so we make sure it is shown on wear
         //Use path start so that we create the notification
@@ -252,12 +250,10 @@ public class NotificationPanel implements ConnectionCallbacks, GoogleApiClient.O
     @Override
     public void onConnectionSuspended(int i)
     {
-        Log.d("Feather", "Connection Suspended");
     }
 
     @Override
     public void onConnectionFailed(ConnectionResult connectionResult)
     {
-        Log.d("Feather", "Connection Failed");
     }
 }
