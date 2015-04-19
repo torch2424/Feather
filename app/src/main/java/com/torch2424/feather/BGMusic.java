@@ -59,6 +59,9 @@ public class BGMusic extends Service implements OnCompletionListener
     //Boolean to use the helper when we are sorting by track
     boolean stopHelper;
 
+    //Boolean to know we chose folderplay
+    boolean folderPlay;
+
 	@Override
 	public IBinder onBind(Intent arg0)
 	{
@@ -102,13 +105,16 @@ public class BGMusic extends Service implements OnCompletionListener
         //re-adding this for lollipop since music will end early without it
 		 bgmusic.setWakeMode(this.getApplicationContext(),
 		 PowerManager.PARTIAL_WAKE_LOCK);
+
+        //Inititalize our variables
 		playList = new ArrayList<File>();
 		index = 0;
-
 		volume = 1;
 		fading = false;
 		isPaused = false;
 		loopBool = false;
+        stopHelper = false;
+        folderPlay = false;
 		notification = new NotificationPanel(getApplicationContext());
 
         //Preparing our preferences for our settings
@@ -392,16 +398,23 @@ public class BGMusic extends Service implements OnCompletionListener
                     {
                         //Sort with our song metadata comparator
                         Collections.sort(playList, new SongComparator());
-
-                        //Find the song we originally clicked
-                        for (int i = 0; tempFile != null; ++i)
+                        
+                        //Use folder play to know if we should set to index 0
+                        if(folderPlay)
                         {
-                            if (tempFile == playList.get(i))
-                            {
-                                index = i;
-                                //break to save process time
-                                break;
+                            index = 0;
+                            folderPlay = false;
+                        }
+                        //else Find the song we originally clicked
+                        else
+                        {
+                            for (int i = 0; tempFile != null; ++i) {
+                                if (tempFile == playList.get(i)) {
+                                    index = i;
+                                    //break to save process time
+                                    break;
 
+                                }
                             }
                         }
 

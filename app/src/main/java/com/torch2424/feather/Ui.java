@@ -635,6 +635,9 @@ public class Ui extends Activity implements OnSeekBarChangeListener, Runnable
 										
 										// Resetting index
 										bgMusic.index = 0;
+
+                                        //Set folderplay to true(For music sort setting)
+                                        bgMusic.folderPlay = true;
 										
 										// playing playlist, only if it isn't
 										// empty
