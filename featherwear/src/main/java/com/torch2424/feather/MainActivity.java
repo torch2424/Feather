@@ -16,16 +16,17 @@ public class MainActivity extends Activity
     protected void onCreate(Bundle savedInstanceState)
     {
         //Using our main activity to quit feather, sinc eit is least likely to be used
+        super.onCreate(savedInstanceState);
         boolean toQuit = getIntent().getBooleanExtra("QUIT", false);
         Log.d("FEATHEREXTRA", String.valueOf(toQuit));
         if(toQuit)
         {
             //send the path quit
             NotificationActivity.quitApp();
+            finish();
         }
         //else jsut start the activity like normal
         else {
-            super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
             final WatchViewStub stub = (WatchViewStub) findViewById(R.id.watch_view_stub);
             stub.setOnLayoutInflatedListener(new WatchViewStub.OnLayoutInflatedListener() {
