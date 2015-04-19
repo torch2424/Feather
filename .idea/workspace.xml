@@ -61,11 +61,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/featherwear/src/main/java/com/torch2424/feather/MainActivity.java">
+      <file leaf-file-name="NotificationActivity.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/featherwear/src/main/java/com/torch2424/feather/NotificationActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33183858" vertical-offset="62" max-vertical-offset="570">
-              <caret line="19" column="68" selection-start-line="19" selection-start-column="68" selection-end-line="19" selection-end-column="68" />
+            <state vertical-scroll-proportion="3.4304934" vertical-offset="0" max-vertical-offset="1875">
+              <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -1983,7 +1983,6 @@
         <option value="$PROJECT_DIR$/featherwear/src/main/res/layout/activity_notification.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/featherwear/src/main/java/com/torch2424/feather/WearQuit.java" />
-        <option value="$PROJECT_DIR$/featherwear/src/main/java/com/torch2424/feather/NotificationActivity.java" />
         <option value="$PROJECT_DIR$/featherwear/src/main/java/com/torch2424/feather/OngoingService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/torch2424/feather/Ui.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/torch2424/feather/BGMusic.java" />
@@ -1991,6 +1990,7 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/torch2424/feather/SongComparator.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/torch2424/feather/WearService.java" />
         <option value="$PROJECT_DIR$/featherwear/src/main/java/com/torch2424/feather/MainActivity.java" />
+        <option value="$PROJECT_DIR$/featherwear/src/main/java/com/torch2424/feather/NotificationActivity.java" />
       </list>
     </option>
   </component>
@@ -2795,14 +2795,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/featherwear/src/main/java/com/torch2424/feather/NotificationActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.0394737" vertical-offset="1011" max-vertical-offset="1920">
-          <caret line="38" column="51" selection-start-line="38" selection-start-column="51" selection-end-line="38" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/torch2424/feather/BGMusic.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="7130" max-vertical-offset="10785">
@@ -2887,8 +2879,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/featherwear/src/main/java/com/torch2424/feather/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33183858" vertical-offset="62" max-vertical-offset="570">
+        <state vertical-scroll-proportion="-5.4814816" vertical-offset="62" max-vertical-offset="570">
           <caret line="19" column="68" selection-start-line="19" selection-start-column="68" selection-end-line="19" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/featherwear/src/main/java/com/torch2424/feather/NotificationActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.4304934" vertical-offset="0" max-vertical-offset="1875">
+          <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
           <folding />
         </state>
       </provider>

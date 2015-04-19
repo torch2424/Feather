@@ -101,8 +101,6 @@ public class NotificationActivity extends Activity
             else button = PATHPREV;
             PutDataMapRequest putDataMapRequest = PutDataMapRequest.create(button);
 
-            Log.d("FEATHERWEAR", button);
-
             // Add data to the request (Just so it has changed and it is recieved)
             // Add data to the request
             putDataMapRequest.getDataMap().putString(KEY,
@@ -125,7 +123,6 @@ public class NotificationActivity extends Activity
 
         PutDataMapRequest putDataMapRequest = PutDataMapRequest.create(PATHQUIT);
 
-        Log.d("FEATHERWEAR", "QUITING FROM WEAR");
 
         // Add data to the request (Just so it has changed and it is recieved)
         // Add data to the request
