@@ -129,7 +129,7 @@ public class OngoingService extends WearableListenerService {
 
                     // quit for action button
                     Intent quit = new Intent(this, MainActivity.class);
-                    PendingIntent pendingQuit = PendingIntent.getService(this, 0, quit, 0);
+                    PendingIntent pendingQuit = PendingIntent.getActivity(this, 0, quit, 0);
 
                     // Create the ongoing notification
                     Notification.Builder notificationBuilder =
