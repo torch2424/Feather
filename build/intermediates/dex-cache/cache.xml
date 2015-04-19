@@ -9,13 +9,6 @@
         <dex dex="/home/torch2424/Dropbox/Android Source/NewFeather1/app/build/intermediates/pre-dexed/debug/classes-e532cf46fd9a7e85af50d8f82073829c88d74173.jar" />
     </item>
     <item
-        jar="/home/torch2424/Dropbox/Android Source/NewFeather1/featherwear/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.0/libs/internal_impl-21.0.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="1609e6d42d0480b0f4188e2c29f75388fa12a8f0">
-        <dex dex="/home/torch2424/Dropbox/Android Source/NewFeather1/featherwear/build/intermediates/pre-dexed/debug/internal_impl-21.0.0-df19ce059acc8c2a43b9487960439e2a75ddde12.jar" />
-    </item>
-    <item
         jar="/home/torch2424/Dropbox/Android Source/NewFeather1/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/7.0.0/classes.jar"
         jumboMode="false"
         revision="21.1.2"
@@ -28,13 +21,6 @@
         revision="21.1.2"
         sha1="0e8228b4bc69c6a2c8d7c18498a77e53417d2574">
         <dex dex="/home/torch2424/Dropbox/Android Source/NewFeather1/app/build/intermediates/pre-dexed/debug/classes-b70971ba596b984f2dde0ecf6ce3fa203aef0f37.jar" />
-    </item>
-    <item
-        jar="/home/torch2424/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.0/support-annotations-21.0.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="1a578b9607b36266c63d43a4fa0ab5664dbe911e">
-        <dex dex="/home/torch2424/Dropbox/Android Source/NewFeather1/featherwear/build/intermediates/pre-dexed/debug/support-annotations-21.0.0-1d3a70d83ec52fdb484d88e3dc55b7ccdadb0cdb.jar" />
     </item>
     <item
         jar="/home/torch2424/Dropbox/Android Source/NewFeather1/featherwear/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/6.5.87/classes.jar"
@@ -65,39 +51,11 @@
         <dex dex="/home/torch2424/Dropbox/Android Source/NewFeather1/app/build/intermediates/pre-dexed/debug/classes-7c286c5b48f038180d88f4ecc2812b7027f78e08.jar" />
     </item>
     <item
-        jar="/home/torch2424/Dropbox/Android Source/NewFeather1/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/7.0.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="29fd6d3794b71491c2789708cd8d03c71feb8954">
-        <dex dex="/home/torch2424/Dropbox/Android Source/NewFeather1/app/build/intermediates/pre-dexed/debug/classes-0c3c3de6a0d422291a2b0c2be5a0b7c46331b938.jar" />
-    </item>
-    <item
-        jar="/home/torch2424/Dropbox/Android Source/NewFeather1/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/libs/internal_impl-22.0.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
-        <dex dex="/home/torch2424/Dropbox/Android Source/NewFeather1/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-a1465c6d2cede2e53aaefcf28da358df4deb927c.jar" />
-    </item>
-    <item
         jar="/home/torch2424/Dropbox/Android Source/NewFeather1/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/7.0.0/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="41b3870cbe5fa546d8095b5b89d42cb69f3dd175">
         <dex dex="/home/torch2424/Dropbox/Android Source/NewFeather1/app/build/intermediates/pre-dexed/debug/classes-6f41f87f303c357f7583b335de2a8040ee9b4e3d.jar" />
-    </item>
-    <item
-        jar="/home/torch2424/Dropbox/Android Source/NewFeather1/featherwear/build/intermediates/exploded-aar/com.google.android.support/wearable/1.1.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="27f19641b81b1078e653d2f0e5d1ed44d158a785">
-        <dex dex="/home/torch2424/Dropbox/Android Source/NewFeather1/featherwear/build/intermediates/pre-dexed/debug/classes-a87039c8eb54fc8be9c0d12d2a7b56e27bf8adba.jar" />
-    </item>
-    <item
-        jar="/home/torch2424/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/22.0.0/support-annotations-22.0.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
-        <dex dex="/home/torch2424/Dropbox/Android Source/NewFeather1/app/build/intermediates/pre-dexed/debug/support-annotations-22.0.0-6d1ce80dc61d8d484bf326af0050a3b65c0b8bf5.jar" />
     </item>
     <item
         jar="/home/torch2424/Dropbox/Android Source/NewFeather1/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/classes.jar"
@@ -107,20 +65,6 @@
         <dex dex="/home/torch2424/Dropbox/Android Source/NewFeather1/app/build/intermediates/pre-dexed/debug/classes-733cf01ab58ac8e2b0aa86a249b43ca5a4b64a6f.jar" />
     </item>
     <item
-        jar="/home/torch2424/Dropbox/Android Source/NewFeather1/featherwear/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/6.5.87/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="6384c6cd674a22610b932d9464aa6938d067f285">
-        <dex dex="/home/torch2424/Dropbox/Android Source/NewFeather1/featherwear/build/intermediates/pre-dexed/debug/classes-5b4847293b8c6d513ae32550548df0839aa0ea67.jar" />
-    </item>
-    <item
-        jar="/home/torch2424/Dropbox/Android Source/NewFeather1/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/7.0.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="9224bc4c54ba95147c7eabd874573763c07cb6be">
-        <dex dex="/home/torch2424/Dropbox/Android Source/NewFeather1/app/build/intermediates/pre-dexed/debug/classes-976d96c8df73a6d14b108f45956da3bcad2c9af6.jar" />
-    </item>
-    <item
         jar="/home/torch2424/Dropbox/Android Source/NewFeather1/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/7.0.0/classes.jar"
         jumboMode="false"
         revision="21.1.2"
@@ -128,11 +72,11 @@
         <dex dex="/home/torch2424/Dropbox/Android Source/NewFeather1/app/build/intermediates/pre-dexed/debug/classes-33d3f1bf270bd408ec5ada66b7c144f1f7f202c7.jar" />
     </item>
     <item
-        jar="/home/torch2424/Dropbox/Android Source/NewFeather1/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/7.0.0/classes.jar"
+        jar="/home/torch2424/Dropbox/Android Source/NewFeather1/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/7.0.0/classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="fb04b12526b0073c7fb1ebb70c5842d82ee95596">
-        <dex dex="/home/torch2424/Dropbox/Android Source/NewFeather1/app/build/intermediates/pre-dexed/debug/classes-ccd75e627b62e599e73b97e5db6a8727cb43e73f.jar" />
+        sha1="9224bc4c54ba95147c7eabd874573763c07cb6be">
+        <dex dex="/home/torch2424/Dropbox/Android Source/NewFeather1/app/build/intermediates/pre-dexed/debug/classes-976d96c8df73a6d14b108f45956da3bcad2c9af6.jar" />
     </item>
     <item
         jar="/home/torch2424/Dropbox/Android Source/NewFeather1/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/7.0.0/classes.jar"
@@ -156,6 +100,76 @@
         <dex dex="/home/torch2424/Dropbox/Android Source/NewFeather1/app/build/intermediates/pre-dexed/debug/classes-63409aab2df33ed63f2fed231d98dd004fb5b509.jar" />
     </item>
     <item
+        jar="/home/torch2424/Dropbox/Android Source/NewFeather1/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="73ccb92b70112f2e463e415ef8d7275de7da6516">
+        <dex dex="/home/torch2424/Dropbox/Android Source/NewFeather1/app/build/intermediates/pre-dexed/debug/classes-cea5dd06aca18857c4fe5de22192e2f425a15fb8.jar" />
+    </item>
+    <item
+        jar="/home/torch2424/Dropbox/Android Source/NewFeather1/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="ef5f051e7308febe289dc93c67c5f32785b4260a">
+        <dex dex="/home/torch2424/Dropbox/Android Source/NewFeather1/app/build/intermediates/pre-dexed/debug/classes-89a66113445abac17e36d4261f7c788d66b95a2e.jar" />
+    </item>
+    <item
+        jar="/home/torch2424/Dropbox/Android Source/NewFeather1/featherwear/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.0/libs/internal_impl-21.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="1609e6d42d0480b0f4188e2c29f75388fa12a8f0">
+        <dex dex="/home/torch2424/Dropbox/Android Source/NewFeather1/featherwear/build/intermediates/pre-dexed/debug/internal_impl-21.0.0-df19ce059acc8c2a43b9487960439e2a75ddde12.jar" />
+    </item>
+    <item
+        jar="/home/torch2424/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.0/support-annotations-21.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="1a578b9607b36266c63d43a4fa0ab5664dbe911e">
+        <dex dex="/home/torch2424/Dropbox/Android Source/NewFeather1/featherwear/build/intermediates/pre-dexed/debug/support-annotations-21.0.0-1d3a70d83ec52fdb484d88e3dc55b7ccdadb0cdb.jar" />
+    </item>
+    <item
+        jar="/home/torch2424/Dropbox/Android Source/NewFeather1/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="29fd6d3794b71491c2789708cd8d03c71feb8954">
+        <dex dex="/home/torch2424/Dropbox/Android Source/NewFeather1/app/build/intermediates/pre-dexed/debug/classes-0c3c3de6a0d422291a2b0c2be5a0b7c46331b938.jar" />
+    </item>
+    <item
+        jar="/home/torch2424/Dropbox/Android Source/NewFeather1/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/libs/internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
+        <dex dex="/home/torch2424/Dropbox/Android Source/NewFeather1/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-a1465c6d2cede2e53aaefcf28da358df4deb927c.jar" />
+    </item>
+    <item
+        jar="/home/torch2424/Dropbox/Android Source/NewFeather1/featherwear/build/intermediates/exploded-aar/com.google.android.support/wearable/1.1.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="27f19641b81b1078e653d2f0e5d1ed44d158a785">
+        <dex dex="/home/torch2424/Dropbox/Android Source/NewFeather1/featherwear/build/intermediates/pre-dexed/debug/classes-a87039c8eb54fc8be9c0d12d2a7b56e27bf8adba.jar" />
+    </item>
+    <item
+        jar="/home/torch2424/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/22.0.0/support-annotations-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
+        <dex dex="/home/torch2424/Dropbox/Android Source/NewFeather1/app/build/intermediates/pre-dexed/debug/support-annotations-22.0.0-6d1ce80dc61d8d484bf326af0050a3b65c0b8bf5.jar" />
+    </item>
+    <item
+        jar="/home/torch2424/Dropbox/Android Source/NewFeather1/featherwear/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/6.5.87/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="6384c6cd674a22610b932d9464aa6938d067f285">
+        <dex dex="/home/torch2424/Dropbox/Android Source/NewFeather1/featherwear/build/intermediates/pre-dexed/debug/classes-5b4847293b8c6d513ae32550548df0839aa0ea67.jar" />
+    </item>
+    <item
+        jar="/home/torch2424/Dropbox/Android Source/NewFeather1/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="fb04b12526b0073c7fb1ebb70c5842d82ee95596">
+        <dex dex="/home/torch2424/Dropbox/Android Source/NewFeather1/app/build/intermediates/pre-dexed/debug/classes-ccd75e627b62e599e73b97e5db6a8727cb43e73f.jar" />
+    </item>
+    <item
         jar="/home/torch2424/Dropbox/Android Source/NewFeather1/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/7.0.0/classes.jar"
         jumboMode="false"
         revision="21.1.2"
@@ -170,25 +184,11 @@
         <dex dex="/home/torch2424/Dropbox/Android Source/NewFeather1/app/build/intermediates/pre-dexed/debug/classes-bae3cce3c879132451cc75c00771d03dd0cf740d.jar" />
     </item>
     <item
-        jar="/home/torch2424/Dropbox/Android Source/NewFeather1/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/7.0.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="73ccb92b70112f2e463e415ef8d7275de7da6516">
-        <dex dex="/home/torch2424/Dropbox/Android Source/NewFeather1/app/build/intermediates/pre-dexed/debug/classes-cea5dd06aca18857c4fe5de22192e2f425a15fb8.jar" />
-    </item>
-    <item
         jar="/home/torch2424/Dropbox/Android Source/NewFeather1/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/7.0.0/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="a08d65794b844d8e7540bf9a33859bf3b2482d7f">
         <dex dex="/home/torch2424/Dropbox/Android Source/NewFeather1/app/build/intermediates/pre-dexed/debug/classes-ca07145862ea9cca2c2b109517300121a0aff215.jar" />
-    </item>
-    <item
-        jar="/home/torch2424/Dropbox/Android Source/NewFeather1/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/7.0.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="ef5f051e7308febe289dc93c67c5f32785b4260a">
-        <dex dex="/home/torch2424/Dropbox/Android Source/NewFeather1/app/build/intermediates/pre-dexed/debug/classes-89a66113445abac17e36d4261f7c788d66b95a2e.jar" />
     </item>
     <item
         jar="/home/torch2424/Dropbox/Android Source/NewFeather1/featherwear/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/21.0.0/classes.jar"

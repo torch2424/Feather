@@ -1,0 +1,73 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/notifylayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:background="@color/transparent"
+    android:gravity="center_vertical"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:id="@+id/notifcation_icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="10dp"
+        android:background="@drawable/ic_launcher"
+        android:contentDescription="@string/app_name"
+        android:scaleType="center" />
+    
+    <TextView
+        android:id="@+id/message"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/notifcation_icon"
+        android:layout_alignBottom="@+id/notifcation_icon"
+        android:layout_toRightOf="@+id/notifcation_icon"
+        android:layout_toLeftOf="@+id/buttons"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:text="@string/app_name" />
+
+    <LinearLayout
+         android:id="@+id/buttons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/prev"
+            android:layout_width="36dp"
+            android:layout_height="41dp"
+            android:layout_margin="8dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/prevs" />
+
+        <Button
+            android:id="@+id/playpause"
+            android:layout_width="36dp"
+            android:layout_height="41dp"
+            android:layout_margin="8dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/playpauses" />
+
+        <Button
+            android:id="@+id/next"
+            android:layout_width="36dp"
+            android:layout_height="41dp"
+            android:layout_margin="8dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/nexts" />
+
+        <Button
+            android:id="@+id/quit"
+            android:layout_width="25dp"
+            android:layout_height="30dp"
+            android:layout_margin="8dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/quits" />
+    </LinearLayout>
+
+</RelativeLayout><!-- From: file:/home/torch2424/Dropbox/Android%20Source/NewFeather1/app/src/main/res/layout/medianotification.xml -->

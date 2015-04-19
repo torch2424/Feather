@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.torch2424.feather.FeatherSettings"
+    tools:ignore="MergeRootFrame" >
+
+    <TextView
+        android:id="@+id/configTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:textColor="@color/white"
+        android:text="@string/ConfigTitle"/>
+
+    <CheckBox
+        android:id="@+id/checkHeadset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:textColor="@color/white"
+        android:text="@string/headset" />
+
+    <CheckBox
+        android:id="@+id/musicSort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:textColor="@color/white"
+        android:text="@string/musicSort" />
+
+    <CheckBox
+        android:id="@+id/loopList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:textColor="@color/white"
+        android:text="@string/loopList" />
+
+    <Button
+        android:id="@+id/saveConfig"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/saveConfig"
+        android:textColor="@color/white"
+        android:onClick="saveConfig"/>
+
+</LinearLayout>
+<!-- From: file:/home/torch2424/Dropbox/Android%20Source/NewFeather1/app/src/main/res/layout/fsettings.xml -->

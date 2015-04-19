@@ -4,6 +4,20 @@
 
     <uses-feature android:name="android.hardware.type.watch" />
 
+    <!-- Permissions -->
+    <!-- to access songs -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- To store some app settings (Wallpaper) -->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+    <!-- to fix lollipop music bug -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
