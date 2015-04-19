@@ -18,7 +18,6 @@ public class MainActivity extends Activity
         //Using our main activity to quit feather, sinc eit is least likely to be used
         super.onCreate(savedInstanceState);
         boolean toQuit = getIntent().getBooleanExtra("QUIT", false);
-        Log.d("FEATHEREXTRA", String.valueOf(toQuit));
         if(toQuit)
         {
             //send the path quit
