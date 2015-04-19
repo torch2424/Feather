@@ -64,12 +64,9 @@
       <file leaf-file-name="BGMusic.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/torch2424/feather/BGMusic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.42543858" vertical-offset="5139" max-vertical-offset="10725">
-              <caret line="400" column="24" selection-start-line="400" selection-start-column="24" selection-end-line="400" selection-end-column="24" />
-              <folding>
-                <element signature="e#9750#11454#0" expanded="true" />
-                <element signature="e#11434#11435#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.55263156" vertical-offset="4887" max-vertical-offset="10830">
+              <caret line="389" column="77" selection-start-line="389" selection-start-column="77" selection-end-line="389" selection-end-column="77" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -77,7 +74,7 @@
       <file leaf-file-name="Ui.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/torch2424/feather/Ui.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.0" vertical-offset="7896" max-vertical-offset="19035">
+            <state vertical-scroll-proportion="-127.0" vertical-offset="4791" max-vertical-offset="19035">
               <caret line="639" column="66" selection-start-line="639" selection-start-column="66" selection-end-line="639" selection-end-column="66" />
               <folding />
             </state>
@@ -2204,7 +2201,7 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="localhost:4444" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="TA093017D4" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_S_API_21" />
     <property name="FullScreen" value="false" />
     <property name="LayoutCode.rearrangeEntriesJava" value="false" />
@@ -2461,7 +2458,7 @@
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21868132" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21868132" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2885,7 +2882,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/torch2424/feather/Ui.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.0" vertical-offset="7896" max-vertical-offset="19035">
+        <state vertical-scroll-proportion="-127.0" vertical-offset="4791" max-vertical-offset="19035">
           <caret line="639" column="66" selection-start-line="639" selection-start-column="66" selection-end-line="639" selection-end-column="66" />
           <folding />
         </state>
@@ -2893,12 +2890,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/torch2424/feather/BGMusic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42543858" vertical-offset="5139" max-vertical-offset="10725">
-          <caret line="400" column="24" selection-start-line="400" selection-start-column="24" selection-end-line="400" selection-end-column="24" />
-          <folding>
-            <element signature="e#9750#11454#0" expanded="true" />
-            <element signature="e#11434#11435#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.55263156" vertical-offset="4887" max-vertical-offset="10830">
+          <caret line="389" column="77" selection-start-line="389" selection-start-column="77" selection-end-line="389" selection-end-column="77" />
+          <folding />
         </state>
       </provider>
     </entry>

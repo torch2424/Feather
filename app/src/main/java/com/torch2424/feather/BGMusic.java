@@ -275,7 +275,7 @@ public class BGMusic extends Service implements OnCompletionListener
 
         //Doing this because we are sorting by music or alphabetically
         //This will stop the helper from being run if it is going to be executed by the background thread
-        //inside the shuffle function, therefore music isn't played before we are done sorting
+        //inside the sort function, therefore music isn't played before we are done sorting
         if(!stopHelper)
         {
             startMediaHelper(selectedFile);
@@ -366,7 +366,7 @@ public class BGMusic extends Service implements OnCompletionListener
 	/**
 	 * Sorts our current playlist while keeping the current playlist
 	 */
-	public void sort(final File currentFile)
+	public void sort(File currentFile)
 	{
 		// Need to sure playlist isn't null or empty
 		if (playList != null && !playList.isEmpty() && currentFile != null)
@@ -393,23 +393,30 @@ public class BGMusic extends Service implements OnCompletionListener
                 //Sort our stuff on a new thread, and close our loading dialog there
                 Ui.mThread = new Thread()
                 {
+                    //Declaring a file here to avoid Not being able to assign value to a file
+                    File musicFile = tempFile;
+
                     @Override
                     public void run()
                     {
                         //Sort with our song metadata comparator
                         Collections.sort(playList, new SongComparator());
-                        
+
                         //Use folder play to know if we should set to index 0
                         if(folderPlay)
                         {
+                            Log.d("FEATHERFOLDER", "HIIIII");
                             index = 0;
+                            musicFile = playList.get(index);
                             folderPlay = false;
                         }
                         //else Find the song we originally clicked
                         else
                         {
-                            for (int i = 0; tempFile != null; ++i) {
-                                if (tempFile == playList.get(i)) {
+                            Log.d("FEATHERFOLDER", "Pretzels" +
+                                    "");
+                            for (int i = 0; musicFile != null; ++i) {
+                                if (musicFile == playList.get(i)) {
                                     index = i;
                                     //break to save process time
                                     break;
@@ -426,7 +433,7 @@ public class BGMusic extends Service implements OnCompletionListener
 
                                 //Now finish playing the playlist
                                 try {
-                                    startMediaHelper(currentFile);
+                                    startMediaHelper(musicFile);
                                 } catch (IOException e) {
                                     e.printStackTrace();
                                 }
