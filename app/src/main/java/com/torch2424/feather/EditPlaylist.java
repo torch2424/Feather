@@ -1,8 +1,5 @@
 package com.torch2424.feather;
 
-import java.io.IOException;
-import java.util.Collections;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.WallpaperManager;
@@ -22,6 +19,9 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import java.io.IOException;
+import java.util.Collections;
 
 public class EditPlaylist extends Activity
 {

@@ -1,10 +1,8 @@
 package com.torch2424.feather;
 
 import android.media.MediaMetadataRetriever;
-import android.util.Log;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.Comparator;
 
 /**

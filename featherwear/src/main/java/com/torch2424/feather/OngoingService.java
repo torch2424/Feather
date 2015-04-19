@@ -5,13 +5,8 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
-import android.os.Bundle;
 import android.support.v4.app.NotificationManagerCompat;
-import android.util.DisplayMetrics;
-import android.util.Log;
-import android.view.KeyEvent;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -50,9 +45,6 @@ public class OngoingService extends WearableListenerService {
                 .build();
         GoogClient.connect();
 
-        //Show that we've created our service
-        Log.d("Feather", "Create the wearable listener");
-
         //Dont change is active here since on create is called  multiple times
     }
     
@@ -65,7 +57,6 @@ public class OngoingService extends WearableListenerService {
 
         //If our client has lost connection, try reconnecting, if we cant, return and leave
         if (!GoogClient.isConnected()) {
-            Log.d("Feather", "Client is not connected");
             ConnectionResult connectionResult = GoogClient
                     .blockingConnect(30, TimeUnit.SECONDS);
             if (!connectionResult.isSuccess()) {
@@ -81,7 +72,6 @@ public class OngoingService extends WearableListenerService {
                 //If it is feather's path
                 if (PATH.equals(path))
                 {
-                    Log.d("Feather", "Changing text");
                     // Get the data out of the event
                     DataMapItem dataMapItem =
                             DataMapItem.fromDataItem(event.getDataItem());
@@ -90,14 +80,12 @@ public class OngoingService extends WearableListenerService {
                     //Change our ticker text to the specified string
                     //Check with is active to make sure we dont crash
                     if(NotificationActivity.isActive) NotificationActivity.changeText(title);
-                    else Log.d("Feather", "We're not active :'(");
 
                     //We only build our notification when it is started
                 }
                 //We get a notification with path dissmiss
                 else if(path.equals(PATHDISMISS))
                 {
-                    Log.d("Feahter", "Questlove is in the house");
                     //Close the noticiation
                     NotificationManagerCompat notifyCompat = NotificationManagerCompat.from(this);
                     notifyCompat.cancel(NID);
@@ -108,7 +96,6 @@ public class OngoingService extends WearableListenerService {
                 else if(path.equals(PATHSTART))
                 {
                     //Create our notification
-                    Log.d("Feather", "Creating notifyication");
                     // Build the intent to display our custom notification
                     Intent notificationIntent =
                             new Intent(this, NotificationActivity.class);
