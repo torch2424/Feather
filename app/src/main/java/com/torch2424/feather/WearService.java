@@ -57,9 +57,6 @@ public class WearService extends WearableListenerService
                 .build();
         GoogClient.connect();
 
-        //Show that we've created our service
-        Log.d("Feather", "Create the phone listener");
-
         //Initialize our handler
         handler = new Handler(Looper.getMainLooper());
 
@@ -75,7 +72,6 @@ public class WearService extends WearableListenerService
 
         //If our client has lost connection, try reconnecting, if we cant, return and leave
         if (!GoogClient.isConnected()) {
-            Log.d("Feather", "Client is not connected");
             ConnectionResult connectionResult = GoogClient
                     .blockingConnect(30, TimeUnit.SECONDS);
             if (!connectionResult.isSuccess()) {
