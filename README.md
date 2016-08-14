@@ -1,7 +1,7 @@
 # Feather
 A Media/Video Playing app for android
 
-![Feather Img](https://aaronthedev.com/images/featherscreen.530474a5.png)
+![Feather Img](https://files.aaronthedev.com/$/43pzt)
 
 ##Submitting Pull Requests and Issues
 **Please Please Please** Submit any bugs or any fixes you would like fixed about the app. 
